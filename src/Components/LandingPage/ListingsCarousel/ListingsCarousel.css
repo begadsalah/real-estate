@@ -1,0 +1,19 @@
+.card-div-container {
+}
+.subtitle {
+  text-align: left;
+  color: #88a9c3;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.span-title {
+  color: #336b9f;
+  font-weight: 600;
+}
+.div-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 3rem 0;
+}

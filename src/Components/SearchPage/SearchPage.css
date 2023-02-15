@@ -1,0 +1,25 @@
+.form-container {
+  margin-top: 10rem;
+}
+.flex-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem 0;
+}
+.Search-page-thead,
+.Search-page-tr,
+.Search-page-tbody,
+.Search-page-tbody td {
+  padding: 1rem;
+  border: 1px solid lightgray;
+}
+.Search-page-tbody td {
+  width: 20%;
+}
+.Search-page-tbody,
+.Search-page-thead {
+}
+.Search-page-tr {
+}

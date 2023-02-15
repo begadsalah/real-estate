@@ -1,0 +1,122 @@
+.communities-section-title {
+  margin: 3rem 0;
+  padding: 3rem 0;
+}
+.div-flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+hr.solid {
+  border-top: 1.5px solid #000;
+}
+.box-shadow-customized {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+}
+.houseCardInfo {
+  font-weight: 600;
+  color: #262525;
+}
+
+.card-img:hover {
+}
+p {
+  font-size: 11px;
+}
+.card-hover-effect {
+  margin-top: 0.5rem;
+}
+.card-hover-effect:hover {
+  transform: scale(1.02);
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+  -o-transition: all 0.1s ease;
+  -ms-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+.tab-box {
+  height: fit-content !important;
+}
+
+.btn-1 a::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -2px;
+  width: calc(100% + 6px);
+
+  height: calc(100% - 10px);
+  background-color: #ffffff;
+  transition: all 0.5s ease-in-out;
+  transform: scaleY(1);
+}
+
+.btn-1 a:hover::before {
+  transform: scaleY(0);
+}
+
+.btn-1 a::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: -5px;
+  width: calc(100% - 10px);
+
+  height: calc(100% + 10px);
+  background-color: #ffffff;
+  transition: all 0.5s ease-in-out;
+  transform: scaleX(1);
+}
+
+.btn-1 a:hover::after {
+  transform: scaleX(0);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+}
+.btn-1 {
+  width: 300px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-1 a {
+  text-decoration: none;
+  border: 2px solid #010100;
+  padding: 15px;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  font-weight: 600;
+}
+
+span {
+  position: relative;
+  z-index: 3;
+}
+.fav-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100% !important;
+  margin-top: 0.5rem;
+  background-color: white;
+  padding: 0.1rem;
+  clip-path: circle(50% at 50% 50%);
+}
+.card-pic-div {
+  width: 100%;
+}

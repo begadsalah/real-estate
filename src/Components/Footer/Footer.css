@@ -1,0 +1,37 @@
+hr.solid {
+  border-top: 2px solid #336b9f;
+}
+.footer-main-div {
+  background-image: url(../../assets/wave.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 70vh;
+  width: 100%;
+}
+.footer-table,
+.footer-table-row {
+  width: 100%;
+  margin: 1rem 0;
+}
+.footer-thead-tr th {
+}
+
+.footer-tbody {
+}
+.footer-tbody-tr {
+}
+.footer-tbody-tr td {
+}
+.socialMedia-td {
+  display: flex;
+  justify-contnet: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.footer-thead-rights > tr > p {
+  display: flex;
+  justify-contnet: center;
+  align-items: center;
+  tex-align: center;
+}

@@ -1,0 +1,96 @@
+.services-full-bg-image {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(179, 209, 243, 0.52),
+      rgba(38, 94, 137, 0.73)
+    ),
+    url(../../../assets/servicesPic.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  clip-path: polygon(0 13%, 100% 0, 100% 85%, 0% 100%);
+  min-height: 100vh;
+}
+
+.servicesSection-h1 {
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 2.7rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  padding: 2rem;
+  margin-top: 4rem;
+  text-shadow: rgb(0 0 0) 0px 1px 5px;
+}
+.servicesSection-h1 span {
+  color: #336b9f;
+  text-shadow: none;
+}
+.servicesSection-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  postion: realtive;
+}
+.card-row {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  hieght: 100%;
+}
+.card-body:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 14px 28px, rgba(0, 0, 0, 0.1) 0px 10px 10px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(179, 209, 243, 0.3),
+    rgba(38, 94, 137, 0.3)
+  );
+}
+.card-body {
+  background-color: transparent !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.card-icon {
+  background-size: contain !important;
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+.card-content-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: white;
+}
+.card-title {
+  text-shadow: rgb(0 0 0) 0px 1px 5px;
+}
+.card-paragraph {
+  color: white !important;
+}
+.service-svg-icon {
+  fill: white;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+}
+.card-button {
+  color: white !important;
+  border: 2px solid white !important;
+  padding: 0.2rem 2rem !important;
+  text-shadow: none !important;
+}

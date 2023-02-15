@@ -1,0 +1,24 @@
+.navbar_contaner {
+  margin-bottom: 0px;
+  z-index: 1999;
+  position: relative;
+  top: 0;
+  width: 100%;
+  padding: 0.7rem 0;
+}
+.div-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.margin-0 {
+  margin: 0;
+}
+.primary-color-palette {
+  background-color: #ffffff;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

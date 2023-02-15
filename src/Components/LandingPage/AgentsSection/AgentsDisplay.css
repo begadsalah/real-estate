@@ -1,0 +1,117 @@
+.card-image {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+.card-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 1rem 1rem !important;
+}
+.card-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.card-button-action {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.card-button {
+  border: 1.5px solid black !important;
+  text-shadow: rgb(255, 255, 255) 0px 1px 5px;
+  color: black !important;
+  margin-bottom: 2rem !important;
+}
+.card-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+  margin: 0 0.1rem;
+}
+.content-div {
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+  flex-direction: column;
+  height: 200px;
+}
+.connect-agent-mainRow {
+  margin-top: 3rem;
+}
+.connect-agent-image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.connect-agent-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.connect-agent-image {
+  max-width: 100%;
+  height: auto;
+}
+.connect-agent-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 3rem 0;
+  width: 100% !important;
+}
+.connect-agent-content span {
+  font-weight: 600 !important;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.connect-agent-content p {
+  font-weight: 400 !important;
+  font-size: 15px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.connect-agent-formBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100% !important;
+}
+.connect-agent-textField {
+  border: 1px solid gray;
+  width: 100% !important;
+}
+.form-button {
+  border: 1px solid rgb(51, 107, 159) !important;
+  border-radius: 2em !important;
+  background-color: rgb(51, 107, 159) !important;
+  color: white !important;
+  margin: 2rem 0 !important;
+  padding: 0.5rem 2rem !important;
+}
+.connect-agent-bottomP {
+  font-size: 12px !important;
+  color: gray;
+}
+
+#fill4,
+#fill5,
+#fill6 {
+  fill: rgb(51, 107, 159);
+}
+#fill2 {
+  fill: #87caff;
+}
+#fill3 {
+  fill: #b2ddff;
+}
