@@ -141,17 +141,6 @@ Pacific Palisades, CA 90272`,
     price: "$225,000",
   },
   {
-    property: "13",
-    type: "55+ Community Homes",
-    image: require("../../../assets/house2.jpg"),
-    beds: "6",
-    baths: "3",
-    sqft: "3,560",
-    address: `2261 Victoria Avenue
-Oxnard, CA 93035`,
-    price: "$825,000",
-  },
-  {
     property: "14",
     type: "Golf Course Homes",
     image: require("../../../assets/house3.jpg"),
@@ -162,42 +151,10 @@ Oxnard, CA 93035`,
 Ventura, CA 93001`,
     price: "$432,000",
   },
-  {
-    property: "15",
-    type: "Horse Property",
-    image: require("../../../assets/house4.jpg"),
-    beds: "3",
-    baths: "2",
-    sqft: "2,201",
-    address: `1322 Alessandro Drive
-Newbury Park, CA 91320`,
-    price: "$595,000",
-  },
-  {
-    property: "16",
-    type: "Main Level Master Homes",
-    image: require("../../../assets/house5.jpg"),
-    beds: "4",
-    baths: "2",
-    sqft: "1,054",
-    address: `119 N Driskill Street
-Oxnard, CA 93030`,
-    price: "$309,900",
-  },
-  {
-    property: "17",
-    type: "Multi Family Homes",
-    image: require("../../../assets/house6.jpg"),
-    beds: "5",
-    baths: "2.5",
-    sqft: "2,169",
-    address: `591 Hollyburne Lane
-Thousand Oaks, CA 91360`,
-    price: "$622,000",
-  },
+
   {
     property: "18",
-    type: "Duplex",
+    type: "Ocean View Homes",
     image: require("../../../assets/house7.jpg"),
     beds: "3",
     baths: "1",
@@ -208,7 +165,7 @@ Pacific Palisades, CA 90272`,
   },
   {
     property: "19",
-    type: "Triplex",
+    type: "City View Homes",
     image: require("../../../assets/house8.jpg"),
     beds: "4",
     baths: "2",
@@ -216,17 +173,6 @@ Pacific Palisades, CA 90272`,
     address: `3700 Dean Drive #1302
 Ventura, CA 93003`,
     price: "$445,000",
-  },
-  {
-    property: "20",
-    type: "Quadruplex",
-    image: require("../../../assets/house9.jpg"),
-    beds: "2",
-    baths: "2",
-    sqft: "2,905",
-    address: `2531 Apple Lane #86
-Oxnard, CA 93036`,
-    price: "$821,000",
   },
 ];
 function TabPanel(props) {
@@ -296,7 +242,29 @@ const TabPanelComponent = () => {
           <>
             <TabPanel value={value} index={index} key={`key-${index}`}>
               <Row>
-                <Col xs={12} sm={12} md={4}>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
                   <CardComponent
                     key={index}
                     housePics={item.image}

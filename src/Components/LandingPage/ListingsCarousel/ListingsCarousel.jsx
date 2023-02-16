@@ -131,10 +131,9 @@ const ListingsCarousel = (props) => {
   return (
     <div>
       <Row className="div-flex">
-        <span className="subtitle text-left">Real Estate Listing</span>
-        <h2 className="text-center h3-title">
-          <span className="span-title">Newly</span> listed Properties
-        </h2>
+        <h1 className="text-center h3-title">
+          <span className="span-title">New</span> Homes for Sale in Los Angeles
+        </h1>
       </Row>
       <Carousel
         centerMode={true}

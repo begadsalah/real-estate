@@ -77,9 +77,9 @@ const AgentsDisplay = () => {
   return (
     <Container>
       <Row className="div-flex">
-        <span className="subtitle text-left">Real Estate Listing</span>
         <h2 className="text-center h3-title">
-          <span className="span-title">Meet </span> Our Agents
+          <span className="span-title"> Real Estate Agents</span> in the Los
+          Angeles Area
         </h2>
       </Row>
       <Row>
@@ -101,49 +101,25 @@ const AgentsDisplay = () => {
           itemClass="carousel-item-padding-40-px"
         >
           {users.map((user, index) => (
-            <div key={index}>
-              <Card sx={{ minWidth: 275 }} className="card-main">
-                <Row className="card-div">
-                  <Col className="image-div">
-                    <img
-                      src={user.img}
-                      alt={user.name}
-                      className="card-image"
-                    />
-                  </Col>
-                  <Col className="content-div">
-                    <CardContent>
-                      <Typography
-                        sx={{ fontSize: 14 }}
-                        color="text.secondary"
-                        gutterBottom
-                      >
-                        Real Estate Agent
-                      </Typography>
-                      <Typography variant="h5" component="div">
-                        {user.name}
-                      </Typography>
-                      <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                        Agent.real-estate@gmail.com
-                      </Typography>
-                      <Typography variant="body2">
-                        Rate: {user.rate}/5
-                      </Typography>
-                    </CardContent>
-                  </Col>
-                </Row>
-                <Row className="card-button-div">
-                  <CardActions className="card-button-action">
-                    <Button
-                      className="card-button"
-                      size="small"
-                      variant="outlined"
+            <div key={index} className="card-main">
+              <Row className="card-div">
+                <Col className="image-div">
+                  <img src={user.img} alt={user.name} className="card-image" />
+                </Col>
+                <Col className="content-div">
+                  <CardContent className="card-content-component">
+                    <Typography
+                      variant="h5"
+                      component="div"
+                      className="userName-name"
                     >
-                      Ask a Question
-                    </Button>
-                  </CardActions>
-                </Row>
-              </Card>
+                      {user.name}
+                    </Typography>
+                    <Typography variant="body2">Rate: {user.rate}/5</Typography>
+                    <button className="contact-button">Contact Agent</button>
+                  </CardContent>
+                </Col>
+              </Row>
             </div>
           ))}
         </Carousel>
@@ -158,11 +134,8 @@ const AgentsDisplay = () => {
           <Agent1 className="connect-agent-image" />
         </Col>
         <Col className="connect-agent-content">
-          <span>Connect with an Agent</span>
-          <p>
-            We'll match you with a top-rated OJO Network Agent, best suited to
-            your home journey needs.
-          </p>
+          <span>Connect With a Local Agent</span>
+
           <Box
             component="form"
             sx={{
@@ -194,10 +167,11 @@ const AgentsDisplay = () => {
               className="connect-agent-textField"
             />
             <TextField
-              id="filled-required"
-              label="Zip Code"
-              type="text"
-              variant="outlined"
+              multiline
+              rows={4}
+              defaultValue="Send us a message"
+              id="outlined-multiline-static"
+              label="Message"
               className="connect-agent-textField"
             />
 

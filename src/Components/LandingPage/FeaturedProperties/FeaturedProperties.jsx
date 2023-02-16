@@ -36,7 +36,7 @@ const itemData = [
     title: "Pasadena",
     size: {
       width: "300",
-      height: "300",
+      height: "200",
     },
   },
   {
@@ -52,7 +52,7 @@ const itemData = [
     title: "Pasadena",
     size: {
       width: "300",
-      height: "300",
+      height: "200",
     },
   },
   {
@@ -68,7 +68,7 @@ const itemData = [
     title: "Anaheim",
     size: {
       width: "300",
-      height: "300",
+      height: "200",
     },
   },
 ];
@@ -78,7 +78,7 @@ const itemData1 = [
     title: "Los Angeles",
     size: {
       width: "300",
-      height: "300",
+      height: "200",
     },
   },
   {
@@ -94,7 +94,7 @@ const itemData1 = [
     title: "Ventura",
     size: {
       width: "300",
-      height: "300",
+      height: "200",
     },
   },
   {
@@ -110,7 +110,7 @@ const itemData1 = [
     title: "Palm Springs",
     size: {
       width: "300",
-      height: "300",
+      height: "200",
     },
   },
   {
@@ -152,10 +152,9 @@ const FeaturedProperties = () => {
   return (
     <div>
       <Row className="div-flex">
-        <span className="subtitle text-left">Real Estate Listing</span>
-        <h2 className="text-center h3-title">
-          <span className="span-title">Newly</span> listed Properties
-        </h2>
+        <h1 className="text-center h3-title">
+          <span className="span-title">Explore</span> Las Angeles Communities
+        </h1>
       </Row>
       <Carousel
         centerMode={true}
@@ -176,7 +175,7 @@ const FeaturedProperties = () => {
         itemClass="carousel-item-padding-40-px"
       >
         <div className="FeaturedCard-div-container">
-          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={1}>
+          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
             {itemData.map((item, index) => (
               <Item key={index}>
                 <div className="container-div">
@@ -211,7 +210,42 @@ const FeaturedProperties = () => {
           </Masonry>
         </div>
         <div className="FeaturedCard-div-container">
-          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={1}>
+          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
+            {itemData.map((item, index) => (
+              <Item key={index}>
+                <div className="container-div">
+                  <div
+                    className="masonary-pic item-div image"
+                    key={index}
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      height: `${item.size.height}px`,
+                      borderRadius: "2em !important",
+                    }}
+                  >
+                    <div className="middle">
+                      <div className="text">{item.title}</div>
+                    </div>
+                    <div className="button-div">
+                      <Button
+                        variant="outlined"
+                        endIcon={<SendIcon />}
+                        className="masonary-div-button"
+                      >
+                        View Homes
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </Item>
+            ))}
+          </Masonry>
+        </div>
+        <div className="FeaturedCard-div-container">
+          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
             {itemData1.map((item, index) => (
               <Item key={index}>
                 <div className="container-div">

@@ -14,9 +14,9 @@ const HomeSection = () => {
       <div className="full-bg-image">
         <div className="homeSection-cntent">
           <h1 className="homeSection-h1">
-            Let's Find you a Property, Get you the right one!
+            All <span className="homeSection-h1-span">Los Angeles</span> Homes
           </h1>
-          <SearchBar />
+          <SearchBar widthPercentage="50%" />
         </div>
       </div>
       <ListingsCarousel />

@@ -43,19 +43,19 @@
 
 .middle {
   transition: 0.5s ease;
-  opacity: 0;
+  opacity: 1;
   /* position: absolute; */
   /* top: 25%;
   left: 30%; */
   /* transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%); */
-  text-align: center;
+  text-align: left;
   display: content;
 }
 .container-div {
   padding: 0 !important;
 }
-.container-div:hover .image {
+.container-div:hover {
   /* opacity: 0.3; */
   transform: scale(1.02);
 }
@@ -73,8 +73,9 @@
     rgba(0, 0, 0, 0) 0%,
     rgba(42, 42, 42, 1) 100%
   );
-  text-shadow: rgb(0 0 0) 0px 1px 5px;
+  text-shadow: rgb(0 0 0) 0px 1px 3px;
   color: rgb(255, 255, 255);
   font-size: 24px;
   padding: 2rem 32px;
+  font-weight: 600;
 }

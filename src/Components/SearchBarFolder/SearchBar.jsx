@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import SearchIcon from "@mui/icons-material/Search";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({ widthPercentage }) => {
   const [searchInput, setSearchInput] = useState("");
   const handleChange = (e) => {
     e.preventDefault();
@@ -23,6 +23,7 @@ const SearchBar = () => {
               onChange={handleChange}
               value={searchInput}
               className="searchBarInput"
+              style={{ width: `${widthPercentage}` }}
             />
             <button type="submit" className="submit-button">
               <SearchIcon color="primary" className="search-icon-mui" />

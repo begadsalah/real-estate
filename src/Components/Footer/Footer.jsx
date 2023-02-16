@@ -11,12 +11,12 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer-main-div">
-      <Container>
+      <Container className="footer-container">
         <Row className="footer-table-row">
           <table className="footer-table">
             <thead className="footer-thead ">
               <tr className="footer-tr">
-                <th style={{ color: "#336b9f" }}>CONTACT</th>
+                <th style={{ color: "white" }}>CONTACT</th>
                 <th>CONNECT</th>
                 <th>NAVIGATION</th>
                 <th>POPULAR SEARCHES</th>
@@ -26,7 +26,10 @@ const Footer = () => {
               <tr className="footer-tbody-tr">
                 <td>Real Estate</td>
                 <td className="socialMedia-td">
-                  <FacebookIcon style={{ color: "#336b9f" }} /> Facebook
+                  <FacebookIcon
+                    style={{ color: "white", marginRight: "1rem" }}
+                  />{" "}
+                  Facebook
                 </td>
                 <td>Search</td>
                 <td>Los Angeles</td>
@@ -34,7 +37,9 @@ const Footer = () => {
               <tr className="footer-tbody-tr">
                 <td>(123) 123-1234</td>
                 <td className="socialMedia-td">
-                  <TwitterIcon style={{ color: "#336b9f" }} />
+                  <TwitterIcon
+                    style={{ color: "white", marginRight: "1rem" }}
+                  />
                   Twitter
                 </td>
                 <td>Hire Agent</td>
@@ -43,7 +48,9 @@ const Footer = () => {
               <tr className="footer-tbody-tr">
                 <td>real-estate@gmail.com</td>
                 <td className="socialMedia-td">
-                  <InstagramIcon style={{ color: "#336b9f" }} />
+                  <InstagramIcon
+                    style={{ color: "white", marginRight: "1rem" }}
+                  />
                   Instagram
                 </td>
                 <td>Communities</td>
@@ -52,7 +59,9 @@ const Footer = () => {
               <tr className="footer-tbody-tr">
                 <td>LOSANGELOS DRE #0123123</td>
                 <td className="socialMedia-td">
-                  <LinkedInIcon style={{ color: "#336b9f" }} />
+                  <LinkedInIcon
+                    style={{ color: "white", marginRight: "1rem" }}
+                  />
                   Linkedin
                 </td>
                 <td>Help</td>

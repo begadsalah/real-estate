@@ -26,19 +26,19 @@ const CardComponent = (props) => {
         className="box-shadow-customized card-hover-effect"
       >
         <div className="card-pic-div">
-          <CardMedia
-            component="img"
-            height="120"
-            image={props.housePics}
-            alt="house"
-            className="card-img"
-          />
           <FavoriteIcon
             className="fav-icon"
             style={{
               color: isActive ? "red" : "gray",
             }}
             onClick={handleColorchange}
+          />
+          <CardMedia
+            component="img"
+            height="120"
+            image={props.housePics}
+            alt="house"
+            className="card-img"
           />
         </div>
         <CardContent>

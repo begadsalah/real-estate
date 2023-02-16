@@ -1,8 +1,8 @@
 .full-bg-image {
   background-image: linear-gradient(
       to bottom,
-      rgba(179, 209, 243, 0.3),
-      rgba(38, 94, 137, 0.6)
+      rgba(0, 48, 96, 0.4),
+      rgba(38, 94, 137, 0.7)
     ),
     url(../../../assets/homeSectionPic.jpg);
   background-position: center;
@@ -24,12 +24,16 @@
   margin: 2rem;
   text-shadow: rgb(0 0 0) 0px 2px 5px;
 }
+.homeSection-h1-span {
+  color: #68b3f9;
+  text-shadow: rgb(0 0 0) 1px 0px 1px;
+}
 .homeSection-cntent {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  min-height: 65vh;
   flex-direction: column;
   postion: realtive;
 }

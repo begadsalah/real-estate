@@ -5,6 +5,28 @@
   width: 100px;
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
+.image-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-button {
+  padding: 0.2rem 0.4rem;
+  border-radius: 1em;
+  background-color: rgba(3, 102, 214, 0.6);
+  color: white;
+  font-size: 11px !important;
+}
+.card-content-component {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.userName-name {
+  text-align: center;
+}
 .card-div {
   display: flex;
   justify-content: center;
@@ -33,9 +55,9 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 300px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
-  margin: 0 0.1rem;
+  border: 1px solid lightgray;
+  margin: 1rem;
 }
 .content-div {
   display: flex;

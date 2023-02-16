@@ -14,15 +14,14 @@ const CommunitiesSection = () => {
   return (
     <Container>
       <Row className="div-flex">
-        <span className="subtitle text-left">Real Estate Listing</span>
         <h2 className="text-center h3-title">
-          <span className="span-title">Check out</span> the local listings
+          <span className="span-title">Los Angeles</span> Real Estate Listings
         </h2>
       </Row>
       <Row>
         <TabPanelComponent />
       </Row>
-      <Row>
+      {/* <Row>
         <div className="center">
           <div className="btn-1">
             <a href="">
@@ -30,7 +29,7 @@ const CommunitiesSection = () => {
             </a>
           </div>
         </div>
-      </Row>
+      </Row> */}
     </Container>
   );
 };

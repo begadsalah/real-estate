@@ -26,10 +26,13 @@ hr.solid {
 p {
   font-size: 11px;
 }
-.card-hover-effect {
-  margin-top: 0.5rem;
+.card-div-container {
+  border: 2.5px solid lightgray;
+  margin: 0.3rem;
+  border-radius: 0.48em;
 }
-.card-hover-effect:hover {
+
+.card-div-container:hover {
   transform: scale(1.02);
   -webkit-transition: all 0.1s ease;
   -moz-transition: all 0.1s ease;
@@ -110,13 +113,17 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  align-self: center;
-  width: 100% !important;
-  margin-top: 0.5rem;
-  background-color: white;
-  padding: 0.1rem;
+  position: absolute;
+  margin: 1rem;
+  background: white;
   clip-path: circle(50% at 50% 50%);
+  padding: 0.2rem;
 }
 .card-pic-div {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
   width: 100%;
 }
