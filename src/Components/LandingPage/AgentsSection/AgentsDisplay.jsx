@@ -32,7 +32,7 @@ const users = [
   },
   {
     img: person3,
-    name: "Liam F. Beskoweski",
+    name: "Liam F. Ben",
     rate: 3,
   },
   {
@@ -76,124 +76,129 @@ const responsive = {
 const AgentsDisplay = () => {
   return (
     <Container>
-      <Row className="div-flex">
-        <h2 className="text-center h3-title">
-          <span className="span-title"> Real Estate Agents</span> in the Los
-          Angeles Area
-        </h2>
-      </Row>
-      <Row>
-        <Carousel
-          className="carousel-section"
-          swipeable={true}
-          draggable={false}
-          showDots={true}
-          responsive={responsive}
-          ssr={true}
-          infinite={true}
-          autoPlaySpeed={1000}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={500}
-          containerClass="carousel-container"
-          removeArrowOnDeviceType={["tablet", "mobile"]}
-          dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-40-px"
-        >
-          {users.map((user, index) => (
-            <div key={index} className="card-main">
-              <Row className="card-div">
-                <Col className="image-div">
-                  <img src={user.img} alt={user.name} className="card-image" />
-                </Col>
-                <Col className="content-div">
-                  <CardContent className="card-content-component">
-                    <Typography
-                      variant="h5"
-                      component="div"
-                      className="userName-name"
-                    >
-                      {user.name}
-                    </Typography>
-                    <Typography variant="body2">Rate: {user.rate}/5</Typography>
-                    <button className="contact-button">Contact Agent</button>
-                  </CardContent>
-                </Col>
-              </Row>
-            </div>
-          ))}
-        </Carousel>
-      </Row>
-      <Row className="connect-agent-mainRow">
-        <Col className="connect-agent-image-col">
-          {/* <img
-            src={agent1}
-            alt="connect to agent image"
-            className="connect-agent-image"
-          /> */}
-          <Agent1 className="connect-agent-image" />
-        </Col>
-        <Col className="connect-agent-content">
-          <span>Connect With a Local Agent</span>
-
-          <Box
-            component="form"
-            sx={{
-              "& .MuiTextField-root": { m: 1, width: "25ch" },
-            }}
-            noValidate
-            autoComplete="off"
-            className="connect-agent-formBox"
+      <div>
+        <Row className="div-flex">
+          <h2 className="text-center h3-title">
+            Real Estate Agents in the Los Angeles Area
+          </h2>
+        </Row>
+        <Row>
+          <Carousel
+            className="carousel-section"
+            swipeable={true}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true}
+            infinite={true}
+            autoPlaySpeed={1000}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={["tablet", "mobile"]}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
           >
-            <TextField
-              id="filled-required"
-              label="Name"
-              type="text"
-              variant="outlined"
-              className="connect-agent-textField"
-            />
-            <TextField
-              id="filled-required"
-              label="Email"
-              type="email"
-              variant="outlined"
-              className="connect-agent-textField"
-            />
-            <TextField
-              id="filled-required"
-              label="Mobile Phone"
-              type="text"
-              variant="outlined"
-              className="connect-agent-textField"
-            />
-            <TextField
-              multiline
-              rows={4}
-              defaultValue="Send us a message"
-              id="outlined-multiline-static"
-              label="Message"
-              className="connect-agent-textField"
-            />
+            {users.map((user, index) => (
+              <div key={index} className="card-main">
+                <Row className="card-div">
+                  <Col className="image-div">
+                    <img
+                      src={user.img}
+                      alt={user.name}
+                      className="card-image"
+                    />
+                  </Col>
+                  <Col className="content-div">
+                    <CardContent className="card-content-component">
+                      <Typography
+                        variant="h5"
+                        component="div"
+                        className="userName-name"
+                      >
+                        {user.name}
+                      </Typography>
+                      <Typography variant="body2">
+                        Rate: {user.rate}/5
+                      </Typography>
+                    </CardContent>
+                  </Col>
+                  <button className="contact-button">Contact Agent</button>
+                </Row>
+              </div>
+            ))}
+          </Carousel>
+        </Row>
+        <Container>
+          <Row className="connect-agent-mainRow">
+            <Col className="connect-agent-image-col">
+              <Agent1 className="connect-agent-image" />
+            </Col>
+            <Col className="connect-agent-content">
+              <span>Connect With a Local Agent</span>
 
-            <Button variant="outlined" size="large" className="form-button">
-              Connect with the Agent
-            </Button>
-          </Box>
-          <p className="connect-agent-bottomP">
-            By submitting your information, you agree Movoto can share your
-            information with its network of real estate & mortgage professionals
-            (affiliates) (or through their agents) and consent to receive
-            marketing emails, calls, & texts related to your inquiry (including
-            via automatic telephone dialing system, or artificial or
-            pre-recorded voice technology) from Movoto or affiliates to the
-            email address or number you provided even if your number appears on
-            the company, state, or national Do Not Call Registry. You further
-            agree that such affiliates may share information with Movoto and
-            each other. You also agree to our Terms & Conditions and Privacy
-            Policy. Consent not required for purchase.
-          </p>
-        </Col>
-      </Row>
+              <Box
+                component="form"
+                sx={{
+                  "& .MuiTextField-root": { m: 1, width: "25ch" },
+                }}
+                noValidate
+                autoComplete="off"
+                className="connect-agent-formBox"
+              >
+                <TextField
+                  id="filled-required"
+                  label="Name"
+                  type="text"
+                  variant="outlined"
+                  className="connect-agent-textField"
+                />
+                <TextField
+                  id="filled-required"
+                  label="Email"
+                  type="email"
+                  variant="outlined"
+                  className="connect-agent-textField"
+                />
+                <TextField
+                  id="filled-required"
+                  label="Mobile Phone"
+                  type="text"
+                  variant="outlined"
+                  className="connect-agent-textField"
+                />
+                <TextField
+                  multiline
+                  rows={4}
+                  defaultValue="Send us a message"
+                  id="outlined-multiline-static"
+                  label="Message"
+                  className="connect-agent-textField"
+                />
+
+                <Button variant="outlined" size="large" className="form-button">
+                  Connect with the Agent
+                </Button>
+              </Box>
+              <p className="connect-agent-bottomP">
+                By submitting your information, you agree to share your
+                information with its network of real estate & mortgage
+                professionals (affiliates) (or through their agents) and consent
+                to receive marketing emails, calls, & texts related to your
+                inquiry (including via automatic telephone dialing system, or
+                artificial or pre-recorded voice technology) or affiliates to
+                the email address or number you provided even if your number
+                appears on the company, state, or national Do Not Call Registry.
+                You further agree that such affiliates may share information
+                with Movoto and each other. You also agree to our Terms &
+                Conditions and Privacy Policy. Consent not required for
+                purchase.
+              </p>
+            </Col>
+          </Row>
+        </Container>
+      </div>
     </Container>
   );
 };

@@ -132,11 +132,11 @@ const ListingsCarousel = (props) => {
     <div>
       <Row className="div-flex">
         <h1 className="text-center h3-title">
-          <span className="span-title">New</span> Homes for Sale in Los Angeles
+          New Homes for Sale in Los Angeles
         </h1>
       </Row>
       <Carousel
-        centerMode={true}
+        // centerMode={true}
         swipeable={true}
         draggable={true}
         showDots={true}
@@ -150,7 +150,7 @@ const ListingsCarousel = (props) => {
         containerClass="carousel-container"
         removeArrowOnDeviceType={["tablet", "mobile"]}
         dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-40-px"
+        itemClass="carousel-item-padding-50-px"
       >
         {propertyDetails.map((item, index) => (
           <div className="card-div-container" key={index}>

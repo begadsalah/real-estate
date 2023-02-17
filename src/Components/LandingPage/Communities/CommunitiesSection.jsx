@@ -13,15 +13,16 @@ const CommunitiesSection = () => {
   };
   return (
     <Container>
-      <Row className="div-flex">
-        <h2 className="text-center h3-title">
-          <span className="span-title">Los Angeles</span> Real Estate Listings
-        </h2>
-      </Row>
-      <Row>
-        <TabPanelComponent />
-      </Row>
-      {/* <Row>
+      <div className="communities-section">
+        <Row className="div-flex">
+          <h2 className="text-center h3-title">
+            Los Angeles Real Estate Listings
+          </h2>
+        </Row>
+        <Row>
+          <TabPanelComponent />
+        </Row>
+        {/* <Row>
         <div className="center">
           <div className="btn-1">
             <a href="">
@@ -30,6 +31,7 @@ const CommunitiesSection = () => {
           </div>
         </div>
       </Row> */}
+      </div>
     </Container>
   );
 };

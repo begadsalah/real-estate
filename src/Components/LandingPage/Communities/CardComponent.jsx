@@ -43,22 +43,21 @@ const CardComponent = (props) => {
         </div>
         <CardContent>
           <Typography variant="body2" color="text.secondary">
-            <Row>
-              <h5 className="houseCardInfo">{props.price}</h5>
-              <p>{props.address}</p>
-            </Row>
-            <hr className="solid" />
             <Row className="div-flex-centered flex-row">
+              <h5 className="houseCardInfo">{props.price}</h5>
+              <p className="card-address">{props.address}</p>
               <Col className="div-flex-centered flex-col">
-                <span className="houseCardInfo">{props.beds}</span>
+                <span className="houseCardInfo card-address">{props.beds}</span>
                 <p>BEDS</p>
               </Col>
               <Col className="div-flex-centered flex-col">
-                <span className="houseCardInfo">{props.baths}</span>
+                <span className="houseCardInfo card-address">
+                  {props.baths}
+                </span>
                 <p>BATHS</p>
               </Col>
               <Col className="div-flex-centered flex-col">
-                <span className="houseCardInfo">{props.sqft}</span>
+                <span className="houseCardInfo card-address">{props.sqft}</span>
                 <p>SQ.FT.</p>
               </Col>
             </Row>

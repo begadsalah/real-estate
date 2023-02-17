@@ -1,9 +1,9 @@
 .card-image {
   object-fit: cover;
   border-radius: 50%;
-  height: 100px;
-  width: 100px;
-  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  height: 130px;
+  width: 130px;
+  box-shadow: #336b9f 0px 0px 0px 3px;
 }
 .image-div {
   display: flex;
@@ -11,11 +11,13 @@
   align-items: center;
 }
 .contact-button {
-  padding: 0.2rem 0.4rem;
-  border-radius: 1em;
-  background-color: rgba(3, 102, 214, 0.6);
+  padding: 0.4rem 0;
+  border-radius: 2em;
+  background-color: #336b9f;
   color: white;
   font-size: 11px !important;
+  width: 50%;
+  margin-top: 1rem;
 }
 .card-content-component {
   display: flex;
@@ -64,7 +66,6 @@
   justify-content: space-between !important;
   align-items: center;
   flex-direction: column;
-  height: 200px;
 }
 .connect-agent-mainRow {
   margin-top: 3rem;
@@ -115,7 +116,6 @@
 }
 .form-button {
   border: 1px solid rgb(51, 107, 159) !important;
-  border-radius: 2em !important;
   background-color: rgb(51, 107, 159) !important;
   color: white !important;
   margin: 2rem 0 !important;
@@ -129,11 +129,21 @@
 #fill4,
 #fill5,
 #fill6 {
-  fill: rgb(51, 107, 159);
+  fill: #bfbfbf;
 }
 #fill2 {
-  fill: #87caff;
+  fill: #52a9ff;
 }
 #fill3 {
-  fill: #b2ddff;
+  fill: #52a9ff;
+}
+.connect-agent-mainRow {
+  background-color: #336b9f;
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+.connect-agent-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4rem;
 }

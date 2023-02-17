@@ -15,5 +15,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 3rem 0;
+  margin: 2rem 0;
+}
+.h3-title {
+  font-weight: 600;
 }
