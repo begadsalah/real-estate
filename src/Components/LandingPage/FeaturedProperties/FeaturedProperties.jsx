@@ -151,7 +151,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const FeaturedProperties = () => {
   return (
     <div className="full-bg-image-featured-page">
-      <Row className="div-flex">
+      <Row>
         <h1 className="text-center h1-title" style={{ color: "white" }}>
           Explore Los Angeles Communities
         </h1>
@@ -173,9 +173,9 @@ const FeaturedProperties = () => {
           containerClass="carousel-container"
           dotListClass="custom-dot-list-style"
           style={{ borderRadius: "2em" }}
-          itemClass="carousel-item-padding-50-px"
+          itemClass="carousel-item-padding-60-px"
         >
-          <div className="FeaturedCard-div-container">
+          <Container className="FeaturedCard-div-container">
             <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
               {itemData.map((item, index) => (
                 <Item key={index}>
@@ -209,8 +209,8 @@ const FeaturedProperties = () => {
                 </Item>
               ))}
             </Masonry>
-          </div>
-          <div className="FeaturedCard-div-container">
+          </Container>
+          <Container className="FeaturedCard-div-container">
             <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
               {itemData.map((item, index) => (
                 <Item key={index}>
@@ -244,8 +244,8 @@ const FeaturedProperties = () => {
                 </Item>
               ))}
             </Masonry>
-          </div>
-          <div className="FeaturedCard-div-container">
+          </Container>
+          <Container className="FeaturedCard-div-container">
             <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
               {itemData1.map((item, index) => (
                 <Item key={index}>
@@ -279,7 +279,7 @@ const FeaturedProperties = () => {
                 </Item>
               ))}
             </Masonry>
-          </div>
+          </Container>
         </Carousel>
       </Container>
     </div>

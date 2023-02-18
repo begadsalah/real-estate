@@ -113,12 +113,12 @@ const responsive = {
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 5,
+    items: 4,
     slidesToSlide: 4,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 3,
+    items: 4,
     slidesToSlide: 2,
   },
   mobile: {
@@ -129,7 +129,7 @@ const responsive = {
 };
 const ListingsCarousel = (props) => {
   return (
-    <div>
+    <div className="sections-main-container">
       <Row className="div-flex">
         <h1 className="text-center h3-title">
           New Homes for Sale in Los Angeles

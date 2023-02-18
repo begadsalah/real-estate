@@ -8,7 +8,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./CommunitiesSection.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-
+import SquareFootIcon from "@mui/icons-material/SquareFoot";
+import KingBedIcon from "@mui/icons-material/KingBed";
+import BathtubIcon from "@mui/icons-material/Bathtub";
 const CardComponent = (props) => {
   const [expanded, setExpanded] = React.useState(false);
   const [isActive, setIsActive] = useState(false);
@@ -44,22 +46,22 @@ const CardComponent = (props) => {
         <CardContent>
           <Typography variant="body2" color="text.secondary">
             <Row className="div-flex-centered flex-row">
-              <h5 className="houseCardInfo">{props.price}</h5>
-              <p className="card-address">{props.address}</p>
-              <Col className="div-flex-centered flex-col">
-                <span className="houseCardInfo card-address">{props.beds}</span>
-                <p>BEDS</p>
-              </Col>
-              <Col className="div-flex-centered flex-col">
+              <span className="card-price">{props.price}</span>
+              <div className="card-body-content">
                 <span className="houseCardInfo card-address">
-                  {props.baths}
+                  <KingBedIcon style={{ color: "gray" }} />
+                  {props.beds + "bd" + " "}
                 </span>
-                <p>BATHS</p>
-              </Col>
-              <Col className="div-flex-centered flex-col">
-                <span className="houseCardInfo card-address">{props.sqft}</span>
-                <p>SQ.FT.</p>
-              </Col>
+                <span className="houseCardInfo card-address">
+                  <BathtubIcon style={{ color: "gray" }} />
+                  {props.baths + "ba" + " "}
+                </span>
+                <span className="houseCardInfo card-address">
+                  <SquareFootIcon style={{ color: "gray" }} />
+                  {props.sqft + "sq.ft." + " "}
+                </span>
+              </div>
+              <span className="card-address">{props.address}</span>
             </Row>
           </Typography>
         </CardContent>

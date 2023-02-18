@@ -12,10 +12,13 @@ const CommunitiesSection = () => {
     setValue(newValue);
   };
   return (
-    <Container>
-      <div className="communities-section">
-        <Row className="div-flex">
-          <h2 className="text-center h3-title">
+    <Container className="communities-container">
+      <div className="communities-section" style={{ backgroundColor: "white" }}>
+        <Row className="div-flex" style={{ backgroundColor: "white" }}>
+          <h2
+            className="text-center h3-title"
+            style={{ backgroundColor: "white" }}
+          >
             Los Angeles Real Estate Listings
           </h2>
         </Row>

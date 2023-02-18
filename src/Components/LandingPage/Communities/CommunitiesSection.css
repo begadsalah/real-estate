@@ -1,4 +1,8 @@
+.communities-container {
+  background-color: white;
+}
 .communities-section-title {
+  background-color: white;
   margin: 3rem 0;
   padding: 3rem 0;
 }
@@ -19,7 +23,7 @@ hr.solid {
 .houseCardInfo {
   font-weight: 600;
   color: #262525;
-  text-align: center;
+  text-align: left;
 }
 
 .card-img:hover {
@@ -136,4 +140,26 @@ span {
 }
 .communities-section {
   margin: 5rem 0;
+}
+.div-flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-body-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-body-content > span {
+}
+.card-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
 }

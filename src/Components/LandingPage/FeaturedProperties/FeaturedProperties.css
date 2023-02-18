@@ -101,3 +101,9 @@
   margin-top: 3rem;
   text-shadow: rgb(0 0 0) 0px 1px 5px;
 }
+.FeaturedCard-div-container {
+  padding: 0 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

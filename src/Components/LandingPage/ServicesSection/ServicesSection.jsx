@@ -8,13 +8,13 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { ReactComponent as Iconone } from "../../../assets/icon1-1.svg";
+import { ReactComponent as Iconone } from "../../../assets/icon1-2.svg";
 import { ReactComponent as Icontwo } from "../../../assets/icon2-1.svg";
-import { ReactComponent as Iconthree } from "../../../assets/icon3-1.svg";
+import { ReactComponent as Iconthree } from "../../../assets/icon3-2.svg";
 import "./ServicesSection.css";
 const ServicesSection = () => {
   return (
-    <div className="services-full-bg-image">
+    <div className="services-full-bg-image sections-main-container">
       <Container>
         <Row>
           <div>
@@ -31,8 +31,8 @@ const ServicesSection = () => {
               <div className="svg-container">
                 <Iconone
                   className="service-svg-icon"
-                  width={"100px"}
-                  height={"100px"}
+                  width={"120px"}
+                  height={"120px"}
                 />
               </div>
               <Typography
