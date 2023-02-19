@@ -4,6 +4,7 @@ import "react-multi-carousel/lib/styles.css";
 import CardComponent from "../Communities/CardComponent";
 import Row from "react-bootstrap/Row";
 import "./ListingsCarousel.css";
+import Container from "react-bootstrap/Container";
 
 const propertyDetails = [
   {
@@ -130,41 +131,44 @@ const responsive = {
 const ListingsCarousel = (props) => {
   return (
     <div className="sections-main-container">
-      <Row className="div-flex">
+      <div className="headLines-div-container">
         <h1 className="text-center h3-title">
           New Homes for Sale in Los Angeles
         </h1>
-      </Row>
-      <Carousel
-        // centerMode={true}
-        swipeable={true}
-        draggable={true}
-        showDots={true}
-        responsive={responsive}
-        ssr={true}
-        infinite={true}
-        autoPlaySpeed={1000}
-        keyBoardControl={true}
-        customTransition="all .5"
-        transitionDuration={500}
-        containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-50-px"
-      >
-        {propertyDetails.map((item, index) => (
-          <div className="card-div-container" key={index}>
-            <CardComponent
-              housePics={item.image}
-              beds={item.beds}
-              baths={item.baths}
-              price={item.price}
-              sqft={item.sqft}
-              address={item.address}
-            />
-          </div>
-        ))}
-      </Carousel>
+      </div>
+      <Container>
+        <Carousel
+          // centerMode={true}
+          arrows={false}
+          swipeable={true}
+          draggable={true}
+          showDots={true}
+          responsive={responsive}
+          ssr={true}
+          infinite={true}
+          autoPlaySpeed={1000}
+          keyBoardControl={true}
+          customTransition="all .5"
+          transitionDuration={500}
+          containerClass="carousel-container"
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          dotListClass="custom-dot-list-style"
+          itemClass="carousel-item-padding-50-px"
+        >
+          {propertyDetails.map((item, index) => (
+            <div className="card-div-container listing-card-div" key={index}>
+              <CardComponent
+                housePics={item.image}
+                beds={item.beds}
+                baths={item.baths}
+                price={item.price}
+                sqft={item.sqft}
+                address={item.address}
+              />
+            </div>
+          ))}
+        </Carousel>
+      </Container>
     </div>
   );
 };

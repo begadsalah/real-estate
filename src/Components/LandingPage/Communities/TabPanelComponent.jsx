@@ -8,7 +8,9 @@ import Box from "@mui/material/Box";
 import CardComponent from "./CardComponent";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
+import ArrowCircleLeftIcon from "@mui/icons-material/ArrowCircleLeft";
+import TabScrollButton from "@mui/material/TabScrollButton";
 const propertyDetails = [
   {
     property: "1",
@@ -233,14 +235,16 @@ const TabPanelComponent = () => {
           onChange={handleChange}
           aria-label="horizontal tabs example"
           sx={{ borderRight: 1, borderColor: "divider" }}
+          scrollButtons
         >
           {propertyDetails.map((item, index) => (
             <Tab label={item.type} {...a11yProps({ index })} wrapped />
           ))}
         </Tabs>
+
         {propertyDetails.map((item, index) => (
-          <>
-            <TabPanel value={value} index={index} key={`key-${index}`}>
+          <TabPanel value={value} index={index} key={`key-${index}`}>
+            <Container>
               <Row>
                 <Col xs={12} sm={12} md={4} className="col-card-component">
                   <CardComponent
@@ -275,9 +279,108 @@ const TabPanelComponent = () => {
                     address={item.address}
                   />
                 </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
+                <Col xs={12} sm={12} md={4} className="col-card-component">
+                  <CardComponent
+                    key={index}
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </Col>
               </Row>
-            </TabPanel>
-          </>
+            </Container>
+          </TabPanel>
         ))}
       </Box>
     </Container>

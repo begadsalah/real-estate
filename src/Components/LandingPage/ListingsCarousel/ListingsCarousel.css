@@ -1,5 +1,6 @@
 .sections-main-container {
-  margin: 9rem 0;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
 }
 .subtitle {
   text-align: left;
@@ -19,4 +20,7 @@
 }
 .h3-title {
   font-weight: 600;
+}
+.listing-card-div {
+  margin: 0.3rem;
 }

@@ -151,137 +151,135 @@ const Item = styled(Paper)(({ theme }) => ({
 const FeaturedProperties = () => {
   return (
     <div className="full-bg-image-featured-page">
-      <Row>
+      <div className="headLines-div-container">
         <h1 className="text-center h1-title" style={{ color: "white" }}>
           Explore Los Angeles Communities
         </h1>
-      </Row>
-      <Container>
-        <Carousel
-          // centerMode={true}
-          classname="carousel-section"
-          swipeable={true}
-          draggable={true}
-          showDots={true}
-          responsive={responsive}
-          ssr={true}
-          infinite={true}
-          autoPlaySpeed={100}
-          keyBoardControl={true}
-          customTransition="all .5"
-          transitionDuration={100}
-          containerClass="carousel-container"
-          dotListClass="custom-dot-list-style"
-          style={{ borderRadius: "2em" }}
-          itemClass="carousel-item-padding-60-px"
-        >
-          <Container className="FeaturedCard-div-container">
-            <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
-              {itemData.map((item, index) => (
-                <Item key={index}>
-                  <div className="container-div">
-                    <div
-                      className="masonary-pic item-div image"
-                      key={index}
-                      style={{
-                        backgroundImage: `url(${item.img})`,
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        height: `${item.size.height}px`,
-                        borderRadius: "2em !important",
-                      }}
-                    >
-                      <div className="middle">
-                        <div className="text">{item.title}</div>
-                      </div>
-                      <div className="button-div">
-                        <Button
-                          variant="outlined"
-                          endIcon={<SendIcon />}
-                          className="masonary-div-button"
-                        >
-                          View Homes
-                        </Button>
-                      </div>
+      </div>
+      <Carousel
+        // centerMode={true}
+        classname="carousel-section"
+        swipeable={true}
+        draggable={true}
+        showDots={true}
+        responsive={responsive}
+        ssr={true}
+        infinite={true}
+        autoPlaySpeed={100}
+        keyBoardControl={true}
+        customTransition="all .5"
+        transitionDuration={100}
+        containerClass="carousel-container"
+        dotListClass="custom-dot-list-style"
+        style={{ borderRadius: "2em" }}
+        itemClass="carousel-item-padding-60-px"
+      >
+        <Container className="FeaturedCard-div-container">
+          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
+            {itemData.map((item, index) => (
+              <Item key={index}>
+                <div className="container-div">
+                  <div
+                    className="masonary-pic item-div image"
+                    key={index}
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      height: `${item.size.height}px`,
+                      borderRadius: "2em !important",
+                    }}
+                  >
+                    <div className="middle">
+                      <div className="text">{item.title}</div>
+                    </div>
+                    <div className="button-div">
+                      <Button
+                        variant="outlined"
+                        endIcon={<SendIcon />}
+                        className="masonary-div-button"
+                      >
+                        View Homes
+                      </Button>
                     </div>
                   </div>
-                </Item>
-              ))}
-            </Masonry>
-          </Container>
-          <Container className="FeaturedCard-div-container">
-            <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
-              {itemData.map((item, index) => (
-                <Item key={index}>
-                  <div className="container-div">
-                    <div
-                      className="masonary-pic item-div image"
-                      key={index}
-                      style={{
-                        backgroundImage: `url(${item.img})`,
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        height: `${item.size.height}px`,
-                        borderRadius: "2em !important",
-                      }}
-                    >
-                      <div className="middle">
-                        <div className="text">{item.title}</div>
-                      </div>
-                      <div className="button-div">
-                        <Button
-                          variant="outlined"
-                          endIcon={<SendIcon />}
-                          className="masonary-div-button"
-                        >
-                          View Homes
-                        </Button>
-                      </div>
+                </div>
+              </Item>
+            ))}
+          </Masonry>
+        </Container>
+        <Container className="FeaturedCard-div-container">
+          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
+            {itemData.map((item, index) => (
+              <Item key={index}>
+                <div className="container-div">
+                  <div
+                    className="masonary-pic item-div image"
+                    key={index}
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      height: `${item.size.height}px`,
+                      borderRadius: "2em !important",
+                    }}
+                  >
+                    <div className="middle">
+                      <div className="text">{item.title}</div>
+                    </div>
+                    <div className="button-div">
+                      <Button
+                        variant="outlined"
+                        endIcon={<SendIcon />}
+                        className="masonary-div-button"
+                      >
+                        View Homes
+                      </Button>
                     </div>
                   </div>
-                </Item>
-              ))}
-            </Masonry>
-          </Container>
-          <Container className="FeaturedCard-div-container">
-            <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
-              {itemData1.map((item, index) => (
-                <Item key={index}>
-                  <div className="container-div">
-                    <div
-                      className="masonary-pic item-div image"
-                      key={index}
-                      style={{
-                        backgroundImage: `url(${item.img})`,
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        height: `${item.size.height}px`,
-                        borderRadius: "2em !important",
-                      }}
-                    >
-                      <div className="middle">
-                        <div className="text">{item.title}</div>
-                      </div>
-                      <div className="button-div">
-                        <Button
-                          variant="outlined"
-                          endIcon={<SendIcon />}
-                          className="masonary-div-button"
-                        >
-                          View Homes
-                        </Button>
-                      </div>
+                </div>
+              </Item>
+            ))}
+          </Masonry>
+        </Container>
+        <Container className="FeaturedCard-div-container">
+          <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
+            {itemData1.map((item, index) => (
+              <Item key={index}>
+                <div className="container-div">
+                  <div
+                    className="masonary-pic item-div image"
+                    key={index}
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      height: `${item.size.height}px`,
+                      borderRadius: "2em !important",
+                    }}
+                  >
+                    <div className="middle">
+                      <div className="text">{item.title}</div>
+                    </div>
+                    <div className="button-div">
+                      <Button
+                        variant="outlined"
+                        endIcon={<SendIcon />}
+                        className="masonary-div-button"
+                      >
+                        View Homes
+                      </Button>
                     </div>
                   </div>
-                </Item>
-              ))}
-            </Masonry>
-          </Container>
-        </Carousel>
-      </Container>
+                </div>
+              </Item>
+            ))}
+          </Masonry>
+        </Container>
+      </Carousel>
     </div>
   );
 };

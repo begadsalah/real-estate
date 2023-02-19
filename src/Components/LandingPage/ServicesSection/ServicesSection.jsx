@@ -16,23 +16,19 @@ const ServicesSection = () => {
   return (
     <div className="services-full-bg-image sections-main-container">
       <Container>
-        <Row>
-          <div>
-            <div className="servicesSection-content">
-              <h1 className="servicesSection-h1 h1-title">
-                See How We Can Help
-              </h1>
-            </div>
+        <div className="headLines-div-container">
+          <div className="servicesSection-content">
+            <h1 className="servicesSection-h1 h1-title">See How We Can Help</h1>
           </div>
-        </Row>
+        </div>
         <div className="card-div">
           <Card sx={{ maxWidth: 345, maxHeight: 350 }} className="card-body">
             <CardContent className="card-content">
               <div className="svg-container">
                 <Iconone
                   className="service-svg-icon"
-                  width={"120px"}
-                  height={"120px"}
+                  width={"110px"}
+                  height={"110px"}
                 />
               </div>
               <Typography
@@ -64,8 +60,8 @@ const ServicesSection = () => {
               <div className="svg-container">
                 <Icontwo
                   className="service-svg-icon"
-                  width={"100px"}
-                  height={"100px"}
+                  width={"110px"}
+                  height={"110px"}
                 />
               </div>
               <Typography
@@ -98,8 +94,8 @@ const ServicesSection = () => {
               <div className="svg-container">
                 <Iconthree
                   className="service-svg-icon"
-                  width={"100px"}
-                  height={"100px"}
+                  width={"110px"}
+                  height={"110px"}
                 />
               </div>
               <Typography

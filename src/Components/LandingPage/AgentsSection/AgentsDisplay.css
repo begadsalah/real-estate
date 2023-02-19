@@ -1,3 +1,6 @@
+.agents-section-div {
+  margin-top: 3rem;
+}
 .card-image {
   object-fit: cover;
   border-radius: 50%;
@@ -14,10 +17,10 @@
   margin-bottom: 7rem;
 }
 .contact-button {
-  padding: 0.4rem 0;
+  padding: 0.3rem 0.2rem;
   background-color: #336b9f;
   color: white;
-  font-size: 11px !important;
+  font-size: 14.5px !important;
   width: 100%;
   margin-top: 1rem;
 }
@@ -31,6 +34,7 @@
 .userName-name {
   text-align: center;
   font-weight: 600 !important;
+  font-size: 1.5rem;
 }
 .card-div {
   display: flex;
@@ -60,7 +64,7 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important;
+  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px !important; */
   border: 1px solid lightgray;
   margin: 1rem;
 }
@@ -98,7 +102,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 3rem 0;
   width: 100% !important;
 }
 .connect-agent-content span {

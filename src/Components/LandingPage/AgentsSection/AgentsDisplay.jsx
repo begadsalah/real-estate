@@ -71,13 +71,12 @@ const responsive = {
 const AgentsDisplay = () => {
   return (
     <>
-      <Container>
-        <Row className="div-flex">
+      <Container className="agents-section-div">
+        <div className="headLines-div-container">
           <h2 className="text-center h3-title">
             Real Estate Agents in the Los Angeles Area
           </h2>
-        </Row>
-
+        </div>
         <Carousel
           centerMode={false}
           swipeable={true}
@@ -104,16 +103,11 @@ const AgentsDisplay = () => {
                 </Col>
                 <Col className="content-div">
                   <CardContent className="card-content-component">
-                    <Typography
-                      variant="h5"
-                      component="div"
-                      className="userName-name"
-                    >
+                    <div className="userName-name">
                       {user.name}
-                    </Typography>
-                    <Typography variant="body2">Rate: {user.rate}/5</Typography>
+                      <button className="contact-button">Contact Agent</button>
+                    </div>
                   </CardContent>
-                  <button className="contact-button">Contact Agent</button>
                 </Col>
               </Row>
             </div>
