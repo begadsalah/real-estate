@@ -14,7 +14,7 @@ const HomeSection = () => {
       <div className="full-bg-image">
         <div className="homeSection-cntent">
           <h1 className="homeSection-h1">
-            All <span className="homeSection-h1-span">Los Angeles</span> Homes
+            All <span className="homeSection-h1-span"> Los Angeles</span> Homes
           </h1>
           <SearchBar widthPercentage="50%" />
         </div>

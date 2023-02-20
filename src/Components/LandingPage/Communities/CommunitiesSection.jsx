@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import TabPanelComponent from "./TabPanelComponent";
+import StyledTabs from "./StyledTabs";
 import "./CommunitiesSection.css";
 const CommunitiesSection = () => {
   const [value, setValue] = React.useState(0);
@@ -9,8 +8,8 @@ const CommunitiesSection = () => {
     setValue(newValue);
   };
   return (
-    <Container className="communities-container">
-      <div className="communities-section" style={{ backgroundColor: "white" }}>
+    <div className="sections-main-container">
+      <Container>
         <div
           className="headLines-div-container"
           style={{ backgroundColor: "white" }}
@@ -21,10 +20,11 @@ const CommunitiesSection = () => {
           >
             Los Angeles Real Estate Listings
           </h2>
+
+          <StyledTabs />
         </div>
-        <TabPanelComponent />
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

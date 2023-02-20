@@ -141,9 +141,7 @@ span {
   padding-bottom: 4rem;
   padding-top: 1rem;
 }
-.communities-section {
-  margin: 5rem 0;
-}
+
 .div-flex-centered {
   display: flex;
   justify-content: center;
@@ -165,4 +163,38 @@ span {
   font-size: 1.5rem;
   font-weight: 600;
   color: black;
+}
+.styled-tabs-component .css-heg063-MuiTabs-flexContainer {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: "center" !important;
+}
+.css-qtm4bu-MuiButtonBase-root-MuiTab-root {
+  max-width: auto !important;
+  min-width: auto !important;
+  padding: 0 !important;
+}
+.cards-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#styledTabList .css-heg063-MuiTabs-flexContainer {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: "center" !important;
+}
+#styledTabList .css-1aquho2-MuiTabs-indicator {
+  background-color: white !important;
+}
+.cards-tab-panel {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: "center" !important;
+}
+.cards-tab-panel .card-hover-effect {
+  margin: 0.3rem;
+}
+.css-13xfq8m-MuiTabPanel-root {
+  padding: 0 !important;
 }
