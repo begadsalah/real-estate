@@ -7,7 +7,29 @@ import TabPanel from "@mui/lab/TabPanel";
 import { propertyDetails } from "../../api/mlsdata";
 import { styled } from "@mui/material/styles";
 import CardComponent from "./CardComponent";
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 3,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+    slidesToSlide: 4,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 3,
+    slidesToSlide: 2,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1,
+  },
+};
 const AntTab = styled((props) => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
     textTransform: "none",
@@ -93,25 +115,45 @@ const StyledTabs = () => {
           ))}
         </TabList>
         {propertyDetails.map((item, index) => (
+          <TabPanel value={`${index}`}>
+            <Carousel
+              // centerMode={true}
+              arrows={false}
+              swipeable={true}
+              draggable={true}
+              showDots={true}
+              responsive={responsive}
+              ssr={true}
+              infinite={true}
+              autoPlaySpeed={1000}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {propertyDetails.map((item, index) => (
+                <div
+                  className="card-div-container listing-card-div styledTabs-card-div-container"
+                  key={index}
+                >
+                  <CardComponent
+                    housePics={item.image}
+                    beds={item.beds}
+                    baths={item.baths}
+                    price={item.price}
+                    sqft={item.sqft}
+                    address={item.address}
+                  />
+                </div>
+              ))}
+            </Carousel>
+          </TabPanel>
+        ))}
+        {/* {propertyDetails.map((item, index) => (
           <TabPanel value={`${index}`} className="cards-tab-panel">
-            <CardComponent
-              housePics={item.image}
-              beds={item.beds}
-              baths={item.baths}
-              price={item.price}
-              sqft={item.sqft}
-              address={item.address}
-              className="styled-tabs-card"
-            />
-            <CardComponent
-              housePics={item.image}
-              beds={item.beds}
-              baths={item.baths}
-              price={item.price}
-              sqft={item.sqft}
-              address={item.address}
-              className="styled-tabs-card"
-            />
             <CardComponent
               housePics={item.image}
               beds={item.beds}
@@ -137,7 +179,7 @@ const StyledTabs = () => {
           {propertyDetails.map((item, index) => (
             <StyledTab label={"\u2B24"} value={`${index}`} />
           ))}
-        </TabList>
+        </TabList> */}
       </TabContext>
     </Box>
   );

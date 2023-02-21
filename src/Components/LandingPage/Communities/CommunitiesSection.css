@@ -198,3 +198,8 @@ span {
 .css-13xfq8m-MuiTabPanel-root {
   padding: 0 !important;
 }
+.styledTabs-card-div-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: "center" !important;
+}
