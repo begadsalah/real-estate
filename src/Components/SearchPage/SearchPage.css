@@ -1,5 +1,4 @@
 .form-container {
-  margin-top: 10rem;
 }
 .flex-div {
   display: flex;
@@ -12,14 +11,32 @@
 .Search-page-tr,
 .Search-page-tbody,
 .Search-page-tbody td {
-  padding: 1rem;
-  border: 1px solid lightgray;
+  /* border: 1px solid lightgray; */
 }
 .Search-page-tbody td {
-  width: 20%;
+  /* width: 20%; */
 }
 .Search-page-tbody,
 .Search-page-thead {
+  overflow-y: scroll;
 }
 .Search-page-tr {
+}
+.address-search-tr {
+}
+.address-search-a:hover .address-search-link {
+  color: #bf3212 !important;
+}
+.search-engine-box {
+  max-height: 200px !important;
+  overflow-y: scroll !important;
+  margin: 1rem 0;
+}
+.search-engine-box tr {
+  border-bottom: 1px solid lightgray;
+}
+.address-search-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

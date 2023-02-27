@@ -7,6 +7,7 @@ import "../../../assets/building.png";
 import FeaturedProperties from "../FeaturedProperties/FeaturedProperties.jsx";
 import AgentsDisplay from "../AgentsSection/AgentsDisplay.jsx";
 import ServicesSection from "../ServicesSection/ServicesSection.jsx";
+import Test from "../Communities/Test.jsx";
 
 const HomeSection = () => {
   return (
@@ -16,7 +17,11 @@ const HomeSection = () => {
           <h1 className="homeSection-h1">
             All <span className="homeSection-h1-span"> Los Angeles</span> Homes
           </h1>
-          <SearchBar widthPercentage="50%" />
+          <SearchBar
+            widthPercentage="50%"
+            searchBarPadding="16px 19px"
+            placeholderContent={"City, Zip, Neighborhood, Address"}
+          />
         </div>
       </div>
       <ListingsCarousel />

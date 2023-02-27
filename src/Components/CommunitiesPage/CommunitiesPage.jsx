@@ -12,7 +12,7 @@ const CommunitiesPage = () => {
     <div>
       <Container className="communities-page-container">
         <Row className="communities-page-container">
-          <Col xs={12} md={7} xm={7} lg={7}>
+          <Col xs={12} md={9} xm={9} lg={9}>
             <Row className="communities-page-row">
               <Col xs={1} md={1} xm={1} lg={1}>
                 <Link className="breadcrumbs-links" to="/">
@@ -74,7 +74,7 @@ const CommunitiesPage = () => {
               ))}
             </Container>
           </Col>
-          <Col xs={12} md={5} xm={5} lg={5} style={{ marginTop: "4rem" }}>
+          <Col xs={12} md={3} xm={3} lg={3} style={{ marginTop: "4rem" }}>
             <Widgets areaFromParent={false} showPagination={true} />
           </Col>
         </Row>

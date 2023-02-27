@@ -134,6 +134,13 @@ span {
   flex-direction: column;
   width: 100%;
 }
+.card-pic-div-2 {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+}
 .col-card-component {
   margin: 0.5rem 0;
 }
@@ -161,6 +168,11 @@ span {
 }
 .card-price {
   font-size: 1.5rem;
+  font-weight: 600;
+  color: black;
+}
+.card-price-2 {
+  font-size: 2rem;
   font-weight: 600;
   color: black;
 }
@@ -202,4 +214,47 @@ span {
   display: flex !important;
   justify-content: center !important;
   align-items: "center" !important;
+}
+.contact-form-main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contact-form-main-container {
+}
+
+.contact-form-main-div label {
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgb(102, 102, 102);
+}
+
+.contact-form-main-div input {
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+  outline: none;
+  width: 100%;
+}
+.contact-form-main-div textarea {
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+  outline: none;
+  width: 100%;
+}
+.contact-form-main-div select {
+  border: 1px solid lightgray;
+  padding: 0.5rem 1rem;
+  outline: none;
+  width: 100%;
+}
+.star {
+  color: red;
+  font-size: 0.7rem;
+}
+.basic-tabs .css-heg063-MuiTabs-flexContainer {
+  display: flex !important;
+  align-items: center !important;
+  justify-conetent: center !important;
 }

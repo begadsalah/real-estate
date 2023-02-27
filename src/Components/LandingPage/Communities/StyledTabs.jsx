@@ -9,27 +9,7 @@ import { styled } from "@mui/material/styles";
 import CardComponent from "./CardComponent";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 3,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 4,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3,
-    slidesToSlide: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1,
-  },
-};
+
 const AntTab = styled((props) => <Tab disableRipple {...props} />)(
   ({ theme }) => ({
     textTransform: "none",
@@ -88,7 +68,28 @@ function a11yProps(index) {
   };
 }
 
-const StyledTabs = () => {
+const StyledTabs = ({ pageName, CardsNumber }) => {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: CardsNumber,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: CardsNumber,
+      slidesToSlide: 2,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: CardsNumber,
+      slidesToSlide: 3,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
   const [value, setValue] = React.useState("1");
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -107,7 +108,7 @@ const StyledTabs = () => {
         >
           {propertyDetails.map((item, index) => (
             <AntTab
-              label={item.type}
+              label={`${item.type} ${pageName}`}
               {...a11yProps({ index })}
               wrapped
               value={`${index}`}

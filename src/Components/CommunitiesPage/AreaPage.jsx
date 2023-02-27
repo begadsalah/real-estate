@@ -8,6 +8,7 @@ import ListtingTabs from "./ListtingTabs";
 import Widgets from "./Widgets";
 import { communitiesArea } from "../api/mlsdata";
 import "./CommunitiesPage.css";
+import StyledTabs from "../LandingPage/Communities/StyledTabs";
 
 function paginator(items, current_page, per_page_items) {
   let page = current_page || 1,
@@ -87,23 +88,23 @@ const AreaPage = () => {
               <Link className="breadcrumbs-links" to="/">
                 Home
               </Link>
-              <span>&#62;</span>
+              {/* <span>&#62;</span>
               <Link className="breadcrumbs-links" to="/communities">
                 Communities
-              </Link>
+              </Link> */}
               <span>&#62;</span>
               <Link className="breadcrumbs-links" to="#">
                 {area.pageName}
               </Link>
             </Col>
-            <Col className="communities-breadcrumbs-col2">
+            {/* <Col className="communities-breadcrumbs-col2">
               <Pagination
                 count={count}
                 page={page}
                 onChange={handleChange}
                 color="primary"
               />
-            </Col>
+            </Col> */}
           </Row>
           <Row className="title-row">
             <Col>
@@ -113,25 +114,15 @@ const AreaPage = () => {
             </Col>
           </Row>
           <Row>
-            <thead>
-              <tr>
-                <th>
-                  {area.pageName}, Real Estate Listings, {current_date}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{communitiesArea.length} Listed</td>
-              </tr>
-            </tbody>
-          </Row>
-          <Row>
-            <Col xs={12} md={7} xm={7} lg={7}>
-              <ListtingTabs pageName={area.pageName} />
+            <Col xs={12} md={8} xm={8} lg={8}>
+              <StyledTabs pageName={area.pageName} CardsNumber={2} />
             </Col>
-            <Col xs={12} md={5} xm={5} lg={5} className="right-side-column">
-              <Widgets areaFromParent={area} showPagination={false} />
+            <Col xs={12} md={4} xm={4} lg={4} className="right-side-column">
+              <Widgets
+                areaFromParent={area}
+                showPagination={false}
+                placeholderContent={"Search Homes"}
+              />
             </Col>
           </Row>
         </Container>

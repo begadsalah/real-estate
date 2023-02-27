@@ -6,12 +6,13 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import SearchIcon from "@mui/icons-material/Search";
 import { mlsdata } from "../api/mlsdata";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "./SearchPage.css";
-const SearchPage = () => {
+const SearchPage = ({ ShowHead }) => {
   const [search, setSearch] = useState("");
   return (
-    <Container className="form-container">
-      <Form className="flex-div">
+    <div>
+      <Form>
         <InputGroup>
           <Form.Control
             onChange={(e) => setSearch(e.target.value)}
@@ -19,42 +20,53 @@ const SearchPage = () => {
           />
         </InputGroup>
       </Form>
-      <thead className="table-flex Search-page-thead">
-        <tr className="Search-page-tr">
-          <th>State</th>
-          <th>Street Address</th>
-          <th>Street Name</th>
-          <th>Street Number</th>
-          <th>Postal Code</th>
-          <th>Street Suffix</th>
-        </tr>
-      </thead>
+      {ShowHead ? (
+        <thead className="table-flex Search-page-thead">
+          <tr className="Search-page-tr">
+            <th>State</th>
+            <th>Street Address</th>
+            <th>Street Name</th>
+            <th>Street Number</th>
+            <th>Postal Code</th>
+            <th>Street Suffix</th>
+          </tr>
+        </thead>
+      ) : null}
+
       <tbody className="Search-page-tbody">
-        {mlsdata
-          .filter((item) => {
-            return search.toLowerCase() === ""
-              ? item
-              : item.states.toLowerCase().includes(search) ||
-                  item.streetAddress.toLowerCase().includes(search) ||
-                  item.streetName.toLowerCase().includes(search) ||
-                  item.streetNumber.toLowerCase().includes(search) ||
-                  item.postalCode.toLowerCase().includes(search) ||
-                  item.streetSuffix.toLowerCase().includes(search);
-          })
-          .map((item, index) => (
-            <>
-              <tr key={index}>
-                <td>{item.states}</td>
-                <td>{item.streetAddress}</td>
-                <td>{item.streetName}</td>
-                <td>{item.streetNumber}</td>
-                <td>{item.postalCode}</td>
-                <td>{item.streetSuffix}</td>
-              </tr>
-            </>
-          ))}
+        <div className="search-engine-box">
+          {mlsdata
+            .filter((item) => {
+              return search.toLowerCase() === ""
+                ? null
+                : item.states.toLowerCase().includes(search) ||
+                    item.streetAddress.toLowerCase().includes(search) ||
+                    item.streetName.toLowerCase().includes(search) ||
+                    item.streetNumber.toLowerCase().includes(search) ||
+                    item.postalCode.toLowerCase().includes(search) ||
+                    item.streetSuffix.toLowerCase().includes(search);
+            })
+            .map((item, index) => (
+              <>
+                <a href="#" className="address-search-a">
+                  <LocationOnIcon
+                    className="address-search-link"
+                    style={{
+                      margin: "0.3rem",
+                      fontSize: "2rem",
+                      color: "#336b9f",
+                    }}
+                  />
+                  {"  "}
+                  {item.streetNumber} {item.streetAddress}, {item.streetName},{" "}
+                  {item.streetSuffix} {item.postalCode}, {item.states}.
+                </a>
+                <br />
+              </>
+            ))}
+        </div>
       </tbody>
-    </Container>
+    </div>
   );
 };
 

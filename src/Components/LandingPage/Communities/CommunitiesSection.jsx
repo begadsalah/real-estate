@@ -7,6 +7,7 @@ const CommunitiesSection = () => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <div className="sections-main-container">
       <Container>
@@ -21,7 +22,7 @@ const CommunitiesSection = () => {
             Los Angeles Real Estate Listings
           </h2>
 
-          <StyledTabs />
+          <StyledTabs CardsNumber={3} />
         </div>
       </Container>
     </div>

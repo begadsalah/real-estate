@@ -284,7 +284,7 @@ const ListtingTabs = ({ pageName }) => {
         compareArrays(nested[index], items.type) ? (
           <TabPanel value={value} index={index} key={`key-${index}`}>
             <Row>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={6} className="listtingTab-col">
                 <CardComponent
                   key={index}
                   housePics={items.image}
@@ -295,7 +295,7 @@ const ListtingTabs = ({ pageName }) => {
                   address={items.address}
                 />
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={6} className="listtingTab-col">
                 <CardComponent
                   key={index}
                   housePics={items.image}
@@ -306,7 +306,7 @@ const ListtingTabs = ({ pageName }) => {
                   address={items.address}
                 />
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={6} className="listtingTab-col">
                 <CardComponent
                   key={index}
                   housePics={items.image}
@@ -317,7 +317,7 @@ const ListtingTabs = ({ pageName }) => {
                   address={items.address}
                 />
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={6} className="listtingTab-col">
                 <CardComponent
                   key={index}
                   housePics={items.image}
@@ -328,7 +328,7 @@ const ListtingTabs = ({ pageName }) => {
                   address={items.address}
                 />
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={6} className="listtingTab-col">
                 <CardComponent
                   key={index}
                   housePics={items.image}
@@ -339,7 +339,7 @@ const ListtingTabs = ({ pageName }) => {
                   address={items.address}
                 />
               </Col>
-              <Col xs={12} sm={12} md={4}>
+              <Col xs={12} sm={12} md={6} className="listtingTab-col">
                 <CardComponent
                   key={index}
                   housePics={items.image}
@@ -355,173 +355,6 @@ const ListtingTabs = ({ pageName }) => {
         ) : null
       )}
     </Box>
-    // <Box
-    //   sx={{
-    //     flexGrow: 1,
-    //     bgcolor: "background.paper",
-    //     display: "flex",
-    //     height: 224,
-    //   }}
-    //   className="flex-col tab-box"
-    // >
-    //   <Tabs
-    //     orientation="horizontal"
-    //     variant="scrollable"
-    //     value={value}
-    //     onChange={handleChange}
-    //     aria-label="horizontal tabs example"
-    //     sx={{ borderRight: 1, borderColor: "divider" }}
-    //   >
-    //     {propertyDetails.map((items, index) => (
-    //       <Tab
-    //         label={`${items.type} ${pageName}`}
-    //         {...a11yProps({ index })}
-    //         wrapped
-    //       />
-    //     ))}
-    //   </Tabs>
-
-    //   {propertyDetails.map((item, index) => (
-    //     <TabPanel value={value} index={index} key={`key-${index}`}>
-    //       <Row>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //         <Col xs={12} sm={12} md={4}>
-    //           <CardComponent
-    //             key={index}
-    //             housePics={item.image}
-    //             beds={item.beds}
-    //             baths={item.baths}
-    //             price={item.price}
-    //             sqft={item.sqft}
-    //             address={item.address}
-    //           />
-    //         </Col>
-    //       </Row>
-    //     </TabPanel>
-    //   ))}
-    // </Box>
-
-    // <Tab.Container>
-    //   {propertyDetails
-    //     .sort((a, b) => a.type.localeCompare(b.type))
-    //     .map((items, index, sortedItems) => {
-    //       const typeChanged =
-    //         !index || items.type !== sortedItems[index - 1].type;
-    //       return (
-    //         <>
-    //           {typeChanged && (
-    //             <Nav.Link eventKey={items.type}>
-    //               {items.type} {pageName}
-    //             </Nav.Link>
-    //           )}
-    //           <Tab.Content>
-    //             <Tab.Pane eventKey={items.type}>
-    //               {propertyDetails.map((item, index) =>
-    //                 item.type === items.type ? (
-    //                   <CardComponent
-    //                     key={index}
-    //                     housePics={items.image}
-    //                     beds={items.beds}
-    //                     baths={items.baths}
-    //                     price={items.price}
-    //                     sqft={items.sqft}
-    //                     address={items.address}
-    //                   />
-    //                 ) : null
-    //               )}
-    //             </Tab.Pane>
-    //           </Tab.Content>
-    //         </>
-    //       );
-    //     })}
-    // </Tab.Container>
   );
 };
 
