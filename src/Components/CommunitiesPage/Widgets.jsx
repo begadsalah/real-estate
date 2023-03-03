@@ -82,317 +82,6 @@ const Widgets = ({
               <thead className="area-thead">
                 <tr className="area-tr">
                   <th>
-                    <h5>
-                      Featured{" "}
-                      {areaFromParent.contentLabel
-                        ? areaFromParent.contentLabel
-                        : area.contentLabel}
-                    </h5>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="area-tbody">
-                <Container>
-                  <Row>
-                    {CommunitiesObj.map((Item, index) => (
-                     <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                        <td className="td-text">
-                          <Link to={`/area-page/${Item.pageId}`}>
-                            {Item.PageName}
-                          </Link>
-                        </td>
-                      </Col>
-                    ))}
-                  </Row>
-                </Container>
-              </tbody>
-            </div>
-          </Row>
-          <Row className="row-box">
-            <div className="searchBox">
-              <thead className="area-thead">
-                <tr className="area-tr">
-                  <th>
-                    <h5>
-                      Browse Los Angeles
-                      {areaFromParent.PageName
-                        ? areaFromParent.PageName
-                        : area.PageName}{" "}
-                      Homes By Type
-                    </h5>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="area-tbody">
-                <Container>
-                  <Row>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Single Family Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Condos</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Townhomes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Luxury Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Luxury Condos</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Gated Community Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Pool Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Single Story Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">New Construction Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Beachfront Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Homes with Guest House</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Homes with Open Floorplan</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Golf Course Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Ocean View Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">City View Homes</td>
-                    </Col>
-                  </Row>
-                </Container>
-              </tbody>
-            </div>
-          </Row>
-          <Row className="row-box">
-            <div className="searchBox">
-              <thead className="area-thead">
-                <tr className="area-tr">
-                  <th>
-                    <h5>
-                      Browse Los Angeles
-                      {areaFromParent.PageName
-                        ? areaFromParent.PageName
-                        : area.PageName}{" "}
-                      Homes by Architectural Style
-                    </h5>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="area-tbody">
-                <Container>
-                  <Row>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Bungalows </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Contemporary Homes </td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Craftsman Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Custom Homes</td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Mediterranean Homes </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Modern Homes </td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Mid-Century Modern Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Patio Homes</td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Penthouse Ranch Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Spanish Homes</td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Tudor Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text"> Victorian Homes</td>
-                    </Col>
-                  </Row>
-                </Container>
-              </tbody>
-            </div>
-          </Row>
-          <Row className="row-box">
-            <div className="searchBox">
-              <thead className="area-thead">
-                <tr className="area-tr">
-                  <th>
-                    <h5>
-                      Browse Los Angeles
-                      {areaFromParent.PageName
-                        ? areaFromParent.PageName
-                        : area.PageName}{" "}
-                      Homes by Price Range
-                    </h5>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="area-tbody">
-                <Container>
-                  <Row>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">$300k - $400k </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">$400k - $500k </td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">$500k - $600k </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">$600k - $700k</td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">$700k - $800k </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">$800k - $900k </td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">$900k - $1 Million </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Above $1 Million </td>
-                    </Col>
-
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Above $5 Million</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Above $10 Million</td>
-                    </Col>
-                  </Row>
-                </Container>
-              </tbody>
-            </div>
-          </Row>
-          <Row className="row-box">
-            <div className="searchBox">
-              <thead className="area-thead">
-                <tr className="area-tr">
-                  <th>
-                    <h5>
-                      Browse Los Angeles
-                      {areaFromParent.PageName
-                        ? areaFromParent.PageName
-                        : area.PageName}{" "}
-                      Homes by Views
-                    </h5>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="area-tbody">
-                <Container>
-                  <Row>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Canyon View Homes </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">City View Homes </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Coastline View Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Golf Course View Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Hill View Homes </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Mountain View Homes </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Ocean View Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Panoramic View Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Park/Greenbelt View Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">Valley View Homes</td>
-                    </Col>
-                  </Row>
-                </Container>
-              </tbody>
-            </div>
-          </Row>
-          <Row className="row-box">
-            <div className="searchBox">
-              <thead className="area-thead">
-                <tr className="area-tr">
-                  <th>
-                    <h5>
-                      Browse Los Angeles
-                      {areaFromParent.PageName
-                        ? areaFromParent.PageName
-                        : area.PageName}{" "}
-                      Homes by Number of Bedrooms
-                    </h5>
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="area-tbody">
-                <Container>
-                  <Row>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">2 Bed Homes </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text"> 3 Bed Homes </td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">4 Bed Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">5 bed Homes</td>
-                    </Col>
-                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
-                      <td className="td-text">6+ Bed Homes </td>
-                    </Col>
-                  </Row>
-                </Container>
-              </tbody>
-            </div>
-          </Row>
-          <Row className="row-box">
-            <div className="searchBox">
-              <thead className="area-thead">
-                <tr className="area-tr">
-                  <th>
                     <h5>Los Angeles County Residential Market Stats</h5>
                   </th>
                 </tr>
@@ -446,6 +135,688 @@ const Widgets = ({
                       and the median sales price is $800,000. There have been
                       3,406 new listings in the last 4 weeks and 3,423 sales.
                     </p>
+                  </Row>
+                </Container>
+              </tbody>
+            </div>
+          </Row>
+          <Row className="row-box">
+            <div className="searchBox">
+              <thead className="area-thead">
+                <tr className="area-tr">
+                  <th>
+                    <h5>
+                      Featured{" "}
+                      {areaFromParent.contentLabel
+                        ? areaFromParent.contentLabel
+                        : area.contentLabel}
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="area-tbody">
+                <Container>
+                  <Row>
+                    {CommunitiesObj.map((Item, index) => (
+                      <Col
+                        xs={4}
+                        sm={4}
+                        md={4}
+                        lg={4}
+                        xl={4}
+                        className="element-col"
+                      >
+                        <td className="td-text">
+                          <Link to={`/area-page/${Item.pageId}`}>
+                            {Item.PageName}
+                          </Link>
+                        </td>
+                      </Col>
+                    ))}
+                  </Row>
+                </Container>
+              </tbody>
+            </div>
+          </Row>
+          <Row className="row-box">
+            <div className="searchBox">
+              <thead className="area-thead">
+                <tr className="area-tr">
+                  <th>
+                    <h5>
+                      Browse Los Angeles
+                      {areaFromParent.PageName
+                        ? areaFromParent.PageName
+                        : area.PageName}{" "}
+                      Homes By Type
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="area-tbody">
+                <Container>
+                  <Row>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Single Family Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Condos</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Townhomes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Luxury Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Luxury Condos</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Gated Community Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Pool Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Single Story Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">New Construction Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Beachfront Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Homes with Guest House</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Homes with Open Floorplan</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Golf Course Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Ocean View Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">City View Homes</td>
+                    </Col>
+                  </Row>
+                </Container>
+              </tbody>
+            </div>
+          </Row>
+          <Row className="row-box">
+            <div className="searchBox">
+              <thead className="area-thead">
+                <tr className="area-tr">
+                  <th>
+                    <h5>
+                      Browse Los Angeles
+                      {areaFromParent.PageName
+                        ? areaFromParent.PageName
+                        : area.PageName}{" "}
+                      Homes by Architectural Style
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="area-tbody">
+                <Container>
+                  <Row>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Bungalows </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Contemporary Homes </td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Craftsman Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Custom Homes</td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Mediterranean Homes </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Modern Homes </td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Mid-Century Modern Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Patio Homes</td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Penthouse Ranch Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Spanish Homes</td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Tudor Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text"> Victorian Homes</td>
+                    </Col>
+                  </Row>
+                </Container>
+              </tbody>
+            </div>
+          </Row>
+          <Row className="row-box">
+            <div className="searchBox">
+              <thead className="area-thead">
+                <tr className="area-tr">
+                  <th>
+                    <h5>
+                      Browse Los Angeles
+                      {areaFromParent.PageName
+                        ? areaFromParent.PageName
+                        : area.PageName}{" "}
+                      Homes by Price Range
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="area-tbody">
+                <Container>
+                  <Row>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">$300k - $400k </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">$400k - $500k </td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">$500k - $600k </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">$600k - $700k</td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">$700k - $800k </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">$800k - $900k </td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">$900k - $1 Million </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Above $1 Million </td>
+                    </Col>
+
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Above $5 Million</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Above $10 Million</td>
+                    </Col>
+                  </Row>
+                </Container>
+              </tbody>
+            </div>
+          </Row>
+          <Row className="row-box">
+            <div className="searchBox">
+              <thead className="area-thead">
+                <tr className="area-tr">
+                  <th>
+                    <h5>
+                      Browse Los Angeles
+                      {areaFromParent.PageName
+                        ? areaFromParent.PageName
+                        : area.PageName}{" "}
+                      Homes by Views
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="area-tbody">
+                <Container>
+                  <Row>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Canyon View Homes </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">City View Homes </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Coastline View Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Golf Course View Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Hill View Homes </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Mountain View Homes </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Ocean View Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Panoramic View Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Park/Greenbelt View Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">Valley View Homes</td>
+                    </Col>
+                  </Row>
+                </Container>
+              </tbody>
+            </div>
+          </Row>
+          <Row className="row-box">
+            <div className="searchBox">
+              <thead className="area-thead">
+                <tr className="area-tr">
+                  <th>
+                    <h5>
+                      Browse Los Angeles
+                      {areaFromParent.PageName
+                        ? areaFromParent.PageName
+                        : area.PageName}{" "}
+                      Homes by Number of Bedrooms
+                    </h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="area-tbody">
+                <Container>
+                  <Row>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">2 Bed Homes </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text"> 3 Bed Homes </td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">4 Bed Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">5 bed Homes</td>
+                    </Col>
+                    <Col
+                      xs={4}
+                      sm={4}
+                      md={4}
+                      lg={4}
+                      xl={4}
+                      className="element-col"
+                    >
+                      <td className="td-text">6+ Bed Homes </td>
+                    </Col>
                   </Row>
                 </Container>
               </tbody>
