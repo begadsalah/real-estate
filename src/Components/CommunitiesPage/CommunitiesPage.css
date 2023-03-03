@@ -2,7 +2,7 @@
   margin-top: 7rem;
 }
 .communities-page-container span {
-  margin: 0 0.8rem;
+  /* margin: 0 0.8rem; */
 }
 .communities-breadcrumbs-row {
   margin-top: 3rem;
@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
-  border: solid 6px #336b9f;
+  /* border: solid 6px #336b9f; */
   padding: 1rem;
   background-color: rgba(200, 200, 200, 0);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -91,7 +91,7 @@
 }
 
 .searchBox h5 {
-  margin: 1rem 0;
+  margin: 0.3rem 0;
 }
 .searchBox-button {
   margin: 1rem 0;
@@ -116,7 +116,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  border-bottom: 0.5px solid lightgray;
+  color: #1976d2;
+}
+.td-text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  color: #1976d2;
 }
 .area-tbody tr td {
   display: flex;
@@ -125,10 +133,11 @@
   padding: 0 0.1rem;
 }
 .area-thead tr th h5 {
-  texr-align: center;
+  texr-align: left;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  font-weight: 600;
 }
 td {
   cursor: pointer;
@@ -193,4 +202,119 @@ td {
   alignitems: center !important;
   border: 1px solid lightgray !important;
   margintop: 2rem 0 !important;
+}
+.dropDown-div-box {
+  position: absolute;
+  background-color: white;
+  border: 1px solid lightgray;
+  max-height: 400px;
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: start;
+  flex-direction: column;
+  padding: 1rem;
+  z-index: 33 !important;
+  margin-top: 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  max-width: 1000px;
+}
+.dropDown-content {
+}
+.filters-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter-component-col-search {
+  padding: 1rem;
+}
+
+.filter-component-col > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter-component-col {
+  border: 1px solid lightgray;
+  padding: 1.2rem 0;
+  margin: 0 0.4rem;
+}
+.dropDown-div-box input {
+  padding: 0.6rem 0.5rem;
+  outline: none;
+  border: 1px solid lightgray;
+  margin: 0.3rem 0.3rem;
+}
+.dropDown-div-box input:focus {
+  border: 1px solid rgb(25, 118, 210);
+}
+.filters-main-right-row {
+}
+.agent-contact-picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkboxes-div-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  top: -1.5rem;
+}
+.checkboxes-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.checkboxes-main-row {
+  display: flex;
+  justify-content: center;
+  align-items: inherit;
+}
+.market-state-col td {
+  display: flex;
+  justify-content: flex-end;
+}
+.market-state-p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6d96bf;
+  padding: 1.5rem;
+}
+.dropDown-div-box label {
+  font-weight: 600 !important;
+}
+.dropDown-more-button-row {
+  border: 1px solid lightgray;
+  padding: 0.8rem;
+}
+.select-input-option {
+  padding: 0.9rem;
+  outline: none;
+  border: 1px solid lightgray;
+  margin: 0.3rem 0;
+}
+.si-sapp-checkbox label {
+  font-weight: 500 !important;
+}
+.element-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.si-sapp-checkbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem 0rem;
+}
+input[type="checkbox"] {
+  font-size: 1.5rem;
+  height: 15.3px;
+  width: 15.3px;
+  margin-right: 0.9rem;
 }

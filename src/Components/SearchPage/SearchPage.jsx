@@ -8,15 +8,19 @@ import SearchIcon from "@mui/icons-material/Search";
 import { mlsdata } from "../api/mlsdata";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import "./SearchPage.css";
-const SearchPage = ({ ShowHead }) => {
+const SearchPage = ({ ShowHead, searchPadding }) => {
   const [search, setSearch] = useState("");
   return (
-    <div>
+    <div style={{ backgroundColor: "white" }}>
       <Form>
         <InputGroup>
           <Form.Control
             onChange={(e) => setSearch(e.target.value)}
             placeholder="City, Zip, Neighborhood, Address"
+            style={{
+              padding: `${searchPadding}`,
+              borderRadius: "0",
+            }}
           />
         </InputGroup>
       </Form>

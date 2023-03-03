@@ -9,6 +9,7 @@ import Widgets from "./Widgets";
 import { communitiesArea } from "../api/mlsdata";
 import "./CommunitiesPage.css";
 import StyledTabs from "../LandingPage/Communities/StyledTabs";
+import CommunityPage from "./CommunityPage";
 
 function paginator(items, current_page, per_page_items) {
   let page = current_page || 1,
@@ -81,30 +82,19 @@ const AreaPage = () => {
 
   return (
     <div className="communities-page-container flex">
-      {paginator(communitiesArea, page, 1).data.map((area, indexKey) => (
+      <CommunityPage />
+      {/* {paginator(communitiesArea, page, 1).data.map((area, indexKey) => (
         <Container key={indexKey}>
           <Row className="communities-breadcrumbs-row">
             <Col className="communities-breadcrumbs-col1">
               <Link className="breadcrumbs-links" to="/">
                 Home
               </Link>
-              {/* <span>&#62;</span>
-              <Link className="breadcrumbs-links" to="/communities">
-                Communities
-              </Link> */}
               <span>&#62;</span>
               <Link className="breadcrumbs-links" to="#">
                 {area.pageName}
               </Link>
             </Col>
-            {/* <Col className="communities-breadcrumbs-col2">
-              <Pagination
-                count={count}
-                page={page}
-                onChange={handleChange}
-                color="primary"
-              />
-            </Col> */}
           </Row>
           <Row className="title-row">
             <Col>
@@ -126,7 +116,7 @@ const AreaPage = () => {
             </Col>
           </Row>
         </Container>
-      ))}
+      ))} */}
     </div>
   );
 };

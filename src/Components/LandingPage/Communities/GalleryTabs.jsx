@@ -18,6 +18,9 @@ import MapSearch from "../../MapSearch/MapSearch";
 import Button from "@mui/material/Button";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import SearchIcon from "@mui/icons-material/Search";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -195,95 +198,85 @@ const GalleryTabs = ({ areaFromParent }) => {
                 />
               </Col>
             </Row>
-            <Row>
+            <Row style={{ marginTop: "1.5rem" }}>
               <Col>
-                <label htmlFor="">I am Interested in:</label>
-                <select id="#" name="interstedIn">
-                  <option value="australia">Buying</option>
-                  <option value="australia">Selling</option>
-                  <option value="australia">Buying & Selling</option>
-                  <option value="australia">Leasing</option>
-                  <option value="australia">Broker / Agent</option>
-                </select>
-              </Col>
-              <Col>
-                <label htmlFor="">Property Type:</label>
+                <label htmlFor="">Type of Home:</label>
                 <select id="#" name="PropertyType">
-                  {propertyDetails.map((item, index) => (
-                    <option value={`${item.type}`} key={index}>
-                      {item.type}
-                    </option>
-                  ))}
+                  <option value="Single Family Home">Single Family Home</option>
+                  <option value="Condominium">Condominium</option>
+                  <option value="Townhouse">Townhouse</option>
+                  <option value="Multi-family">Multi-family</option>
+                  <option value="Manufactured Home">Manufactured Home</option>
+                  <option value="Land">Land</option>
+                </select>
+              </Col>
+              <Col>
+                <label htmlFor="">Price Range</label>
+                <div className="price-range-divBox">
+                  <input
+                    type="text"
+                    name="min-price"
+                    placeholder="Min Price .."
+                  />
+                  <input
+                    type="text"
+                    name="max-price"
+                    placeholder="Max Price .."
+                  />
+                </div>
+              </Col>
+              <Col>
+                <label htmlFor="">Moving When?</label>
+                <select id="#" name="PropertyType">
+                  <option value="asap">ASAP</option>
+                  <option value="1 - 3 Months">1 - 3 Months</option>
+                  <option value="3 - 6 Months">3 - 6 Months</option>
+                  <option value="6 - 9 Months">6 - 9 Months</option>
+                  <option value="9 - 12 Months">9 - 12 Months</option>
+                  <option value="1+ Year">1+ Year</option>
                 </select>
               </Col>
             </Row>
-            <Row>
+            <Row style={{ marginTop: "2rem" }}>
               <Col>
-                <label htmlFor="">Bedrooms:</label>
-                <select id="#" name="Bedrooms">
-                  <option value="australia">Any</option>
-                  <option value="australia">1</option>
-                  <option value="australia">2</option>
-                  <option value="australia">3</option>
-                  <option value="australia">4</option>
-                  <option value="australia">5</option>
-                  <option value="australia">6</option>
-                </select>
+                <label htmlFor="">Are You Working with an Agent?</label>
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="Yes"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="No"
+                />
               </Col>
               <Col>
-                <label htmlFor="">Bathrooms:</label>
-                <select id="#" name="Bathrooms">
-                  <option value="australia">Any</option>
-                  <option value="australia">1</option>
-                  <option value="australia">2</option>
-                  <option value="australia">3</option>
-                  <option value="australia">4</option>
-                  <option value="australia">5</option>
-                  <option value="australia">6</option>
-                </select>
+                <label htmlFor="">Need to Speak with a Lender?</label>
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="Yes"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="No"
+                />
               </Col>
               <Col>
-                <label htmlFor="">Min Price:</label>
-                <select id="#" name="Min">
-                  <option value="australia">No Min</option>
-                  <option value="australia">$50,000</option>
-                  <option value="australia">$150,000</option>
-                  <option value="australia">$250,000</option>
-                  <option value="australia">$350,000</option>
-                  <option value="australia">$450,000</option>
-                  <option value="australia">$550,000</option>
-                  <option value="australia">$650,000</option>
-                  <option value="australia">$750,000</option>
-                  <option value="australia">$850,000</option>
-                  <option value="australia">$950,000</option>
-                  <option value="australia">$1M</option>
-                  <option value="australia">$1.5M</option>
-                  <option value="australia">$2M</option>
-                  <option value="australia">$3M+</option>
-                </select>
-              </Col>
-              <Col>
-                <label htmlFor="">Max Price:</label>
-                <select id="#" name="Max">
-                  <option value="australia">No Max</option>
-                  <option value="australia">$50,000</option>
-                  <option value="australia">$150,000</option>
-                  <option value="australia">$250,000</option>
-                  <option value="australia">$350,000</option>
-                  <option value="australia">$450,000</option>
-                  <option value="australia">$550,000</option>
-                  <option value="australia">$650,000</option>
-                  <option value="australia">$750,000</option>
-                  <option value="australia">$850,000</option>
-                  <option value="australia">$950,000</option>
-                  <option value="australia">$1M</option>
-                  <option value="australia">$1.5M</option>
-                  <option value="australia">$2M</option>
-                  <option value="australia">$3M+</option>
-                </select>
+                <label htmlFor="">Communication Preference </label>
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="Call"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="Text"
+                />
+                <FormControlLabel
+                  control={<Checkbox defaultChecked />}
+                  label="Email"
+                />
               </Col>
             </Row>
-            <Row>
+            {/* <Row>
               <Col>
                 <label htmlFor="">Questions / Where Are You Looking?</label>
                 <textarea
@@ -293,7 +286,7 @@ const GalleryTabs = ({ areaFromParent }) => {
                   style={{ height: "100px" }}
                 ></textarea>
               </Col>
-            </Row>
+            </Row> */}
             <Row>
               <Col className="contact-form-main-div">
                 <input
@@ -305,25 +298,21 @@ const GalleryTabs = ({ areaFromParent }) => {
                     color: "white",
                     backgroundColor: "#336b9f",
                   }}
-                ></input>
+                />
               </Col>
             </Row>
           </Container>
         </form>
         <p style={{ fontSize: "12px", padding: "1rem 0" }}>
-          By proceeding, you expressly consent to receive calls and texts at the
+          By submitting, you expressly consent to receive calls and texts at the
           number you provided, including marketing by auto-dialer, pre-recorded
-          or artificial voice, and email, from Matiah Fischer LLC about real
-          estate related matters, but not as a condition of purchase. Message
-          frequency varies. You can text Help for help and Stop to cancel. You
-          also agree to our Terms of Service and to our Privacy Policy regarding
-          the information relating to you. Message and data rates may apply.
-          This consent applies even if you are on a corporate, state or national
-          Do Not Call list.
-          <br />
-          <br />
-          This site is protected by reCAPTCHA and the Google Privacy Policy and
-          Terms of Service apply.
+          or artificial voice, and email, from agents associated with
+          TotalLosAngelesHomes.com about real estate related matters, but not as
+          a condition of purchase. Message frequency varies. You can text Stop
+          to cancel. You also agree to our Privacy Policy and to our Terms of
+          service regarding the information relating to you. Message and data
+          rates may apply. This consent applies even if you are on a corporate,
+          state or national Do Not Call list
         </p>
       </div>
     </Box>

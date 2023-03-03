@@ -225,8 +225,8 @@ span {
 }
 
 .contact-form-main-div label {
-  padding: 0.9rem 0;
-  font-size: 1.1rem;
+  padding: 0.5rem 0;
+  font-size: 1rem;
   font-weight: 600;
   color: rgb(102, 102, 102);
 }
@@ -257,4 +257,9 @@ span {
   display: flex !important;
   align-items: center !important;
   justify-conetent: center !important;
+}
+.price-range-divBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

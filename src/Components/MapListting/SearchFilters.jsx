@@ -1,41 +1,51 @@
-import React, { Component, useState } from "react";
-
+import React, { useState } from "react";
 import InputRange from "react-input-range";
-// const openDrawer = (value) => {
-//   isClicked = value;
-// };
-class Sreach extends Component {
-  state = {};
-  render() {
-    let {
-      types,
-      rooms,
-      areas,
-      prices,
-      deposits,
-      slideOpen,
-      onChangeSlide,
-      onChangeType,
-      onChangeRoom,
-      onChangeArea,
-      onChangePrice,
-      onChangeDeposit,
-      onChangeTour,
-      getPlacesCount,
-      disableTour,
-    } = this.props;
-    return (
-      <React.Fragment>
-        <header className="sc-slide-header">
-          <button>Filters</button>
-          {/* <i
-            className="sc-icon-menu sc-slide-toggle"
+import FilterListIcon from "@mui/icons-material/FilterList";
+const SearchFilters = ({
+  types,
+  rooms,
+  areas,
+  prices,
+  deposits,
+  slideOpen,
+  onChangeSlide,
+  onChangeType,
+  onChangeRoom,
+  onChangeArea,
+  onChangePrice,
+  onChangeDeposit,
+  onChangeTour,
+  getPlacesCount,
+  disableTour,
+}) => {
+  const [isClicked, setIsClicked] = useState(false);
+  return (
+    <>
+      <header className="sc-slide-header">
+        <div className="header-buttons">
+          <button
+            className="filter-drawer-button"
             onClick={() => {
-              onChangeSlide(!slideOpen);
+              isClicked ? setIsClicked(false) : setIsClicked(true);
             }}
-          ></i> */}
-        </header>
-
+          >
+            Filters <FilterListIcon />
+          </button>
+          <div className="sc-form-group sc-grid-1">
+            <div className="sc-form-button sc-stretched">
+              <button
+                disabled={disableTour}
+                onClick={() => {
+                  onChangeTour("start-tour");
+                }}
+              >
+                {getPlacesCount()} Found.
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      {isClicked ? (
         <div className="sc-slide-body">
           <form className="sc-form">
             <h6>Type</h6>
@@ -126,27 +136,9 @@ class Sreach extends Component {
             </div>
           </form>
         </div>
+      ) : null}
+    </>
+  );
+};
 
-        <footer className="sc-slide-footer">
-          <h6>{getPlacesCount()} results found.</h6>
-          <div className="sc-form-group sc-grid-1">
-            <div className="sc-form-button sc-stretched">
-              <button
-                disabled={disableTour}
-                onClick={() => {
-                  onChangeTour("start-tour");
-                }}
-              >
-                <i className="sc-icon-route"></i>
-
-                <span>Tour through the results</span>
-              </button>
-            </div>
-          </div>
-        </footer>
-      </React.Fragment>
-    );
-  }
-}
-
-export default Sreach;
+export default SearchFilters;

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import "./app.css";
 import Mapcraft from "mapcraft";
-import Search from "./search";
 import Tour from "./tour";
 import Page from "./page";
+import SearchFilters from "./SearchFilters";
 
 class App extends Component {
   state = {
@@ -100,27 +100,27 @@ class App extends Component {
 
     return (
       <div className="app">
-        <div id="app-map"></div>
-
-        <div className={this.getSlideClasses()}>
-          <Search
-            types={this.state.types}
-            rooms={this.state.rooms}
-            areas={this.state.areas}
-            prices={this.state.prices}
-            deposits={this.state.deposits}
-            slideOpen={this.state.slideOpen}
-            onChangeSlide={this.handleChangeSlide}
-            onChangeType={this.handleChangeType}
-            onChangeRoom={this.handleChangeRoom}
-            onChangeArea={this.handleChangeArea}
-            onChangePrice={this.handleChangePrice}
-            onChangeDeposit={this.handleChangeDeposit}
-            onChangeTour={this.handleChangeTour}
-            getPlacesCount={this.getPlacesCount}
-            disableTour={numberOFPlaces === 0}
-          />
-        </div>
+        <SearchFilters
+          types={this.state.types}
+          rooms={this.state.rooms}
+          areas={this.state.areas}
+          prices={this.state.prices}
+          deposits={this.state.deposits}
+          slideOpen={this.state.slideOpen}
+          onChangeSlide={this.handleChangeSlide}
+          onChangeType={this.handleChangeType}
+          onChangeRoom={this.handleChangeRoom}
+          onChangeArea={this.handleChangeArea}
+          onChangePrice={this.handleChangePrice}
+          onChangeDeposit={this.handleChangeDeposit}
+          onChangeTour={this.handleChangeTour}
+          getPlacesCount={this.getPlacesCount}
+          disableTour={numberOFPlaces === 0}
+          isClicked={this.isClicked}
+        />
+        <div id="app-map" style={{ height: "70vh" }}></div>
+        {/* <div className={this.getSlideClasses()}>  
+        </div> */}
 
         <div className={this.getTourControlsClasses()}>
           <Tour
@@ -425,26 +425,26 @@ class App extends Component {
         navigation: true,
       },
       icons: {
-        singleFamilyHomes: "./assets/images/icon-house.png",
-        townhomes: "./assets/images/icon-house.png",
-        luxuryHomes: "./assets/images/icon-house.png",
-        gatedCommunityHomes: "./assets/images/icon-house.png",
-        poolHomes: "./assets/images/icon-house.png",
-        singleStoryHomes: "./assets/images/icon-house.png",
-        newConstructionHomes: "./assets/images/icon-house.png",
-        beachfrontHomes: "./assets/images/icon-house.png",
-        homeswithGuestHouse: "./assets/images/icon-house.png",
-        golfCourseHomes: "./assets/images/icon-house.png",
-        triplex: "./assets/images/icon-house.png",
-        quadruplex: "./assets/images/icon-house.png",
-        condos: "./assets/images/icon-apartment.png",
-        luxuryCondos: "./assets/images/icon-apartment.png",
-        horseProperty: "./assets/images/icon-shared.png",
-        mainLevelMasterHomes: "./assets/images/icon-shared.png",
-        homeswithOpenFloorplan: "./assets/images/icon-shared.png",
-        multiFamilyHomes: "./assets/images/icon-shared.png",
-        duplex: "./assets/images/icon-dorm.png",
-        fiftyFivePlusCommunityHomes: "./assets/images/icon-dorm.png",
+        singleFamilyHomes: "./assets/images/home-pin.png",
+        townhomes: "./assets/images/home-pin.png",
+        luxuryHomes: "./assets/images/home-pin.png",
+        gatedCommunityHomes: "./assets/images/home-pin.png",
+        poolHomes: "./assets/images/home-pin.png",
+        singleStoryHomes: "./assets/images/home-pin.png",
+        newConstructionHomes: "./assets/images/home-pin.png",
+        beachfrontHomes: "./assets/images/home-pin.png",
+        homeswithGuestHouse: "./assets/images/home-pin.png",
+        golfCourseHomes: "./assets/images/home-pin.png",
+        triplex: "./assets/images/home-pin.png",
+        quadruplex: "./assets/images/home-pin.png",
+        condos: "./assets/images/home-pin.png",
+        luxuryCondos: "./assets/images/home-pin.png",
+        horseProperty: "./assets/images/home-pin.png",
+        mainLevelMasterHomes: "./assets/images/home-pin.png",
+        homeswithOpenFloorplan: "./assets/images/home-pin.png",
+        multiFamilyHomes: "./assets/images/home-pin.png",
+        duplex: "./assets/images/home-pin.png",
+        fiftyFivePlusCommunityHomes: "./assets/images/home-pin.png",
       },
       geoJsons: {
         places: "./data/places.json",

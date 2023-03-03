@@ -18,7 +18,6 @@ class Page extends Component {
         <header className="app-page-header">
           <h5>
             {page.title}
-
             <i
               className="sc-icon-cross sc-lg app-page-close"
               onClick={() => {

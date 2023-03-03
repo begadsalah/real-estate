@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import FullCardComponent from "./FullCardComponent";
+
 function Test({
   areaFromParent,
   size,
@@ -16,13 +17,6 @@ function Test({
   fullTheme,
   ShowUpperPagintaion,
 }) {
-  // const filteredItem = CommunitiesObject.filter(
-  //   (item) => item.pageId === areaFromParent
-  // );
-  // const filteredItem2 = filteredItem.map((item) => {
-  //   return item.properties.map((item) => item);
-  // });
-  // console.log(filteredItem2);
   const [Post, setPost] = useState(propertyDetailsCopy);
   const [currentPage, setCurrentPage] = useState(1);
   const [PostPerPage, setPostPerPage] = useState(numberOfCoulmns);
@@ -38,7 +32,7 @@ function Test({
   return (
     <>
       {Post.length !== 0 ? (
-        <div className="p-8 px-40 mt-36">
+        <div>
           {/* previous and next button */}
           {ShowUpperPagintaion ? (
             <div className="pagination-div">
@@ -86,7 +80,6 @@ function Test({
               </button>
             </div>
           ) : null}
-
           <Container>
             <Row>
               {CurrentPosts.map((propItem, index) => (
@@ -167,45 +160,6 @@ function Test({
               <KeyboardArrowRightIcon style={{ color: "#336b9f" }} />
             </button>
           </div>
-          {/* show the post here */}
-          {/* <Container>
-            <Row>
-              {CurrentPosts.map((item, index) => (
-                <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-                  <CardComponent
-                    key={index}
-                    housePics={item.properties.image}
-                    beds={item.properties.beds}
-                    baths={item.properties.baths}
-                    price={item.properties.price}
-                    sqft={item.properties.sqft}
-                    address={item.properties.address}
-                  />
-                </Col>
-              ))}
-            </Row>
-          </Container> */}
-          {/* {CurrentPosts.filter(
-            (item) => item.pageId === `${areaFromParent}`
-          ).map((CountyItem, index) => (
-            <Container>
-              <Row>
-                {CountyItem.properties.map((propItem, index) => (
-                  <Col xs={12} sm={12} md={6} lg={6} xl={6}>
-                    <CardComponent
-                      key={index}
-                      housePics={propItem.image}
-                      beds={propItem.beds}
-                      baths={propItem.baths}
-                      price={propItem.price}
-                      sqft={propItem.sqft}
-                      address={propItem.address}
-                    />
-                  </Col>
-                ))}
-              </Row>
-            </Container>
-          ))} */}
         </div>
       ) : (
         <p className="p-40 text-8xl font-bold">loading ....</p> //if data hasn't come yet show this

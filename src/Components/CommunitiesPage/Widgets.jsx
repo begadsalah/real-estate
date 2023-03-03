@@ -27,7 +27,12 @@ function paginator(items, current_page, per_page_items) {
     data: paginatedItems,
   };
 }
-const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
+const Widgets = ({
+  areaFromParent,
+  showPagination,
+  placeholderContent,
+  searchBar,
+}) => {
   const count = Math.ceil(communitiesArea.length / 1);
   const [page, setPage] = React.useState(1);
   const handleChange = (event, value) => {
@@ -49,27 +54,29 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
               ) : null}
             </Col>
           </Row>
-          <Row className="row-box">
-            <Col className="searchBox">
-              <h5>
-                Search{" "}
-                {areaFromParent.PageName
-                  ? areaFromParent.PageName
-                  : area.PageName}{" "}
-                Home for sale
-              </h5>
-              <Col
-                className="searchBox-col-searchBar"
-                xs={12}
-                md={12}
-                xm={12}
-                lg={12}
-              >
-                <SearchPage ShowHead={false} />
-                {/* <SearchBar placeholderContent={placeholderContent} /> */}
+          {searchBar ? (
+            <Row className="row-box">
+              <Col className="searchBox">
+                <h5>
+                  Search{" "}
+                  {areaFromParent.PageName
+                    ? areaFromParent.PageName
+                    : area.PageName}{" "}
+                  Home for sale
+                </h5>
+                <Col
+                  className="searchBox-col-searchBar"
+                  xs={12}
+                  md={12}
+                  xm={12}
+                  lg={12}
+                >
+                  <SearchPage ShowHead={false} />
+                  {/* <SearchBar placeholderContent={placeholderContent} /> */}
+                </Col>
               </Col>
-            </Col>
-          </Row>
+            </Row>
+          ) : null}
           <Row className="row-box">
             <div className="searchBox">
               <thead className="area-thead">
@@ -84,17 +91,20 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                   </th>
                 </tr>
               </thead>
-
               <tbody className="area-tbody">
-                {CommunitiesObj.map((Item, index) => (
-                  <tr>
-                    <td>
-                      <Link to={`/area-page/${Item.pageId}`}>
-                        {Item.PageName}
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
+                <Container>
+                  <Row>
+                    {CommunitiesObj.map((Item, index) => (
+                     <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                        <td className="td-text">
+                          <Link to={`/area-page/${Item.pageId}`}>
+                            {Item.PageName}
+                          </Link>
+                        </td>
+                      </Col>
+                    ))}
+                  </Row>
+                </Container>
               </tbody>
             </div>
           </Row>
@@ -104,7 +114,7 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse{" "}
+                      Browse Los Angeles
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -114,37 +124,55 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 </tr>
               </thead>
               <tbody className="area-tbody">
-                <tr>
-                  <td>Single Family Homes</td>
-                  <td className="right-td">Condos</td>
-                </tr>
-                <tr>
-                  <td>Townhomes</td>
-                  <td className="right-td">Luxury Homes</td>
-                </tr>
-                <tr>
-                  <td>Luxury Condos</td>
-                  <td className="right-td">Gated Community Homes</td>
-                </tr>
-                <tr>
-                  <td>Pool Homes</td>
-                  <td className="right-td">Single Story Homes</td>
-                </tr>
-                <tr>
-                  <td>New Construction Homes</td>
-                  <td className="right-td">Beachfront Homes</td>
-                </tr>
-                <tr>
-                  <td>Homes with Guest House</td>
-                  <td className="right-td">Homes with Open Floorplan</td>
-                </tr>
-                <tr>
-                  <td>Golf Course Homes</td>
-                  <td className="right-td">Ocean View Homes</td>
-                </tr>
-                <tr>
-                  <td>City View Homes</td>
-                </tr>
+                <Container>
+                  <Row>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Single Family Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Condos</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Townhomes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Luxury Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Luxury Condos</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Gated Community Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Pool Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Single Story Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">New Construction Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Beachfront Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Homes with Guest House</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Homes with Open Floorplan</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Golf Course Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Ocean View Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">City View Homes</td>
+                    </Col>
+                  </Row>
+                </Container>
               </tbody>
             </div>
           </Row>
@@ -154,7 +182,7 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse{" "}
+                      Browse Los Angeles
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -164,30 +192,51 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 </tr>
               </thead>
               <tbody className="area-tbody">
-                <tr>
-                  <td>Bungalows </td>
-                  <td className="right-td">Contemporary Homes </td>
-                </tr>
-                <tr>
-                  <td>Craftsman Homes</td>
-                  <td className="right-td">Custom Homes</td>
-                </tr>
-                <tr>
-                  <td>Mediterranean Homes </td>
-                  <td className="right-td">Modern Homes </td>
-                </tr>
-                <tr>
-                  <td>Mid-Century Modern Homes</td>
-                  <td className="right-td">Patio Homes</td>
-                </tr>
-                <tr>
-                  <td>Penthouse Ranch Homes</td>
-                  <td className="right-td">Spanish Homes</td>
-                </tr>
-                <tr>
-                  <td>Tudor Homes</td>
-                  <td className="right-td"> Victorian Homes</td>
-                </tr>
+                <Container>
+                  <Row>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Bungalows </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Contemporary Homes </td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Craftsman Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Custom Homes</td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Mediterranean Homes </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Modern Homes </td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Mid-Century Modern Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Patio Homes</td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Penthouse Ranch Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Spanish Homes</td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Tudor Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text"> Victorian Homes</td>
+                    </Col>
+                  </Row>
+                </Container>
               </tbody>
             </div>
           </Row>
@@ -197,7 +246,7 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse{" "}
+                      Browse Los Angeles
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -207,26 +256,44 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 </tr>
               </thead>
               <tbody className="area-tbody">
-                <tr>
-                  <td>$300k - $400k </td>
-                  <td className="right-td">$400k - $500k </td>
-                </tr>
-                <tr>
-                  <td>$500k - $600k </td>
-                  <td className="right-td">$600k - $700k</td>
-                </tr>
-                <tr>
-                  <td>$700k - $800k </td>
-                  <td className="right-td">$800k - $900k </td>
-                </tr>
-                <tr>
-                  <td>$900k - $1 Million </td>
-                  <td className="right-td">Above $1 Million </td>
-                </tr>
-                <tr>
-                  <td>Above $5 Million</td>
-                  <td className="right-td">Above $10 Million</td>
-                </tr>
+                <Container>
+                  <Row>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">$300k - $400k </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">$400k - $500k </td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">$500k - $600k </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">$600k - $700k</td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">$700k - $800k </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">$800k - $900k </td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">$900k - $1 Million </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Above $1 Million </td>
+                    </Col>
+
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Above $5 Million</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Above $10 Million</td>
+                    </Col>
+                  </Row>
+                </Container>
               </tbody>
             </div>
           </Row>
@@ -236,7 +303,7 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse{" "}
+                      Browse Los Angeles
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -246,26 +313,40 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 </tr>
               </thead>
               <tbody className="area-tbody">
-                <tr>
-                  <td>Canyon View Homes </td>
-                  <td className="right-td">City View Homes </td>
-                </tr>
-                <tr>
-                  <td>Coastline View Homes</td>
-                  <td className="right-td">Golf Course View Homes</td>
-                </tr>
-                <tr>
-                  <td>Hill View Homes </td>
-                  <td className="right-td">Mountain View Homes </td>
-                </tr>
-                <tr>
-                  <td>Ocean View Homes</td>
-                  <td className="right-td">Panoramic View Homes</td>
-                </tr>
-                <tr>
-                  <td>Park/Greenbelt View Homes</td>
-                  <td className="right-td">Valley View Homes</td>
-                </tr>
+                <Container>
+                  <Row>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Canyon View Homes </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">City View Homes </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Coastline View Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Golf Course View Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Hill View Homes </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Mountain View Homes </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Ocean View Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Panoramic View Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Park/Greenbelt View Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">Valley View Homes</td>
+                    </Col>
+                  </Row>
+                </Container>
               </tbody>
             </div>
           </Row>
@@ -275,7 +356,7 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse{" "}
+                      Browse Los Angeles
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -285,74 +366,91 @@ const Widgets = ({ areaFromParent, showPagination, placeholderContent }) => {
                 </tr>
               </thead>
               <tbody className="area-tbody">
-                <tr>
-                  <td>2 Bed Homes </td>
-                  <td className="right-td"> 3 Bed Homes </td>
-                </tr>
-                <tr>
-                  <td>4 Bed Homes</td>
-                  <td className="right-td">5 bed Homes</td>
-                </tr>
-                <tr>
-                  <td>6+ Bed Homes </td>
-                </tr>
+                <Container>
+                  <Row>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">2 Bed Homes </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text"> 3 Bed Homes </td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">4 Bed Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">5 bed Homes</td>
+                    </Col>
+                   <Col xs={4} sm={4} md={4} lg={4} xl={4} className="element-col">
+                      <td className="td-text">6+ Bed Homes </td>
+                    </Col>
+                  </Row>
+                </Container>
               </tbody>
             </div>
           </Row>
-          {/* <Row className="row-box">
+          <Row className="row-box">
             <div className="searchBox">
               <thead className="area-thead">
                 <tr className="area-tr">
                   <th>
-                    <h5>
-                      Featured{" "}
-                      {areaFromParent.contentLabel
-                        ? areaFromParent.contentLabel
-                        : area.contentLabel}
-                    </h5>
+                    <h5>Los Angeles County Residential Market Stats</h5>
                   </th>
                 </tr>
               </thead>
               <tbody className="area-tbody">
-                <tr>
-                  <td>
-                    {areaFromParent.sideBar
-                      ? areaFromParent.sideBar
-                      : area.sideBar}
-                  </td>
-                  <td className="right-td">
-                    {areaFromParent.sideBar
-                      ? areaFromParent.sideBar
-                      : area.sideBar}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    {areaFromParent.sideBar
-                      ? areaFromParent.sideBar
-                      : area.sideBar}
-                  </td>
-                  <td className="right-td">
-                    {areaFromParent.sideBar
-                      ? areaFromParent.sideBar
-                      : area.sideBar}
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    {areaFromParent.sideBar
-                      ? areaFromParent.sideBar
-                      : area.sideBar}
-                  </td>
-                  <td className="right-td">
-                    {areaFromParent.sideBar
-                      ? areaFromParent.sideBar
-                      : area.sideBar}
-                  </td>
-                </tr>
+                <Container>
+                  <Row>
+                    <Col xs={6} sm={6} md={6} lg={6} xl={6}>
+                      <td className="td-text">New Listings (last 4 weeks) </td>
+                      <td className="td-text">Homes for Sale </td>
+                      <td className="td-text">Condos for Sale </td>
+                      <td className="td-text">Detached for Sale </td>
+                      <td className="td-text">Townhouse for Sale </td>
+                      <td className="td-text">Median List Price</td>
+                      <td className="td-text">Median Sales Price</td>
+                      <td className="td-text">Median Sales Price Change </td>
+                      <td className="td-text">Price Changes </td>
+                      <td className="td-text">Months of Inventory </td>
+                      <td className="td-text">Contracts </td>
+                      <td className="td-text">Sales</td>
+                      <td className="td-text">Sales Change </td>
+                      <td className="td-text">Average Days on Market</td>
+                    </Col>
+                    <Col
+                      xs={6}
+                      sm={6}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      className="market-state-col"
+                    >
+                      <td className="td-text">3,406 </td>
+                      <td className="td-text">12,339 </td>
+                      <td className="td-text">1,893</td>
+                      <td className="td-text">9,700</td>
+                      <td className="td-text">746</td>
+                      <td className="td-text">$850,000</td>
+                      <td className="td-text">$800,000</td>
+                      <td className="td-text">0%</td>
+                      <td className="td-text">3,180</td>
+                      <td className="td-text">4.7</td>
+                      <td className="td-text">2,524</td>
+                      <td className="td-text">3,423</td>
+                      <td className="td-text">0%</td>
+                      <td className="td-text">115</td>
+                    </Col>
+                    <p className="market-state-p">
+                      In Los Angeles County there are currently 12,339 homes for
+                      sale, of those 1,893 are condos, 9,700 are detached homes,
+                      and 746 are townhomes. The median list price is $850,000
+                      and the median sales price is $800,000. There have been
+                      3,406 new listings in the last 4 weeks and 3,423 sales.
+                    </p>
+                  </Row>
+                </Container>
               </tbody>
             </div>
-          </Row> */}
+          </Row>
         </Container>
       ))}
     </>

@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 const MapSearch = () => {
   return (
-    <div className="map-container">
+    <div className="">
       <MapApp />
     </div>
   );

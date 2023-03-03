@@ -16,9 +16,12 @@
 .Search-page-tbody td {
   /* width: 20%; */
 }
-.Search-page-tbody,
-.Search-page-thead {
-  overflow-y: scroll;
+.Search-page-tbody {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  opacity: 1 !important;
 }
 .Search-page-tr {
 }
@@ -29,14 +32,20 @@
 }
 .search-engine-box {
   max-height: 200px !important;
-  overflow-y: scroll !important;
   margin: 1rem 0;
+  overflow-y: scroll;
 }
 .search-engine-box tr {
   border-bottom: 1px solid lightgray;
 }
+.search-engine-box {
+  background-color: white !important;
+  opacity: 1 !important;
+}
 .address-search-a {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  background-color: white !important;
+  opacity: 1 !important;
 }
