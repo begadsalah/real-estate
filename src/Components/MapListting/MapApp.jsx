@@ -100,7 +100,7 @@ class App extends Component {
 
     return (
       <div className="app">
-        <SearchFilters
+        {/* <SearchFilters
           types={this.state.types}
           rooms={this.state.rooms}
           areas={this.state.areas}
@@ -117,7 +117,7 @@ class App extends Component {
           getPlacesCount={this.getPlacesCount}
           disableTour={numberOFPlaces === 0}
           isClicked={this.isClicked}
-        />
+        /> */}
         <div id="app-map" style={{ height: "70vh" }}></div>
         {/* <div className={this.getSlideClasses()}>  
         </div> */}
