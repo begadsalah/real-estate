@@ -7,7 +7,6 @@ import "../../../assets/building.png";
 import FeaturedProperties from "../FeaturedProperties/FeaturedProperties.jsx";
 import AgentsDisplay from "../AgentsSection/AgentsDisplay.jsx";
 import ServicesSection from "../ServicesSection/ServicesSection.jsx";
-import Test from "../Communities/Test.jsx";
 
 const HomeSection = () => {
   return (
@@ -24,7 +23,7 @@ const HomeSection = () => {
           />
         </div>
       </div>
-      <ListingsCarousel />
+      <ListingsCarousel ShowTitle={true} />
       <FeaturedProperties />
       <CommunitiesSection />
       <ServicesSection />

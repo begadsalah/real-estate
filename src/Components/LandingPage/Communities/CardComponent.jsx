@@ -24,7 +24,9 @@ const CardComponent = (props) => {
   return (
     <>
       <Card
-        sx={{ maxWidth: 300 }}
+        sx={{
+          maxWidth: 300,
+        }}
         className="box-shadow-customized card-hover-effect"
       >
         <div className="card-pic-div">
@@ -48,15 +50,24 @@ const CardComponent = (props) => {
             <Row className="div-flex-centered flex-row">
               <span className="card-price">{props.price}</span>
               <div className="card-body-content">
-                <span className="houseCardInfo card-address">
+                <span
+                  className="houseCardInfo card-address centerd-element"
+                  style={{ marginRight: "1rem" }}
+                >
                   <KingBedIcon style={{ color: "gray" }} />
                   {props.beds + "bd" + " "}
                 </span>
-                <span className="houseCardInfo card-address">
+                <span
+                  className="houseCardInfo card-address centerd-element"
+                  style={{ marginRight: "1rem" }}
+                >
                   <BathtubIcon style={{ color: "gray" }} />
                   {props.baths + "ba" + " "}
                 </span>
-                <span className="houseCardInfo card-address">
+                <span
+                  className="houseCardInfo card-address centerd-element"
+                  style={{ marginRight: "1rem" }}
+                >
                   <SquareFootIcon style={{ color: "gray" }} />
                   {props.sqft + "sq.ft." + " "}
                 </span>

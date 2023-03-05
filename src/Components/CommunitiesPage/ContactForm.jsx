@@ -129,21 +129,30 @@ const ContactForm = ({ showLeftPhoto, ColSize }) => {
                 <Row className="checkboxes-main-row">
                   <Col className="checkboxes-col">
                     <label htmlFor="">Are You Working with an Agent?</label>
-                    <div className="checkboxes-div-container">
+                    <div
+                      className="checkboxes-div-container"
+                      style={{ top: "-1.5rem" }}
+                    >
                       <FormControlLabel control={<Checkbox />} label="Yes" />
                       <FormControlLabel control={<Checkbox />} label="No" />
                     </div>
                   </Col>
                   <Col className="checkboxes-col">
                     <label htmlFor="">Need to Speak with a Lender?</label>
-                    <div className="checkboxes-div-container">
+                    <div
+                      className="checkboxes-div-container"
+                      style={{ top: "-1.5rem" }}
+                    >
                       <FormControlLabel control={<Checkbox />} label="Yes" />
                       <FormControlLabel control={<Checkbox />} label="No" />
                     </div>
                   </Col>
                   <Col className="checkboxes-col">
                     <label htmlFor="">Communication Preference</label>
-                    <div className="checkboxes-div-container">
+                    <div
+                      className="checkboxes-div-container"
+                      style={{ top: "-1.5rem" }}
+                    >
                       <FormControlLabel control={<Checkbox />} label="Call" />
                       <FormControlLabel control={<Checkbox />} label="Text" />
                       <FormControlLabel control={<Checkbox />} label="Email" />

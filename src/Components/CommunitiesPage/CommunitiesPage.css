@@ -1,3 +1,10 @@
+/*-------------------------Css Constants----------------------------*/
+.centerd-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*-------------------------Css Constants----------------------------*/
 .communities-page-container {
   margin-top: 7rem;
 }
@@ -262,7 +269,6 @@ td {
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  top: -1.5rem;
 }
 .checkboxes-col {
   display: flex;
@@ -317,4 +323,56 @@ input[type="checkbox"] {
   height: 15.3px;
   width: 15.3px;
   margin-right: 0.9rem;
+}
+.forSaleIcon {
+  position: absolute;
+  z-index: 1;
+  padding: 0.5rem 0.7rem;
+  background-color: white;
+  margin: 0.5rem;
+  font-weight: 600;
+}
+.shareAndSaveIcon {
+  position: absolute;
+  z-index: 1;
+  background-color: transparent;
+  font-weight: 600;
+  display: flex;
+  justify-self: flex-end;
+}
+.shareIcon {
+  padding: 0.5rem 0.7rem;
+  margin: 0.3rem;
+  background-color: white;
+}
+.saveIcon {
+  padding: 0.5rem 0.7rem;
+  margin: 0.3rem;
+  background-color: white;
+}
+.galleryIcon {
+  position: absolute;
+  z-index: 1;
+  padding: 0.5rem 0.7rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0.5rem;
+  font-weight: 500;
+  display: flex;
+  justify-self: flex-end;
+  align-self: end;
+  color: white;
+}
+.image-list-item-component img {
+}
+.table-of-priceHistory {
+  margin: 1.5rem 1rem;
+}
+.table-of-priceHistory th {
+  font-weight: 600;
+  padding-bottom: 1.2rem !important;
+  font-size: 1.1rem;
+}
+.table-of-priceHistory td {
+  color: gray;
+  padding: 0.5rem 0 !important;
 }

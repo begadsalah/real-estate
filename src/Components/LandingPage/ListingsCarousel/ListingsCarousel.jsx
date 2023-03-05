@@ -110,16 +110,16 @@ Oxnard, CA 93036`,
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
-    items: 5,
+    items: 3,
   },
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 4,
+    items: 3,
     slidesToSlide: 4,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
-    items: 4,
+    items: 3,
     slidesToSlide: 2,
   },
   mobile: {
@@ -128,14 +128,17 @@ const responsive = {
     slidesToSlide: 1,
   },
 };
-const ListingsCarousel = (props) => {
+const ListingsCarousel = ({ ShowTitle }) => {
   return (
     <div className="sections-main-container">
-      <div className="headLines-div-container">
-        <h1 className="text-center h3-title">
-          New Homes for Sale in Los Angeles
-        </h1>
-      </div>
+      {ShowTitle ? (
+        <div className="headLines-div-container">
+          <h1 className="text-center h3-title">
+            New Homes for Sale in Los Angeles
+          </h1>
+        </div>
+      ) : null}
+
       <Container>
         <Carousel
           // centerMode={true}
@@ -153,7 +156,7 @@ const ListingsCarousel = (props) => {
           containerClass="carousel-container"
           removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
-          itemClass="carousel-item-padding-50-px"
+          itemClass="carousel-item-padding-40-px"
         >
           {propertyDetails.map((item, index) => (
             <div className="card-div-container listing-card-div" key={index}>

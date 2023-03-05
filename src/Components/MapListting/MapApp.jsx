@@ -118,7 +118,13 @@ class App extends Component {
           disableTour={numberOFPlaces === 0}
           isClicked={this.isClicked}
         /> */}
-        <div id="app-map" style={{ height: "70vh" }}></div>
+        <div
+          id="app-map"
+          style={{
+            height: `${this.props.mapHeight}`,
+            width: `${this.props.mapWidth}`,
+          }}
+        ></div>
         {/* <div className={this.getSlideClasses()}>  
         </div> */}
 

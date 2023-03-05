@@ -15623,6 +15623,31 @@ Ventura, CA 93003`,
     price: "$445,000",
   },
 ];
+export const itemData = [
+  {
+    img: require("../../assets/listingItem2.jpg"),
+    title: "Luxury Home",
+    PropertyState: "For Sale",
+    rows: 2,
+    cols: 2,
+  },
+  {
+    img: require("../../assets/listingItem1.jpg"),
+    title: "Bathroom",
+    PropertyState: "For Sale",
+  },
+  {
+    img: require("../../assets/listingItem3.jpg"),
+    title: "Kitchen",
+    PropertyState: "For Sale",
+  },
+  {
+    img: require("../../assets/listingItem4.jpg"),
+    title: "Livingroom",
+    cols: 2,
+    PropertyState: "For Sale",
+  },
+];
 export const mapCoordinations = [{"country":"China","city":"Longkou","streetAddress":"533 Brickson Park Pass","latitude":37.646108,"longitude":120.477813},
 {"country":"Philippines","city":"Talangnan","postalCode":"6028","streetAddress":"230 Nelson Alley","latitude":11.2666664,"longitude":123.7333298},
 {"country":"Colombia","city":"Aracataca","postalCode":"472008","streetAddress":"19 6th Court","latitude":10.591925,"longitude":-74.186103},

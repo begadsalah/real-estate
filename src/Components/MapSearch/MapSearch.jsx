@@ -3,10 +3,10 @@ import MapApp from "../MapListting/MapApp";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-const MapSearch = () => {
+const MapSearch = ({ mapHeight, mapWidth }) => {
   return (
     <div className="">
-      <MapApp />
+      <MapApp mapHeight={mapHeight} mapWidth={mapWidth} />
     </div>
   );
 };

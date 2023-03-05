@@ -41,7 +41,6 @@ const FullCardComponent = (props) => {
           className="full-card-img"
         />
       </div>
-
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent>
           <span className="card-price-2">{props.price}</span>

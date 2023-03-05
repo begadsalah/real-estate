@@ -13,7 +13,7 @@ import CardComponent from "./CardComponent";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Test from "./Test";
+import Test from "./PropertiesGallery";
 import MapSearch from "../../MapSearch/MapSearch";
 import Button from "@mui/material/Button";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";

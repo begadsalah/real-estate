@@ -24,6 +24,7 @@ import "./Components/MapListting/css/input-range.css";
 import "./Components/MapListting/css/hacks.css";
 import "./Components/MapListting/css/mapbox-hacks.css";
 import CountyPages from './Components/CommunitiesPage/CountyPages';
+import ListingPage from './Components/CommunitiesPage/ListingPage';
 
 
 
@@ -38,6 +39,7 @@ root.render(
         <Route path="property-search" element={<SearchPage  ShowHead={true}/>}/>
         <Route path="property-map-search" element={<MapSearch/>}/>
         <Route path="/area-page" element={ <AreaPage /> } />
+        <Route path="/area-page/Listing-item" element={ <ListingPage /> } />
         <Route path="/area-page/:pageId" element={ <CountyPages /> } />
         </Routes>
       <Footer/>

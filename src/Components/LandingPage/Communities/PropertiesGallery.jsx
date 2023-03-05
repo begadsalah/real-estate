@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { CommunitiesObject } from "../../api/mlsdata";
 import { propertyDetailsCopy } from "../../api/mlsdata";
 import CardComponent from "./CardComponent";
@@ -10,7 +11,7 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import FullCardComponent from "./FullCardComponent";
 
-function Test({
+function PropertiesGallery({
   areaFromParent,
   size,
   numberOfCoulmns,
@@ -92,25 +93,29 @@ function Test({
                   style={{ margin: "0.5rem 0" }}
                 >
                   {fullTheme ? (
-                    <FullCardComponent
-                      key={index}
-                      housePics={propItem.image}
-                      beds={propItem.beds}
-                      baths={propItem.baths}
-                      price={propItem.price}
-                      sqft={propItem.sqft}
-                      address={propItem.address}
-                    />
+                    <Link to="/area-page/Listing-item">
+                      <FullCardComponent
+                        key={index}
+                        housePics={propItem.image}
+                        beds={propItem.beds}
+                        baths={propItem.baths}
+                        price={propItem.price}
+                        sqft={propItem.sqft}
+                        address={propItem.address}
+                      />
+                    </Link>
                   ) : (
-                    <CardComponent
-                      key={index}
-                      housePics={propItem.image}
-                      beds={propItem.beds}
-                      baths={propItem.baths}
-                      price={propItem.price}
-                      sqft={propItem.sqft}
-                      address={propItem.address}
-                    />
+                    <Link to="/area-page/Listing-item">
+                      <CardComponent
+                        key={index}
+                        housePics={propItem.image}
+                        beds={propItem.beds}
+                        baths={propItem.baths}
+                        price={propItem.price}
+                        sqft={propItem.sqft}
+                        address={propItem.address}
+                      />
+                    </Link>
                   )}
                 </Col>
               ))}
@@ -168,4 +173,4 @@ function Test({
   );
 }
 
-export default Test;
+export default PropertiesGallery;
