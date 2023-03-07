@@ -6,19 +6,28 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { ReactComponent as Agent1 } from "../../assets/agentsvg.svg";
 
-const ContactForm = ({ showLeftPhoto, ColSize }) => {
+const ContactForm = ({ showLeftPhoto, ColSize, showTitle }) => {
   return (
     <Container style={{ marginTop: "2rem" }}>
       <Row>
         {showLeftPhoto ? (
-          <Col xs={5} sm={5} md={5} lg={5} xl={5}>
+          <Col
+            xs={12 - ColSize}
+            sm={12 - ColSize}
+            md={12 - ColSize}
+            lg={12 - ColSize}
+            xl={12 - ColSize}
+          >
             <Agent1 className="connect-agent-image" />
           </Col>
         ) : null}
         <Col xs={ColSize} sm={ColSize} md={ColSize} lg={ColSize} xl={ColSize}>
-          <h2 style={{ textAlign: "center" }}>
-            Contact a Real Estate Agent About Los Angeles Home for sale
-          </h2>
+          {showTitle ? (
+            <h2 style={{ textAlign: "center" }}>
+              Contact a Real Estate Agent About Los Angeles Home for sale
+            </h2>
+          ) : null}
+
           <div className="contact-form-main-div">
             <form action="">
               <Container>

@@ -411,7 +411,7 @@ class App extends Component {
       env: {
         mapbox: {
           token:
-            "pk.eyJ1IjoiYXlkaW5naGFuZSIsImEiOiJjazJpcXB1Zm8xamNvM21sNjlsMG95ejY3In0.jMuteEFuzviEuitJZ-DY2w",
+            "pk.eyJ1IjoiYmVnYWRzYWxhaCIsImEiOiJjbGV5bzVjdHUwNnh6M3JzMmNzazQxcTFuIn0.Icha8Jtk4HHLHNIv_QYyCQ",
         },
       },
       styles: {

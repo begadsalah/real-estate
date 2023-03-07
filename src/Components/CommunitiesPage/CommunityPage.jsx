@@ -343,7 +343,7 @@ const CommunityPage = () => {
             fullTheme={false}
             ShowUpperPagintaion={true}
           />
-          <ContactForm showLeftPhoto={true} ColSize={7} />
+          <ContactForm showLeftPhoto={true} ColSize={7} showTitle={true} />
           <Row>
             <Widgets
               searchBar={false}
@@ -380,7 +380,11 @@ const CommunityPage = () => {
                 fullTheme={false}
                 ShowUpperPagintaion={false}
               />
-              <ContactForm showLeftPhoto={false} ColSize={12} />
+              <ContactForm
+                showLeftPhoto={false}
+                ColSize={12}
+                showTitle={true}
+              />
               <Row>
                 <Widgets
                   searchBar={false}

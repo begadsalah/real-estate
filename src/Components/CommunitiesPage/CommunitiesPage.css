@@ -376,3 +376,21 @@ input[type="checkbox"] {
   color: gray;
   padding: 0.5rem 0 !important;
 }
+.show-more-content-toggler-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid lightgray;
+  font-weight: 600;
+  color: rgba(90, 90, 90);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+table.comparable-sales-table {
+  border-collapse: separate;
+  border-spacing: 2em 3.5em;
+}
+.comparable-sales-table-tr th {
+  font-weight: 600;
+}

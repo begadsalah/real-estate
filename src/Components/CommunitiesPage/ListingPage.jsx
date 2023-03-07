@@ -30,6 +30,33 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { fontSize } from "@mui/system";
 import GalleryTabs from "../LandingPage/Communities/GalleryTabs";
 import ListingsCarousel from "../LandingPage/ListingsCarousel/ListingsCarousel";
+import NightShelterIcon from "@mui/icons-material/NightShelter";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import YardIcon from "@mui/icons-material/Yard";
+import HomeWorkIcon from "@mui/icons-material/HomeWork";
+import SellIcon from "@mui/icons-material/Sell";
+import PendingActionsIcon from "@mui/icons-material/PendingActions";
+import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
+import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
+import ApartmentIcon from "@mui/icons-material/Apartment";
+import HolidayVillageIcon from "@mui/icons-material/HolidayVillage";
+import Diversity3Icon from "@mui/icons-material/Diversity3";
+import GrassIcon from "@mui/icons-material/Grass";
+import InfoIcon from "@mui/icons-material/Info";
+import PendingIcon from "@mui/icons-material/Pending";
+import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
+import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
+import ContactForm from "./ContactForm";
+import FlagIcon from "@mui/icons-material/Flag";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
+import LocalParking from "@mui/icons-material/LocalParking";
+import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
+import Avatar from "@mui/material/Avatar";
+import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import { DonutChart } from "react-circle-chart";
+import CircleIcon from "@mui/icons-material/Circle";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -73,15 +100,15 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 const ListingPage = () => {
   const [isActive, setIsActive] = useState(false);
-
   const handleColorchange = () => {
     setIsActive((current) => !current);
   };
   const [value, setValue] = useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const [seeMoreContent, setSeeMoreContent] = useState(false);
+  const [seeMoreContent2, setSeeMoreContent2] = useState(false);
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container>
@@ -182,7 +209,7 @@ const ListingPage = () => {
             className="centerd-element"
             style={{ alignItems: "start" }}
           >
-            <Grid className="" xs={5}>
+            <Grid className="" xs={6}>
               <h2 style={{ fontWeight: "600" }}> 5654 Sheila Ave</h2>
               <h6>
                 Las Vegas, NV 89108{" "}
@@ -254,13 +281,13 @@ const ListingPage = () => {
                 </span>
               </span>
             </Grid>
-            <Grid xs={3}>
-              <h4 style={{ textAlign: "center" }}>
+            <Grid xs={3} style={{ marginTop: "1rem" }}>
+              <h6 style={{ textAlign: "center", fontSize: "1.1rem" }}>
                 Request a tour as early as <br />
                 <span style={{ fontWeight: "600", textAlign: "center" }}>
                   Today at 10:00AM
                 </span>
-              </h4>
+              </h6>
               <div
                 className="centerd-element"
                 style={{
@@ -294,9 +321,11 @@ const ListingPage = () => {
         </Box>
       </Grid>
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2} className="centerd-element">
-          <Grid xs={8}>
-            <h5 style={{ fontWeight: "600" }}>Locale Information</h5>
+        <Grid container className="centerd-element">
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+              Locale Information
+            </h5>
             <Tabs
               className="basic-tabs"
               value={value}
@@ -383,7 +412,7 @@ const ListingPage = () => {
               </p>
             </TabPanel>
           </Grid>
-          <Grid xs={7}>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
             <h5 style={{ fontWeight: "600" }}>Home Highlights</h5>
             <Grid className="centerd-element">
               <Grid
@@ -562,12 +591,594 @@ const ListingPage = () => {
               </Grid>
             </Grid>
           </Grid>
-          {/* <Grid xs={7}>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
             <h5 style={{ fontWeight: "600", marginTop: "1rem" }}>
               Home Details for 5654 Sheila Ave
             </h5>
-          </Grid> */}
-          <Grid xs={7}>
+            <Grid xs={12} style={{ padding: "1rem" }}>
+              <h6
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                }}
+              >
+                <NightShelterIcon
+                  style={{
+                    color: "rgb(25, 118, 210)",
+                    fontSize: "2rem",
+                    marginRight: "0.5rem",
+                    marginBottom: "0.2rem",
+                  }}
+                />
+                <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                  Interior Features
+                </span>
+              </h6>
+              <Grid style={{ marginTop: "-1rem" }}>
+                <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                  Interior Details
+                </h6>
+                <Grid container style={{ justifyContent: "flex-start" }}>
+                  <Grid
+                    xs={4}
+                    className="centerd-element"
+                    style={{ justifyContent: "flex-start" }}
+                  >
+                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
+                      &#8226;
+                    </span>
+                    Number of Rooms:
+                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                      5
+                    </span>
+                  </Grid>
+                  <Grid
+                    xs={4}
+                    className="centerd-element"
+                    style={{ justifyContent: "flex-start" }}
+                  >
+                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
+                      &#8226;
+                    </span>
+                    Types of Rooms:
+                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                      Kitchen
+                    </span>
+                  </Grid>
+                </Grid>
+                <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                  Beds & Baths
+                </h6>
+                <Grid container style={{ justifyContent: "flex-start" }}>
+                  <Grid
+                    xs={4}
+                    className="centerd-element"
+                    style={{ justifyContent: "flex-start" }}
+                  >
+                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
+                      &#8226;
+                    </span>
+                    Number of Bedrooms:
+                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                      4
+                    </span>
+                  </Grid>
+                  <Grid
+                    xs={4}
+                    className="centerd-element"
+                    style={{ justifyContent: "flex-start" }}
+                  >
+                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
+                      &#8226;
+                    </span>
+                    Number of Bathrooms:
+                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                      3
+                    </span>
+                  </Grid>
+                  <Grid
+                    xs={4}
+                    className="centerd-element"
+                    style={{ justifyContent: "flex-start" }}
+                  >
+                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
+                      &#8226;
+                    </span>
+                    Number of Bathrooms (full):
+                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                      2
+                    </span>
+                  </Grid>
+                  <Grid
+                    xs={4}
+                    className="centerd-element"
+                    style={{ justifyContent: "flex-start" }}
+                  >
+                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
+                      &#8226;
+                    </span>
+                    Number of Bathrooms (half):
+                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                      1
+                    </span>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+            {seeMoreContent ? (
+              <>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <YardIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Exterior Features
+                    </span>
+                  </h6>
+                  <Grid style={{ marginTop: "-1rem" }}>
+                    <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Exterior Home Features
+                    </h6>
+                    <Grid container style={{ justifyContent: "flex-start" }}>
+                      <Grid
+                        xs={4}
+                        className="centerd-element"
+                        style={{ justifyContent: "flex-start" }}
+                      >
+                        <span
+                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                        >
+                          &#8226;
+                        </span>
+                        Number of Rooms:
+                        <span
+                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                        >
+                          5
+                        </span>
+                      </Grid>
+                      <Grid
+                        xs={4}
+                        className="centerd-element"
+                        style={{ justifyContent: "flex-start" }}
+                      >
+                        <span
+                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                        >
+                          &#8226;
+                        </span>
+                        Types of Rooms:
+                        <span
+                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                        >
+                          Kitchen
+                        </span>
+                      </Grid>
+                    </Grid>
+                    <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Parking & Garage
+                    </h6>
+                    <Grid container style={{ justifyContent: "flex-start" }}>
+                      <Grid
+                        xs={4}
+                        className="centerd-element"
+                        style={{ justifyContent: "flex-start" }}
+                      >
+                        <span
+                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                        >
+                          &#8226;
+                        </span>
+                        Number of Bedrooms:
+                        <span
+                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                        >
+                          4
+                        </span>
+                      </Grid>
+                      <Grid
+                        xs={4}
+                        className="centerd-element"
+                        style={{ justifyContent: "flex-start" }}
+                      >
+                        <span
+                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                        >
+                          &#8226;
+                        </span>
+                        Number of Bathrooms:
+                        <span
+                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                        >
+                          3
+                        </span>
+                      </Grid>
+                      <Grid
+                        xs={4}
+                        className="centerd-element"
+                        style={{ justifyContent: "flex-start" }}
+                      >
+                        <span
+                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                        >
+                          &#8226;
+                        </span>
+                        Number of Bathrooms (full):
+                        <span
+                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                        >
+                          2
+                        </span>
+                      </Grid>
+                      <Grid
+                        xs={4}
+                        className="centerd-element"
+                        style={{ justifyContent: "flex-start" }}
+                      >
+                        <span
+                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                        >
+                          &#8226;
+                        </span>
+                        Number of Bathrooms (half):
+                        <span
+                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                        >
+                          1
+                        </span>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <CalendarMonthIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Days on Market
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <HomeWorkIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Property Information
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <SellIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Price & Status
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PendingActionsIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Active Status
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PlayCircleFilledIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Media
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <LocationOnIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Location
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <AssignmentIndIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Agent Information
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <ApartmentIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Building
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <HolidayVillageIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Community
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Diversity3Icon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      HOA
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <GrassIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Lot Information
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <RequestQuoteIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Offer
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <MarkEmailReadIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Compensation
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <PendingIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Miscellaneous
+                    </span>
+                  </h6>
+                </Grid>
+                <Grid xs={12} style={{ padding: "1rem" }}>
+                  <h6
+                    style={{
+                      display: "flex",
+                      justifyContent: "flex-start",
+                      alignItems: "center",
+                    }}
+                  >
+                    <InfoIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    />
+                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                      Additional Information
+                    </span>
+                  </h6>
+                </Grid>
+              </>
+            ) : null}
+            <button
+              onClick={() => {
+                if (seeMoreContent) {
+                  setSeeMoreContent(false);
+                } else {
+                  setSeeMoreContent(true);
+                }
+              }}
+              className="show-more-content-toggler-button"
+            >
+              See More{" "}
+              {seeMoreContent ? (
+                <KeyboardArrowUpIcon style={{ color: "red" }} />
+              ) : (
+                <KeyboardArrowDownIcon style={{ color: "rgb(25, 118, 210)" }} />
+              )}
+            </button>
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
             <h5 style={{ fontWeight: "600", marginTop: "1rem" }}>
               Price History for 5654 Sheila Ave
             </h5>
@@ -1323,8 +1934,8 @@ const ListingPage = () => {
               </tr>
             </table>
           </Grid>
-          <Grid xs={8}>
-            <h4
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5
               style={{
                 fontWeight: "600",
                 marginTop: "1rem",
@@ -1332,11 +1943,11 @@ const ListingPage = () => {
               }}
             >
               Similar Homes You May Like
-            </h4>
+            </h5>
             <ListingsCarousel ShowTitle={false} />
           </Grid>
-          <Grid xs={8}>
-            <h4
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5
               style={{
                 fontWeight: "600",
                 marginTop: "1rem",
@@ -1344,8 +1955,863 @@ const ListingPage = () => {
               }}
             >
               New Listings near 5654 Sheila Ave
-            </h4>
+            </h5>
             <ListingsCarousel ShowTitle={false} />
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+              Property Taxes and Assessment
+            </h5>
+            <Grid
+              className="centerd-element"
+              style={{ justifyContent: "space-between" }}
+            >
+              <Grid
+                className="centerd-element"
+                style={{
+                  justifyContent: "center",
+                  alignItems: "start",
+                  flexDirection: "column",
+                  fontWeight: "600",
+                }}
+              >
+                <h6 style={{ fontSize: "1.1rem" }}>Year</h6>
+                <h6 style={{ fontSize: "1.1rem" }}>Tax</h6>
+                <h6 style={{ fontSize: "1.1rem" }}>Assessment</h6>
+              </Grid>
+              <Grid
+                className="centerd-element"
+                style={{
+                  justifyContent: "center",
+                  alignItems: "start",
+                  flexDirection: "column",
+                }}
+                xs={5}
+              >
+                <span style={{ padding: "1rem 0" }}>2022</span>
+                <span style={{ padding: "1rem 0" }}>$1,027</span>
+                <span style={{ padding: "1rem 0" }}>$198,826</span>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+              Price Trends
+            </h5>
+            <br />
+            <span>For Homes in 89108</span>
+            <Grid xs={6} container>
+              <Grid xs={3}>
+                <FlagIcon
+                  style={{ color: "gray", height: "7rem", width: "5rem" }}
+                />
+              </Grid>
+              <Grid xs={9}>
+                <h6>$323,692</h6>
+                <h6>Typical home value</h6>
+                <h6>
+                  This home: $545,000{" "}
+                  <span style={{ fontWeight: "600", marginLeft: "1rem" }}>
+                    41% above
+                  </span>
+                </h6>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600" }}>
+              Comparable Sales for 5654 Sheila Ave
+            </h5>
+            <Grid xs={12} style={{ marginTop: "-1.5rem" }}>
+              {/* <MapSearch mapHeight={"45vh"} mapWidth={"45vw"} /> */}
+              <table className="comparable-sales-table">
+                <tr className="comparable-sales-table-tr">
+                  <th>Address</th>
+                  <th>Distance</th>
+                  <th>Property Type</th>
+                  <th>Sold Price</th>
+                  <th>Sold Date</th>
+                  <th>Bed</th>
+                  <th>Bath</th>
+                  <th>Sqft</th>
+                </tr>
+                <tr className="comparable-sales-table-tr">
+                  <td
+                    style={{
+                      color: "#1976D2",
+                      borderBottom: "1px solid #1976D2",
+                    }}
+                  >
+                    5621 Avenida Silla, Las Vegas, NV
+                  </td>
+                  <td>0.06</td>
+                  <td>Single-Family Home</td>
+                  <td>$580,000</td>
+                  <td>03/23/22</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>2,403</td>
+                </tr>
+                <tr className="comparable-sales-table-tr">
+                  <td
+                    style={{
+                      color: "#1976D2",
+                      borderBottom: "1px solid #1976D2",
+                    }}
+                  >
+                    5621 Avenida Silla, Las Vegas, NV
+                  </td>
+                  <td>0.06</td>
+                  <td>Single-Family Home</td>
+                  <td>$580,000</td>
+                  <td>03/23/22</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>2,403</td>
+                </tr>
+                <tr className="comparable-sales-table-tr">
+                  <td
+                    style={{
+                      color: "#1976D2",
+                      borderBottom: "1px solid #1976D2",
+                    }}
+                  >
+                    5621 Avenida Silla, Las Vegas, NV
+                  </td>
+                  <td>0.06</td>
+                  <td>Single-Family Home</td>
+                  <td>$580,000</td>
+                  <td>03/23/22</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>2,403</td>
+                </tr>
+                <tr className="comparable-sales-table-tr">
+                  <td
+                    style={{
+                      color: "#1976D2",
+                      borderBottom: "1px solid #1976D2",
+                    }}
+                  >
+                    5621 Avenida Silla, Las Vegas, NV
+                  </td>
+                  <td>0.06</td>
+                  <td>Single-Family Home</td>
+                  <td>$580,000</td>
+                  <td>03/23/22</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>2,403</td>
+                </tr>
+                <tr className="comparable-sales-table-tr">
+                  <td
+                    style={{
+                      color: "#1976D2",
+                      borderBottom: "1px solid #1976D2",
+                    }}
+                  >
+                    5621 Avenida Silla, Las Vegas, NV
+                  </td>
+                  <td>0.06</td>
+                  <td>Single-Family Home</td>
+                  <td>$580,000</td>
+                  <td>03/23/22</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>2,403</td>
+                </tr>
+                <tr className="comparable-sales-table-tr">
+                  <td
+                    style={{
+                      color: "#1976D2",
+                      borderBottom: "1px solid #1976D2",
+                    }}
+                  >
+                    5621 Avenida Silla, Las Vegas, NV
+                  </td>
+                  <td>0.06</td>
+                  <td>Single-Family Home</td>
+                  <td>$580,000</td>
+                  <td>03/23/22</td>
+                  <td>4</td>
+                  <td>3</td>
+                  <td>2,403</td>
+                </tr>
+              </table>
+            </Grid>
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
+              Neighborhood Overview
+            </h5>
+            <Grid xs={8} container>
+              <Grid xs={4}>
+                <img
+                  src="https://img.freepik.com/premium-vector/abstract-city-map-perspective-with-pin-pointers_163786-708.jpg"
+                  alt="adasd"
+                  width={170}
+                  height={180}
+                />
+              </Grid>
+              <Grid xs={8}>
+                <h6
+                  style={{
+                    fontWeight: "600",
+                    cursor: "pointer",
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  Michael Way
+                </h6>
+                <h6>
+                  <FlagIcon
+                    style={{
+                      color: "gray",
+                      marginRight: "0.5rem",
+                      fontSize: "1.8rem",
+                    }}
+                  />
+                  132 Homes For You
+                </h6>
+                <h6>
+                  <SellIcon style={{ color: "gray", marginRight: "0.5rem" }} />
+                  Buy: $110k - $1.85m
+                </h6>
+                <h6
+                  style={{
+                    fontWeight: "600",
+                    color: "rgb(25, 118, 210)",
+                    cursor: "pointer",
+                  }}
+                >
+                  See Local Highlights
+                </h6>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600" }}>
+              What Locals Say about Michael Way
+            </h5>
+            <Grid container>
+              <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                <div
+                  className="centerd-element"
+                  style={{ justifyContent: "space-evenly" }}
+                >
+                  <span
+                    style={{
+                      fontWeight: "600",
+                      color: "#1976D2",
+                      backgroundColor: "rgba(25, 118, 210,0.2)",
+                      padding: "0.7rem",
+                      borderRadius: "1em",
+                    }}
+                  >
+                    <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 84%
+                  </span>
+                  <span>
+                    <DirectionsWalkIcon
+                      style={{
+                        fontSize: "2rem",
+                        marginRight: "0.3rem",
+                        color: "gray",
+                      }}
+                    />
+                    There are sidewalks
+                  </span>
+                </div>
+              </Grid>
+              <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                <div
+                  className="centerd-element"
+                  style={{ justifyContent: "space-evenly" }}
+                >
+                  <span
+                    style={{
+                      fontWeight: "600",
+                      color: "#1976D2",
+                      backgroundColor: "rgba(25, 118, 210,0.2)",
+                      padding: "0.7rem",
+                      borderRadius: "1em",
+                    }}
+                  >
+                    <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 70%
+                  </span>
+                  <span>
+                    <DirectionsCarFilledIcon
+                      style={{
+                        fontSize: "2rem",
+                        marginRight: "0.3rem",
+                        color: "gray",
+                      }}
+                    />
+                    Car is Needed
+                  </span>
+                </div>
+              </Grid>
+              <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                <div
+                  className="centerd-element"
+                  style={{ justifyContent: "space-evenly" }}
+                >
+                  <span
+                    style={{
+                      fontWeight: "600",
+                      color: "#1976D2",
+                      backgroundColor: "rgba(25, 118, 210,0.2)",
+                      padding: "0.7rem",
+                      borderRadius: "1em",
+                    }}
+                  >
+                    <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 67%
+                  </span>
+                  <span>
+                    <LocalParking
+                      style={{
+                        fontSize: "2rem",
+                        color: "gray",
+                        marginRight: "0.3rem",
+                      }}
+                    />
+                    Parking is Easy
+                  </span>
+                </div>
+              </Grid>
+              {seeMoreContent2 ? (
+                <>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 84%
+                      </span>
+                      <span>
+                        <DirectionsWalkIcon
+                          style={{
+                            fontSize: "2rem",
+                            marginRight: "0.3rem",
+                            color: "gray",
+                          }}
+                        />
+                        There are sidewalks
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 70%
+                      </span>
+                      <span>
+                        <DirectionsCarFilledIcon
+                          style={{
+                            fontSize: "2rem",
+                            marginRight: "0.3rem",
+                            color: "gray",
+                          }}
+                        />
+                        Car is Needed
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 67%
+                      </span>
+                      <span>
+                        <LocalParking
+                          style={{
+                            fontSize: "2rem",
+                            color: "gray",
+                            marginRight: "0.3rem",
+                          }}
+                        />
+                        Parking is Easy
+                      </span>
+                    </div>
+                  </Grid>
+
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 84%
+                      </span>
+                      <span>
+                        <DirectionsWalkIcon
+                          style={{
+                            fontSize: "2rem",
+                            marginRight: "0.3rem",
+                            color: "gray",
+                          }}
+                        />
+                        There are sidewalks
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 70%
+                      </span>
+                      <span>
+                        <DirectionsCarFilledIcon
+                          style={{
+                            fontSize: "2rem",
+                            marginRight: "0.3rem",
+                            color: "gray",
+                          }}
+                        />
+                        Car is Needed
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 67%
+                      </span>
+                      <span>
+                        <LocalParking
+                          style={{
+                            fontSize: "2rem",
+                            color: "gray",
+                            marginRight: "0.3rem",
+                          }}
+                        />
+                        Parking is Easy
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 84%
+                      </span>
+                      <span>
+                        <DirectionsWalkIcon
+                          style={{
+                            fontSize: "2rem",
+                            marginRight: "0.3rem",
+                            color: "gray",
+                          }}
+                        />
+                        There are sidewalks
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 70%
+                      </span>
+                      <span>
+                        <DirectionsCarFilledIcon
+                          style={{
+                            fontSize: "2rem",
+                            marginRight: "0.3rem",
+                            color: "gray",
+                          }}
+                        />
+                        Car is Needed
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid xs={4} style={{ marginBottom: "1rem" }}>
+                    <div
+                      className="centerd-element"
+                      style={{ justifyContent: "space-evenly" }}
+                    >
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          color: "#1976D2",
+                          backgroundColor: "rgba(25, 118, 210,0.2)",
+                          padding: "0.7rem",
+                          borderRadius: "1em",
+                        }}
+                      >
+                        <ThumbUpOffAltIcon style={{ fontSize: "2rem" }} /> 67%
+                      </span>
+                      <span>
+                        <LocalParking
+                          style={{
+                            fontSize: "2rem",
+                            color: "gray",
+                            marginRight: "0.3rem",
+                          }}
+                        />
+                        Parking is Easy
+                      </span>
+                    </div>
+                  </Grid>
+                </>
+              ) : null}
+              <button
+                onClick={() => {
+                  if (seeMoreContent2) {
+                    setSeeMoreContent2(false);
+                  } else {
+                    setSeeMoreContent2(true);
+                  }
+                }}
+                className="show-more-content-toggler-button"
+              >
+                See More{" "}
+                {seeMoreContent2 ? (
+                  <KeyboardArrowUpIcon style={{ color: "red" }} />
+                ) : (
+                  <KeyboardArrowDownIcon
+                    style={{ color: "rgb(25, 118, 210)" }}
+                  />
+                )}
+              </button>
+            </Grid>
+            <Grid container>
+              <Grid xs={4}>
+                <div
+                  style={{
+                    backgroundColor: "#03C988",
+                    padding: "1.5rem",
+                    borderRadius: "1.2em",
+                    margin: "1rem",
+                  }}
+                >
+                  <Grid className="centerd-element">
+                    <Avatar
+                      sx={{ width: 36, height: 36 }}
+                      alt="Real Estate User"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                    />
+                    <div
+                      style={{
+                        marginLeft: "0.5rem",
+                        color: "white",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontSize: "0.8rem" }}>
+                        Real Estate User
+                      </span>
+                      <br />
+                      <span style={{ fontSize: "0.8rem" }}>
+                        Resident <span>&#8226;</span> 3mo ago
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid style={{ marginBottom: "1rem", padding: "0.5rem" }}>
+                    <p
+                      style={{ fontSize: "1.2rem", color: "white" }}
+                      className="centerd-element"
+                    >
+                      "occasionally a dog off leash. I always leash my dog
+                      because of this. Alot of people walk their dogs, every is
+                      very friendly "
+                    </p>
+                  </Grid>
+                  <Grid
+                    className="centerd-element"
+                    style={{
+                      justifyContent: "space-between",
+                      alignItems: "end",
+                    }}
+                  >
+                    <span style={{ color: "white" }}>
+                      <InsertEmoticonIcon style={{ color: "white" }} /> 7
+                    </span>
+                    <span style={{ color: "white" }}>Flag</span>
+                  </Grid>
+                </div>
+              </Grid>
+              <Grid xs={4}>
+                <div
+                  style={{
+                    backgroundColor: "#810CA8",
+                    padding: "1.5rem",
+                    borderRadius: "1.2em",
+                    margin: "1rem",
+                  }}
+                >
+                  <Grid className="centerd-element">
+                    <Avatar
+                      sx={{ width: 36, height: 36 }}
+                      alt="Real Estate User"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                    />
+                    <div
+                      style={{
+                        marginLeft: "0.5rem",
+                        color: "white",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontSize: "0.8rem" }}>
+                        Real Estate User
+                      </span>
+                      <br />
+                      <span style={{ fontSize: "0.8rem" }}>
+                        Resident <span>&#8226;</span> 3mo ago
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid style={{ marginBottom: "1rem", padding: "0.5rem" }}>
+                    <p
+                      style={{ fontSize: "1.2rem", color: "white" }}
+                      className="centerd-element"
+                    >
+                      "occasionally a dog off leash. I always leash my dog
+                      because of this. Alot of people walk their dogs, every is
+                      very friendly "
+                    </p>
+                  </Grid>
+                  <Grid
+                    className="centerd-element"
+                    style={{
+                      justifyContent: "space-between",
+                      alignItems: "end",
+                    }}
+                  >
+                    <span style={{ color: "white" }}>
+                      <InsertEmoticonIcon style={{ color: "white" }} /> 7
+                    </span>
+                    <span style={{ color: "white" }}>Flag</span>
+                  </Grid>
+                </div>
+              </Grid>
+              <Grid xs={4}>
+                <div
+                  style={{
+                    backgroundColor: "#2F58CD",
+                    padding: "1.5rem",
+                    borderRadius: "1.2em",
+                    margin: "1rem",
+                  }}
+                >
+                  <Grid className="centerd-element">
+                    <Avatar
+                      sx={{ width: 36, height: 36 }}
+                      alt="Real Estate User"
+                      src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+                    />
+                    <div
+                      style={{
+                        marginLeft: "0.5rem",
+                        color: "white",
+                        marginBottom: "0.5rem",
+                      }}
+                    >
+                      <span style={{ fontSize: "0.8rem" }}>
+                        Real Estate User
+                      </span>
+                      <br />
+                      <span style={{ fontSize: "0.8rem" }}>
+                        Resident <span>&#8226;</span> 3mo ago
+                      </span>
+                    </div>
+                  </Grid>
+                  <Grid style={{ marginBottom: "1rem", padding: "0.5rem" }}>
+                    <p
+                      style={{ fontSize: "1.2rem", color: "white" }}
+                      className="centerd-element"
+                    >
+                      "occasionally a dog off leash. I always leash my dog
+                      because of this. Alot of people walk their dogs, every is
+                      very friendly "
+                    </p>
+                  </Grid>
+                  <Grid
+                    className="centerd-element"
+                    style={{
+                      justifyContent: "space-between",
+                      alignItems: "end",
+                    }}
+                  >
+                    <span style={{ color: "white" }}>
+                      <InsertEmoticonIcon style={{ color: "white" }} /> 7
+                    </span>
+                    <span style={{ color: "white" }}>Flag</span>
+                  </Grid>
+                </div>
+              </Grid>
+              <Grid className="centerd-element" xs={12}>
+                <button
+                  style={{
+                    padding: "0.5rem 1rem",
+                    color: "rgb(25, 118, 210)",
+                    border: "1px solid rgb(25, 118, 210)",
+                    fontWeight: "600",
+                    marignTop: "1rem",
+                  }}
+                >
+                  Add Your Review
+                </button>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+              Affordability
+            </h5>
+            <Grid>
+              <h6>
+                Calculate your monthly mortgage payments <br /> Your est.
+                payment: $3,621/month*
+              </h6>
+              <div
+                className="centerd-element"
+                style={{ justifyContent: "space-around" }}
+              >
+                <DonutChart size={300} />
+                <div
+                  className="centerd-element"
+                  style={{
+                    flexDirection: "column",
+                    alignItems: "start",
+                  }}
+                >
+                  <span>
+                    <CircleIcon
+                      style={{ color: "#4361EE", marginRight: "0.5rem" }}
+                    />{" "}
+                    Principal & Interest
+                  </span>
+                  <span>
+                    <CircleIcon
+                      style={{ color: "#4CC9F0", marginRight: "0.5rem" }}
+                    />{" "}
+                    Property Taxes
+                  </span>
+                  <span>
+                    <CircleIcon
+                      style={{ color: "#141517", marginRight: "0.5rem" }}
+                    />{" "}
+                    Home Insurance
+                  </span>
+                  <span>
+                    <CircleIcon
+                      style={{ color: "#4895EF", marginRight: "0.5rem" }}
+                    />{" "}
+                    Mortgage ins. & other
+                  </span>
+                  <div
+                    className="centerd-element"
+                    style={{ flexDirection: "column", marginTop: "1rem" }}
+                  >
+                    <button
+                      style={{
+                        padding: "0.5rem 5rem",
+                        color: "white",
+                        backgroundColor: "rgb(25, 118, 210)",
+                        fontWeight: "600",
+                      }}
+                    >
+                      Get Pre-Qualified
+                    </button>
+                    <br />
+                    or
+                    <br />
+                    <span style={{ color: "rgb(25, 118, 210)" }}>
+                      {" "}
+                      See today's mortgage rates
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Grid>
+          </Grid>
+          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+              Contact an Agent
+            </h5>
+            <ContactForm showLeftPhoto={false} ColSize={12} showTitle={false} />
           </Grid>
         </Grid>
       </Box>
