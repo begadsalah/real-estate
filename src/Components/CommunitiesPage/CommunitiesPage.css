@@ -394,3 +394,12 @@ table.comparable-sales-table {
 .comparable-sales-table-tr th {
   font-weight: 600;
 }
+.react-images__blanket {
+  z-index: 1800 !important;
+}
+.react-images__positioner {
+  z-index: 1800 !important;
+}
+.map-container {
+  height: 400px;
+}

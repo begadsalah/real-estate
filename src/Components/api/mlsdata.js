@@ -15648,6 +15648,53 @@ export const itemData = [
     PropertyState: "For Sale",
   },
 ];
+export const photos = [
+  {
+    src:  require("../../assets/listingItem2.jpg"),
+    width: 4,
+    height: 3
+  },
+  {
+    src:  require("../../assets/listingItem10.jpg"),
+    width: 1,
+    height: 1
+  },
+  {
+    src:  require("../../assets/listingItem9.jpg"),
+    width: 3,
+    height: 4
+  },
+  {
+    src:  require("../../assets/listingItem8.jpg"),
+    width: 3,
+    height: 4
+  },
+  {
+    src:  require("../../assets/listingItem15.jpg"),
+    width: 3,
+    height: 4
+  },
+  {
+    src:  require("../../assets/listingItem6.jpg"),
+    width: 4,
+    height: 3
+  },
+  {
+    src:  require("../../assets/listingItem7.jpg"),
+    width: 3,
+    height: 4
+  },
+  {
+    src:  require("../../assets/listingItem11.jpg"),
+    width: 4,
+    height: 3
+  },
+  {
+    src:  require("../../assets/listingItem12.jpg"),
+    width: 4,
+    height: 3
+  }
+];
 export const mapCoordinations = [{"country":"China","city":"Longkou","streetAddress":"533 Brickson Park Pass","latitude":37.646108,"longitude":120.477813},
 {"country":"Philippines","city":"Talangnan","postalCode":"6028","streetAddress":"230 Nelson Alley","latitude":11.2666664,"longitude":123.7333298},
 {"country":"Colombia","city":"Aracataca","postalCode":"472008","streetAddress":"19 6th Court","latitude":10.591925,"longitude":-74.186103},

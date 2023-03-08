@@ -3,12 +3,6 @@ import { Link } from "react-router-dom";
 import WestIcon from "@mui/icons-material/West";
 import Grid from "@mui/material/Unstable_Grid2";
 import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import { itemData } from "../api/mlsdata";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import IosShareIcon from "@mui/icons-material/IosShare";
-import CollectionsIcon from "@mui/icons-material/Collections";
 import SquareFootIcon from "@mui/icons-material/SquareFoot";
 import KingBedIcon from "@mui/icons-material/KingBed";
 import BathtubIcon from "@mui/icons-material/Bathtub";
@@ -57,6 +51,11 @@ import Avatar from "@mui/material/Avatar";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import { DonutChart } from "react-circle-chart";
 import CircleIcon from "@mui/icons-material/Circle";
+import ListingItemPopUp from "./ListingItemPopUp";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import IosShareIcon from "@mui/icons-material/IosShare";
+import NewMap from "./NewMap";
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -90,14 +89,6 @@ function a11yProps(index) {
   };
 }
 
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
 const ListingPage = () => {
   const [isActive, setIsActive] = useState(false);
   const handleColorchange = () => {
@@ -140,68 +131,9 @@ const ListingPage = () => {
           className="centerd-element grid-div-gallery"
           style={{ flexDirection: "column" }}
         >
-          <ImageList
-            style={{ marginTop: "1rem" }}
-            sx={{ width: 1100, height: 405 }}
-            variant="quilted"
-            cols={4}
-            rowHeight={200}
-            className="image-list-component image-wrapper"
-          >
-            <div className="forSaleIcon">FOR SALE</div>
-            <div className="shareAndSaveIcon">
-              <div className="shareIcon centerd-element">
-                <IosShareIcon
-                  style={{
-                    marginRight: "0.3rem",
-                    paddingBottom: "0.1rem",
-
-                    cursor: "pointer",
-                    color: "gray",
-                  }}
-                />
-                Share
-              </div>
-              <div className="saveIcon centerd-element">
-                <FavoriteIcon
-                  style={{
-                    marginRight: "0.3rem",
-                    paddingBottom: "0.1rem",
-                    cursor: "pointer",
-                    color: isActive ? "red" : "gray",
-                  }}
-                  onClick={handleColorchange}
-                />
-                Save
-              </div>
-            </div>
-            <div className=" galleryIcon centerd-element">
-              <CollectionsIcon
-                style={{
-                  marginRight: "0.3rem",
-                  paddingBottom: "0.1rem",
-                  cursor: "pointer",
-                  color: "white",
-                }}
-              />
-              13
-            </div>
-            {itemData.map((item) => (
-              <ImageListItem
-                key={item.img}
-                cols={item.cols || 1}
-                rows={item.rows || 1}
-                className="image-list-item-component"
-              >
-                <img
-                  {...srcset(item.img, 200, item.rows, item.cols)}
-                  alt={item.title}
-                  loading="lazy"
-                />
-              </ImageListItem>
-            ))}
-          </ImageList>
+          <ListingItemPopUp />
         </Grid>
+
         <Box sx={{ flexGrow: 1 }} className="centerd-element">
           <Grid
             container
@@ -209,7 +141,7 @@ const ListingPage = () => {
             className="centerd-element"
             style={{ alignItems: "start" }}
           >
-            <Grid className="" xs={6}>
+            <Grid xs={6}>
               <h2 style={{ fontWeight: "600" }}> 5654 Sheila Ave</h2>
               <h6>
                 Las Vegas, NV 89108{" "}
@@ -2022,8 +1954,8 @@ const ListingPage = () => {
             <h5 style={{ fontWeight: "600" }}>
               Comparable Sales for 5654 Sheila Ave
             </h5>
-            <Grid xs={12} style={{ marginTop: "-1.5rem" }}>
-              {/* <MapSearch mapHeight={"45vh"} mapWidth={"45vw"} /> */}
+            <Grid xs={12} style={{ marginTop: "-0.5rem" }}>
+              <NewMap />
               <table className="comparable-sales-table">
                 <tr className="comparable-sales-table-tr">
                   <th>Address</th>
