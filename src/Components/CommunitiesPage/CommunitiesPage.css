@@ -403,3 +403,12 @@ table.comparable-sales-table {
 .map-container {
   height: 400px;
 }
+#navbarListingItem {
+  background-color: white;
+  position: fixed;
+  top: -200px;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 100 !important;
+}

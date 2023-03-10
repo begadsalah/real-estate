@@ -55,10 +55,11 @@ import ListingItemPopUp from "./ListingItemPopUp";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import NewMap from "./NewMap";
+import MortgageCalculator from "./MortgageCalculator/MortgageCalculator";
+import NavbarListingItem from "./NavbarListingItem";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
-
   return (
     <div
       role="tabpanel"
@@ -88,7 +89,16 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-
+window.onscroll = function () {
+  scrollFunction();
+};
+const scrollFunction = () => {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("navbarListingItem").style.top = "0";
+  } else {
+    document.getElementById("navbarListingItem").style.top = "-200px";
+  }
+};
 const ListingPage = () => {
   const [isActive, setIsActive] = useState(false);
   const handleColorchange = () => {
@@ -100,195 +110,234 @@ const ListingPage = () => {
   };
   const [seeMoreContent, setSeeMoreContent] = useState(false);
   const [seeMoreContent2, setSeeMoreContent2] = useState(false);
-  return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container>
-        <Grid xs={4} sm={4} md={4} lg={4} xl={4} className="centerd-element">
-          <Link to="/area-page" style={{ color: "#2FA8E6" }}>
-            <WestIcon style={{ margin: "0 0.4rem" }} />
-            Back to Search
-          </Link>
-        </Grid>
-        <Grid className="centerd-element">
-          <span>For Sale</span>
-          <span style={{ margin: "0 0.4rem" }}>&#62;</span>
-          <span style={{ color: "#2FA8E6" }}>State</span>
-          <span style={{ margin: "0 0.4rem" }}>&#62;</span>
-          <span style={{ color: "#2FA8E6" }}>City</span>
-          <span style={{ margin: "0 0.4rem" }}>&#62;</span>
-          <span style={{ color: "#2FA8E6" }}>Zip Code</span>
-          <span style={{ margin: "0 0.4rem" }}>&#62;</span>
-          <span style={{ color: "#2FA8E6" }}>
-            Street Number, Street Name, Location
-          </span>
-        </Grid>
-        <Grid
-          xs={12}
-          sm={12}
-          md={12}
-          lg={12}
-          xl={12}
-          className="centerd-element grid-div-gallery"
-          style={{ flexDirection: "column" }}
-        >
-          <ListingItemPopUp />
-        </Grid>
+  const [ShowNavbar, setShowNavbar] = useState(false);
 
-        <Box sx={{ flexGrow: 1 }} className="centerd-element">
+  return (
+    <>
+      <div id="navbarListingItem">
+        <NavbarListingItem />
+      </div>
+
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container>
+          <Grid xs={4} sm={4} md={4} lg={4} xl={4} className="centerd-element">
+            <Link to="/area-page" style={{ color: "#2FA8E6" }}>
+              <WestIcon style={{ margin: "0 0.4rem" }} />
+              Back to Search
+            </Link>
+          </Grid>
+          <Grid className="centerd-element">
+            <span>For Sale</span>
+            <span style={{ margin: "0 0.4rem" }}>&#62;</span>
+            <span style={{ color: "#2FA8E6" }}>State</span>
+            <span style={{ margin: "0 0.4rem" }}>&#62;</span>
+            <span style={{ color: "#2FA8E6" }}>City</span>
+            <span style={{ margin: "0 0.4rem" }}>&#62;</span>
+            <span style={{ color: "#2FA8E6" }}>Zip Code</span>
+            <span style={{ margin: "0 0.4rem" }}>&#62;</span>
+            <span style={{ color: "#2FA8E6" }}>
+              Street Number, Street Name, Location
+            </span>
+          </Grid>
           <Grid
-            container
-            spacing={9}
-            className="centerd-element"
-            style={{ alignItems: "start" }}
+            xs={12}
+            sm={12}
+            md={12}
+            lg={12}
+            xl={12}
+            className="centerd-element grid-div-gallery"
+            style={{ flexDirection: "column" }}
           >
-            <Grid xs={6}>
-              <h2 style={{ fontWeight: "600" }}> 5654 Sheila Ave</h2>
-              <h6>
-                Las Vegas, NV 89108{" "}
-                <span
-                  style={{
-                    color: "#1976d2",
-                    borderBottom: "1px solid #1976d2",
-                  }}
-                >
-                  Michael Way
-                </span>
-              </h6>
-              <div className="flex-row">
-                <div className="card-body-content">
+            <ListingItemPopUp />
+          </Grid>
+          <Box sx={{ flexGrow: 1 }} className="centerd-element">
+            <Grid
+              container
+              spacing={1}
+              className="centerd-element"
+              style={{ alignItems: "start" }}
+            >
+              <Grid xs={6}>
+                <h2 style={{ fontWeight: "600" }}> 5654 Sheila Ave</h2>
+                <h6>
+                  Las Vegas, NV 89108{" "}
                   <span
-                    className="houseCardInfo card-address centerd-element"
-                    style={{ marginRight: "1rem", fontSize: "1rem" }}
+                    style={{
+                      color: "#1976d2",
+                      borderBottom: "1px solid #1976d2",
+                    }}
                   >
-                    <KingBedIcon
-                      style={{
-                        color: "gray",
-                        fontSize: "1.5rem",
-                        marginRight: "0.3rem",
-                      }}
-                    />
-                    5 Beds
+                    Michael Way
                   </span>
-                  <span
-                    className="houseCardInfo card-address centerd-element"
-                    style={{ marginRight: "1rem", fontSize: "1rem" }}
-                  >
-                    <BathtubIcon
-                      style={{
-                        color: "gray",
-                        fontSize: "1.4rem",
-                        marginRight: "0.3rem",
-                      }}
-                    />
-                    2 Baths
-                  </span>
-                  <span
-                    className="houseCardInfo card-address centerd-element"
-                    style={{ marginRight: "1rem", fontSize: "0.9rem" }}
-                  >
-                    <SquareFootIcon
-                      style={{
-                        color: "gray",
-                        fontSize: "1.5rem",
-                        marginRight: "0.3rem",
-                      }}
-                    />
-                    2,464 sqft (on 0.47 acres)
-                  </span>
+                </h6>
+                <div className="flex-row">
+                  <div className="card-body-content">
+                    <span
+                      className="houseCardInfo card-address centerd-element"
+                      style={{ marginRight: "1rem", fontSize: "1rem" }}
+                    >
+                      <KingBedIcon
+                        style={{
+                          color: "gray",
+                          fontSize: "1.5rem",
+                          marginRight: "0.3rem",
+                        }}
+                      />
+                      5 Beds
+                    </span>
+                    <span
+                      className="houseCardInfo card-address centerd-element"
+                      style={{ marginRight: "1rem", fontSize: "1rem" }}
+                    >
+                      <BathtubIcon
+                        style={{
+                          color: "gray",
+                          fontSize: "1.4rem",
+                          marginRight: "0.3rem",
+                        }}
+                      />
+                      2 Baths
+                    </span>
+                    <span
+                      className="houseCardInfo card-address centerd-element"
+                      style={{ marginRight: "1rem", fontSize: "0.9rem" }}
+                    >
+                      <SquareFootIcon
+                        style={{
+                          color: "gray",
+                          fontSize: "1.5rem",
+                          marginRight: "0.3rem",
+                        }}
+                      />
+                      2,464 sqft (on 0.47 acres)
+                    </span>
+                  </div>
                 </div>
-              </div>
-            </Grid>
-            <Grid xs={3}>
-              <h2 style={{ fontWeight: "600" }}>$745,000</h2>
-              <h6>Est. Mortgage $4,375/mo*</h6>
-              <span>
-                <PaidIcon style={{ color: "#1976d2", fontSize: "1.9rem" }} />{" "}
-                <span
-                  style={{
-                    color: "#1976d2",
-                    borderBottom: "1px solid #1976d2",
-                  }}
-                >
-                  Get Pre-Qualified
+              </Grid>
+              <Grid xs={3}>
+                <h2 style={{ fontWeight: "600" }}>$745,000</h2>
+                <h6>Est. Mortgage $4,375/mo*</h6>
+                <span>
+                  <PaidIcon style={{ color: "#1976d2", fontSize: "1.9rem" }} />{" "}
+                  <span
+                    style={{
+                      color: "#1976d2",
+                      borderBottom: "1px solid #1976d2",
+                    }}
+                  >
+                    Get Pre-Qualified
+                  </span>
                 </span>
-              </span>
-            </Grid>
-            <Grid xs={3} style={{ marginTop: "1rem" }}>
-              <h6 style={{ textAlign: "center", fontSize: "1.1rem" }}>
-                Request a tour as early as <br />
-                <span style={{ fontWeight: "600", textAlign: "center" }}>
-                  Today at 10:00AM
-                </span>
-              </h6>
-              <div
-                className="centerd-element"
+              </Grid>
+              <Grid
+                xs={3}
                 style={{
-                  flexDirection: "column",
-                  width: "100%",
+                  marginTop: "1rem",
+                  border: "1px solid lightgray",
+                  padding: "1rem",
                 }}
               >
-                <Button
-                  variant="contained"
-                  style={{
-                    margin: "0.3rem",
-                    fontSize: "1rem",
-                    width: "100%",
-                  }}
-                >
-                  Schedule a Tour
-                </Button>
-                <Button
-                  variant="outlined"
-                  style={{
-                    margin: "0.5rem",
-                    fontSize: "1rem",
-                    width: "100%",
-                  }}
-                >
-                  Request Info
-                </Button>
-              </div>
+                <div style={{}}>
+                  <h6 style={{ textAlign: "center", fontSize: "1.1rem" }}>
+                    Request a tour as early as <br />
+                    <span style={{ fontWeight: "600", textAlign: "center" }}>
+                      Today at 10:00AM
+                    </span>
+                  </h6>
+                  <div
+                    className="centerd-element"
+                    style={{
+                      flexDirection: "column",
+                      width: "100%",
+                    }}
+                  >
+                    <Button
+                      variant="contained"
+                      style={{
+                        margin: "0.3rem",
+                        fontSize: "1rem",
+                        width: "100%",
+                      }}
+                    >
+                      Schedule a Tour
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      style={{
+                        margin: "0.5rem",
+                        fontSize: "1rem",
+                        width: "100%",
+                      }}
+                    >
+                      Request Info
+                    </Button>
+                  </div>
+                </div>
+              </Grid>
             </Grid>
-          </Grid>
-        </Box>
-      </Grid>
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container className="centerd-element">
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
-              Locale Information
-            </h5>
-            <Tabs
-              className="basic-tabs"
-              value={value}
-              onChange={handleChange}
-              aria-label="basic tabs example"
-              style={{ justifyContent: "center", alignItems: "center" }}
-            >
-              <Tab
-                icon={<LocationOnIcon />}
-                label="Map"
-                {...a11yProps(0)}
-                iconPosition="start"
-              />
-              <Tab
-                icon={<SchoolIcon />}
-                label="Schools"
-                {...a11yProps(1)}
-                iconPosition="start"
-              />
-              <Tab
-                icon={<StoreIcon />}
-                label="Shop & Eat"
-                {...a11yProps(2)}
-                iconPosition="start"
-              />
-            </Tabs>
-            <TabPanel value={value} index={0}>
-              <Grid>
-                <MapSearch mapHeight="40vh" mapWidth="45vw" />
-                <h5 style={{ fontWeight: "600" }}>Description</h5>
-                <p>
+          </Box>
+        </Grid>
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid container className="centerd-element">
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+                Neighborhood Information
+              </h5>
+              <Tabs
+                className="basic-tabs"
+                value={value}
+                onChange={handleChange}
+                aria-label="basic tabs example"
+                style={{ justifyContent: "center", alignItems: "center" }}
+              >
+                <Tab
+                  icon={<LocationOnIcon />}
+                  label="Map"
+                  {...a11yProps(0)}
+                  iconPosition="start"
+                />
+                <Tab
+                  icon={<SchoolIcon />}
+                  label="Schools"
+                  {...a11yProps(1)}
+                  iconPosition="start"
+                />
+                <Tab
+                  icon={<StoreIcon />}
+                  label="Shop & Eat"
+                  {...a11yProps(2)}
+                  iconPosition="start"
+                />
+              </Tabs>
+              <TabPanel value={value} index={0}>
+                <Grid>
+                  <MapSearch mapHeight="40vh" mapWidth="52vw" />
+                  <h5 style={{ fontWeight: "600", margin: "2rem 0" }}>
+                    Property Description
+                  </h5>
+                  <p style={{ maxWidth: "52vw" }}>
+                    Must see this large Las Vegas two story home on just under a
+                    half-acre lot in this custom home neighborhood!! Perfect for
+                    a large family! Huge Backyard is a blank slate with space
+                    for a pool, guesthouse or an additional garage for all your
+                    toys! RV! Zoned for horses! Home has been updated with two
+                    new air conditioners, new roof, new paint inside and out!
+                    New kitchen countertops, appliances with a view of the
+                    backyard! Updated bathrooms! New tile and carpet throughout!
+                    Four large bedrooms with an optional fifth or a den
+                    downstairs along with family room, living room and a dining
+                    room off the kitchen! New front yard desert landscaping!
+                    Perfect home for your large family! Don't hesitate or it
+                    will be gone!! Hard to find lot at this price
+                  </p>
+                </Grid>
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                <MapSearch mapHeight="40vh" mapWidth="52vw" />
+                <h5 style={{ fontWeight: "600", margin: "2rem" }}>
+                  Property Description
+                </h5>
+                <p style={{ maxWidth: "52vw" }}>
                   Must see this large Las Vegas two story home on just under a
                   half-acre lot in this custom home neighborhood!! Perfect for a
                   large family! Huge Backyard is a blank slate with space for a
@@ -303,1825 +352,1862 @@ const ListingPage = () => {
                   Don't hesitate or it will be gone!! Hard to find lot at this
                   price
                 </p>
-              </Grid>
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-              <MapSearch mapHeight="40vh" mapWidth="45vw" />
-              <h5 style={{ fontWeight: "600" }}>Description</h5>
-              <p>
-                Must see this large Las Vegas two story home on just under a
-                half-acre lot in this custom home neighborhood!! Perfect for a
-                large family! Huge Backyard is a blank slate with space for a
-                pool, guesthouse or an additional garage for all your toys! RV!
-                Zoned for horses! Home has been updated with two new air
-                conditioners, new roof, new paint inside and out! New kitchen
-                countertops, appliances with a view of the backyard! Updated
-                bathrooms! New tile and carpet throughout! Four large bedrooms
-                with an optional fifth or a den downstairs along with family
-                room, living room and a dining room off the kitchen! New front
-                yard desert landscaping! Perfect home for your large family!
-                Don't hesitate or it will be gone!! Hard to find lot at this
-                price
-              </p>
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-              <MapSearch mapHeight="40vh" mapWidth="45vw" />
-              <h5 style={{ fontWeight: "600" }}>Description</h5>
-              <p>
-                Must see this large Las Vegas two story home on just under a
-                half-acre lot in this custom home neighborhood!! Perfect for a
-                large family! Huge Backyard is a blank slate with space for a
-                pool, guesthouse or an additional garage for all your toys! RV!
-                Zoned for horses! Home has been updated with two new air
-                conditioners, new roof, new paint inside and out! New kitchen
-                countertops, appliances with a view of the backyard! Updated
-                bathrooms! New tile and carpet throughout! Four large bedrooms
-                with an optional fifth or a den downstairs along with family
-                room, living room and a dining room off the kitchen! New front
-                yard desert landscaping! Perfect home for your large family!
-                Don't hesitate or it will be gone!! Hard to find lot at this
-                price
-              </p>
-            </TabPanel>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600" }}>Home Highlights</h5>
-            <Grid className="centerd-element">
-              <Grid
-                xs={3}
-                className="centerd-element"
-                style={{ flexDirection: "column", alignItems: "start" }}
-              >
-                <span
-                  style={{
-                    fontWeight: "500",
-                    marginBottom: "0.5rem",
-                    fontSize: "1rem",
-                  }}
+              </TabPanel>
+              <TabPanel value={value} index={2}>
+                <MapSearch mapHeight="40vh" mapWidth="52vw" />
+                <h5 style={{ fontWeight: "600", margin: "2rem" }}>
+                  Property Description
+                </h5>
+                <p style={{ maxWidth: "52vw" }}>
+                  Must see this large Las Vegas two story home on just under a
+                  half-acre lot in this custom home neighborhood!! Perfect for a
+                  large family! Huge Backyard is a blank slate with space for a
+                  pool, guesthouse or an additional garage for all your toys!
+                  RV! Zoned for horses! Home has been updated with two new air
+                  conditioners, new roof, new paint inside and out! New kitchen
+                  countertops, appliances with a view of the backyard! Updated
+                  bathrooms! New tile and carpet throughout! Four large bedrooms
+                  with an optional fifth or a den downstairs along with family
+                  room, living room and a dining room off the kitchen! New front
+                  yard desert landscaping! Perfect home for your large family!
+                  Don't hesitate or it will be gone!! Hard to find lot at this
+                  price
+                </p>
+              </TabPanel>
+            </Grid>
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5 style={{ fontWeight: "600", margin: "1rem 0" }}>
+                Property Highlights
+              </h5>
+              <Grid className="centerd-element">
+                <Grid
+                  xs={3}
+                  className="centerd-element"
+                  style={{ flexDirection: "column", alignItems: "start" }}
                 >
-                  <LocalParkingIcon
+                  <span
                     style={{
-                      color: "gray",
-                      marginRight: "0.5rem",
-                      fontSize: "2rem",
+                      fontWeight: "500",
+                      marginBottom: "0.5rem",
+                      fontSize: "1rem",
                     }}
-                  />{" "}
-                  Parking
-                </span>
-                <span
-                  style={{
-                    fontWeight: "500",
-                    marginBottom: "0.5rem",
-                    fontSize: "1rem",
-                  }}
-                >
-                  <DeckIcon
+                  >
+                    <LocalParkingIcon
+                      style={{
+                        color: "gray",
+                        marginRight: "0.5rem",
+                        fontSize: "2rem",
+                      }}
+                    />{" "}
+                    Parking
+                  </span>
+                  <span
                     style={{
-                      color: "gray",
-                      marginRight: "0.5rem",
-                      fontSize: "2rem",
+                      fontWeight: "500",
+                      marginBottom: "0.5rem",
+                      fontSize: "1rem",
                     }}
-                  />{" "}
-                  Outdoor
-                </span>
-                <span
-                  style={{
-                    fontWeight: "500",
-                    marginBottom: "0.5rem",
-                    fontSize: "1rem",
-                  }}
-                >
-                  <DeviceThermostatIcon
+                  >
+                    <DeckIcon
+                      style={{
+                        color: "gray",
+                        marginRight: "0.5rem",
+                        fontSize: "2rem",
+                      }}
+                    />{" "}
+                    Outdoor
+                  </span>
+                  <span
                     style={{
-                      color: "gray",
-                      marginRight: "0.5rem",
-                      fontSize: "2rem",
+                      fontWeight: "500",
+                      marginBottom: "0.5rem",
+                      fontSize: "1rem",
                     }}
-                  />{" "}
-                  A/C
-                </span>
-              </Grid>
-              <Grid
-                xs={3}
-                className="centerd-element"
-                style={{ flexDirection: "column", alignItems: "start" }}
-              >
-                <span
-                  style={{
-                    fontWeight: "600",
-                    fontSize: "1.1rem",
-                    marginBottom: "0.7rem",
-                  }}
+                  >
+                    <DeviceThermostatIcon
+                      style={{
+                        color: "gray",
+                        marginRight: "0.5rem",
+                        fontSize: "2rem",
+                      }}
+                    />{" "}
+                    A/C
+                  </span>
+                </Grid>
+                <Grid
+                  xs={3}
+                  className="centerd-element"
+                  style={{ flexDirection: "column", alignItems: "start" }}
                 >
-                  2 Car Garage
-                </span>
-                <span
-                  style={{
-                    fontWeight: "600",
-                    fontSize: "1.1rem",
-                    marginBottom: "0.7rem",
-                  }}
-                >
-                  No Info
-                </span>
-                <span
-                  style={{
-                    fontWeight: "600",
-                    fontSize: "1.1rem",
-                    marginBottom: "0.7rem",
-                  }}
-                >
-                  Heating & Cooling
-                </span>
-              </Grid>
-              <Grid
-                xs={3}
-                className="centerd-element"
-                style={{ flexDirection: "column", alignItems: "start" }}
-              >
-                <span
-                  style={{
-                    fontWeight: "500",
-                    marginBottom: "0.5rem",
-                    fontSize: "1rem",
-                  }}
-                >
-                  <TableViewIcon
+                  <span
                     style={{
-                      color: "gray",
-                      marginRight: "0.5rem",
-                      fontSize: "2rem",
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      marginBottom: "0.7rem",
                     }}
-                  />{" "}
-                  HOA
-                </span>
-                <span
-                  style={{
-                    fontWeight: "500",
-                    marginBottom: "0.5rem",
-                    fontSize: "1rem",
-                  }}
-                >
-                  <SquareFootIcon
+                  >
+                    2 Car Garage
+                  </span>
+                  <span
                     style={{
-                      color: "gray",
-                      marginRight: "0.5rem",
-                      fontSize: "2rem",
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      marginBottom: "0.7rem",
                     }}
-                  />{" "}
-                  Price/Sqft
-                </span>
-                <span
-                  style={{
-                    fontWeight: "500",
-                    marginBottom: "0.5rem",
-                    fontSize: "1rem",
-                  }}
-                >
-                  <CalendarMonthIcon
+                  >
+                    No Info
+                  </span>
+                  <span
                     style={{
-                      color: "gray",
-                      marginRight: "0.5rem",
-                      fontSize: "2rem",
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      marginBottom: "0.7rem",
                     }}
-                  />{" "}
-                  Listed
-                </span>
-              </Grid>
-              <Grid
-                xs={3}
-                className="centerd-element"
-                style={{ flexDirection: "column", alignItems: "start" }}
-              >
-                <span
-                  style={{
-                    fontWeight: "600",
-                    fontSize: "1.1rem",
-                    marginBottom: "0.7rem",
-                  }}
+                  >
+                    Heating & Cooling
+                  </span>
+                </Grid>
+                <Grid
+                  xs={3}
+                  className="centerd-element"
+                  style={{ flexDirection: "column", alignItems: "start" }}
                 >
-                  No HOA Fee
-                </span>
-                <span
-                  style={{
-                    fontWeight: "600",
-                    fontSize: "1.1rem",
-                    marginBottom: "0.7rem",
-                  }}
+                  <span
+                    style={{
+                      fontWeight: "500",
+                      marginBottom: "0.5rem",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    <TableViewIcon
+                      style={{
+                        color: "gray",
+                        marginRight: "0.5rem",
+                        fontSize: "2rem",
+                      }}
+                    />{" "}
+                    HOA
+                  </span>
+                  <span
+                    style={{
+                      fontWeight: "500",
+                      marginBottom: "0.5rem",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    <SquareFootIcon
+                      style={{
+                        color: "gray",
+                        marginRight: "0.5rem",
+                        fontSize: "2rem",
+                      }}
+                    />{" "}
+                    Price/Sqft
+                  </span>
+                  <span
+                    style={{
+                      fontWeight: "500",
+                      marginBottom: "0.5rem",
+                      fontSize: "1rem",
+                    }}
+                  >
+                    <CalendarMonthIcon
+                      style={{
+                        color: "gray",
+                        marginRight: "0.5rem",
+                        fontSize: "2rem",
+                      }}
+                    />{" "}
+                    Listed
+                  </span>
+                </Grid>
+                <Grid
+                  xs={3}
+                  className="centerd-element"
+                  style={{ flexDirection: "column", alignItems: "start" }}
                 >
-                  $221
-                </span>
-                <span
-                  style={{
-                    fontWeight: "600",
-                    fontSize: "1.1rem",
-                    marginBottom: "0.7rem",
-                  }}
-                >
-                  1 day ago
-                </span>
+                  <span
+                    style={{
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      marginBottom: "0.7rem",
+                    }}
+                  >
+                    No HOA Fee
+                  </span>
+                  <span
+                    style={{
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      marginBottom: "0.7rem",
+                    }}
+                  >
+                    $221
+                  </span>
+                  <span
+                    style={{
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      marginBottom: "0.7rem",
+                    }}
+                  >
+                    1 day ago
+                  </span>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginTop: "1rem" }}>
-              Home Details for 5654 Sheila Ave
-            </h5>
-            <Grid xs={12} style={{ padding: "1rem" }}>
-              <h6
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5
                 style={{
-                  display: "flex",
-                  justifyContent: "flex-start",
-                  alignItems: "center",
+                  fontWeight: "600",
+                  marginTop: "1rem",
+                  marginBottom: "0.8rem",
                 }}
               >
-                <NightShelterIcon
+                Home Details for 5654 Sheila Ave
+              </h5>
+              <Grid xs={12} style={{ padding: "1rem" }}>
+                <h6
+                  style={{
+                    display: "flex",
+                    justifyContent: "flex-start",
+                    alignItems: "center",
+                  }}
+                >
+                  {/* <NightShelterIcon
                   style={{
                     color: "rgb(25, 118, 210)",
                     fontSize: "2rem",
                     marginRight: "0.5rem",
                     marginBottom: "0.2rem",
                   }}
-                />
-                <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                  Interior Features
-                </span>
-              </h6>
-              <Grid style={{ marginTop: "-1rem" }}>
-                <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                  Interior Details
+                /> */}
+                  <span
+                    style={{
+                      fontWeight: "600",
+                      fontSize: "1.1rem",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    Interior Features
+                  </span>
                 </h6>
-                <Grid container style={{ justifyContent: "flex-start" }}>
-                  <Grid
-                    xs={4}
-                    className="centerd-element"
-                    style={{ justifyContent: "flex-start" }}
-                  >
-                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
-                      &#8226;
-                    </span>
-                    Number of Rooms:
-                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
-                      5
-                    </span>
-                  </Grid>
-                  <Grid
-                    xs={4}
-                    className="centerd-element"
-                    style={{ justifyContent: "flex-start" }}
-                  >
-                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
-                      &#8226;
-                    </span>
-                    Types of Rooms:
-                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
-                      Kitchen
-                    </span>
-                  </Grid>
-                </Grid>
-                <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                  Beds & Baths
-                </h6>
-                <Grid container style={{ justifyContent: "flex-start" }}>
-                  <Grid
-                    xs={4}
-                    className="centerd-element"
-                    style={{ justifyContent: "flex-start" }}
-                  >
-                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
-                      &#8226;
-                    </span>
-                    Number of Bedrooms:
-                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
-                      4
-                    </span>
-                  </Grid>
-                  <Grid
-                    xs={4}
-                    className="centerd-element"
-                    style={{ justifyContent: "flex-start" }}
-                  >
-                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
-                      &#8226;
-                    </span>
-                    Number of Bathrooms:
-                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
-                      3
-                    </span>
-                  </Grid>
-                  <Grid
-                    xs={4}
-                    className="centerd-element"
-                    style={{ justifyContent: "flex-start" }}
-                  >
-                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
-                      &#8226;
-                    </span>
-                    Number of Bathrooms (full):
-                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
-                      2
-                    </span>
-                  </Grid>
-                  <Grid
-                    xs={4}
-                    className="centerd-element"
-                    style={{ justifyContent: "flex-start" }}
-                  >
-                    <span style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}>
-                      &#8226;
-                    </span>
-                    Number of Bathrooms (half):
-                    <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
-                      1
-                    </span>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-            {seeMoreContent ? (
-              <>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <YardIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Exterior Features
-                    </span>
+                <Grid style={{ marginTop: "-1rem", marginLeft: "1rem" }}>
+                  <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                    Interior Details
                   </h6>
-                  <Grid style={{ marginTop: "-1rem" }}>
-                    <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Exterior Home Features
-                    </h6>
-                    <Grid container style={{ justifyContent: "flex-start" }}>
-                      <Grid
-                        xs={4}
-                        className="centerd-element"
-                        style={{ justifyContent: "flex-start" }}
-                      >
-                        <span
-                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
-                        >
-                          &#8226;
-                        </span>
-                        Number of Rooms:
-                        <span
-                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
-                        >
-                          5
-                        </span>
-                      </Grid>
-                      <Grid
-                        xs={4}
-                        className="centerd-element"
-                        style={{ justifyContent: "flex-start" }}
-                      >
-                        <span
-                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
-                        >
-                          &#8226;
-                        </span>
-                        Types of Rooms:
-                        <span
-                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
-                        >
-                          Kitchen
-                        </span>
-                      </Grid>
-                    </Grid>
-                    <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Parking & Garage
-                    </h6>
-                    <Grid container style={{ justifyContent: "flex-start" }}>
-                      <Grid
-                        xs={4}
-                        className="centerd-element"
-                        style={{ justifyContent: "flex-start" }}
-                      >
-                        <span
-                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
-                        >
-                          &#8226;
-                        </span>
-                        Number of Bedrooms:
-                        <span
-                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
-                        >
-                          4
-                        </span>
-                      </Grid>
-                      <Grid
-                        xs={4}
-                        className="centerd-element"
-                        style={{ justifyContent: "flex-start" }}
-                      >
-                        <span
-                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
-                        >
-                          &#8226;
-                        </span>
-                        Number of Bathrooms:
-                        <span
-                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
-                        >
-                          3
-                        </span>
-                      </Grid>
-                      <Grid
-                        xs={4}
-                        className="centerd-element"
-                        style={{ justifyContent: "flex-start" }}
-                      >
-                        <span
-                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
-                        >
-                          &#8226;
-                        </span>
-                        Number of Bathrooms (full):
-                        <span
-                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
-                        >
-                          2
-                        </span>
-                      </Grid>
-                      <Grid
-                        xs={4}
-                        className="centerd-element"
-                        style={{ justifyContent: "flex-start" }}
-                      >
-                        <span
-                          style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
-                        >
-                          &#8226;
-                        </span>
-                        Number of Bathrooms (half):
-                        <span
-                          style={{ fontWeight: "600", marginLeft: "0.5rem" }}
-                        >
-                          1
-                        </span>
-                      </Grid>
-                    </Grid>
-                  </Grid>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <CalendarMonthIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Days on Market
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <HomeWorkIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Property Information
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <SellIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Price & Status
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <PendingActionsIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Active Status
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <PlayCircleFilledIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Media
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <LocationOnIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Location
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <AssignmentIndIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Agent Information
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <ApartmentIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Building
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <HolidayVillageIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Community
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Diversity3Icon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      HOA
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <GrassIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Lot Information
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <RequestQuoteIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Offer
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <MarkEmailReadIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Compensation
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <PendingIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Miscellaneous
-                    </span>
-                  </h6>
-                </Grid>
-                <Grid xs={12} style={{ padding: "1rem" }}>
-                  <h6
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-start",
-                      alignItems: "center",
-                    }}
-                  >
-                    <InfoIcon
-                      style={{
-                        color: "rgb(25, 118, 210)",
-                        fontSize: "1.65rem",
-                        marginRight: "0.5rem",
-                        marginBottom: "0.2rem",
-                      }}
-                    />
-                    <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
-                      Additional Information
-                    </span>
-                  </h6>
-                </Grid>
-              </>
-            ) : null}
-            <button
-              onClick={() => {
-                if (seeMoreContent) {
-                  setSeeMoreContent(false);
-                } else {
-                  setSeeMoreContent(true);
-                }
-              }}
-              className="show-more-content-toggler-button"
-            >
-              See More{" "}
-              {seeMoreContent ? (
-                <KeyboardArrowUpIcon style={{ color: "red" }} />
-              ) : (
-                <KeyboardArrowDownIcon style={{ color: "rgb(25, 118, 210)" }} />
-              )}
-            </button>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginTop: "1rem" }}>
-              Price History for 5654 Sheila Ave
-            </h5>
-            <table
-              className="Table-latbb5-3 hMYIhS table-of-priceHistory"
-              style={{ width: "100%" }}
-            >
-              <thead>
-                <tr className="Table__TableRow-latbb5-0 ezcNaI">
-                  <th
-                    width="0.25"
-                    className="Table__TableHeadCell-latbb5-1 eYVelx"
-                  >
-                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                      Date
-                    </span>
-                  </th>
-                  <th
-                    width="0.25"
-                    className="Table__TableHeadCell-latbb5-1 eYVelx"
-                  >
-                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                      Price
-                    </span>
-                  </th>
-                  <th
-                    width="0.25"
-                    className="Table__TableHeadCell-latbb5-1 eYVelx"
-                  >
-                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                      Event
-                    </span>
-                  </th>
-                  <th
-                    width="0.25"
-                    className="Table__TableHeadCell-latbb5-1 eYVelx"
-                  >
-                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                      Source
-                    </span>
-                  </th>
-                </tr>
-              </thead>
-              <tr className="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    03/04/2023
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $545,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Listed For Sale
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    className="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2478649
-                  </span>
-                </td>
-              </tr>
-              <tr className="Table__TableRow-latbb5-0 cdWvbO">
-                <td
-                  width="auto"
-                  colspan="4"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl className="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr className="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    03/04/2023
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                ></td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    ListingRemoved
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    className="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2445251
-                  </span>
-                </td>
-              </tr>
-              <tr
-                className="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr className="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    10/08/2022
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $550,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Listed For Sale
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    className="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2445251
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr className="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    08/01/2022
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $365,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Sold
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <div className="MediaBlock__MediaContainer-skmvlj-0 krAWpL">
-                    <div className="MediaBlock__MediaContent-skmvlj-1 bgzWtF">
+                  <Grid container style={{ justifyContent: "flex-start" }}>
+                    <Grid
+                      xs={4}
+                      className="centerd-element"
+                      style={{ justifyContent: "flex-start" }}
+                    >
                       <span
-                        data-testid="price-history-attribution-desktop-source"
-                        className="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                        style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
                       >
-                        GLVAR #2389089
+                        &#8226;
                       </span>
-                    </div>
-                    <button
-                      type="button"
-                      data-testid="expand-button"
-                      aria-label="Show Details"
-                      aria-expanded="false"
-                      theme="light"
-                      className="FloatingActionButton-sc-6olq4f-0 jLkiXh"
+                      Number of Rooms:
+                      <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                        5
+                      </span>
+                    </Grid>
+                    <Grid
+                      xs={4}
+                      className="centerd-element"
+                      style={{ justifyContent: "flex-start" }}
                     >
-                      <div class="getUiSvgContainer__SvgContainer-sc-1cdn1ln-0 GMFpC">
-                        <svg
-                          role="img"
-                          aria-label=""
-                          aria-hidden="true"
-                          class="svg"
-                          viewBox="0 0 32 32"
-                          xmlns="http://www.w3.org/2000/svg"
+                      <span
+                        style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                      >
+                        &#8226;
+                      </span>
+                      Types of Rooms:
+                      <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                        Kitchen
+                      </span>
+                    </Grid>
+                  </Grid>
+                  <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                    Beds & Baths
+                  </h6>
+                  <Grid container style={{ justifyContent: "flex-start" }}>
+                    <Grid
+                      xs={4}
+                      className="centerd-element"
+                      style={{ justifyContent: "flex-start" }}
+                    >
+                      <span
+                        style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                      >
+                        &#8226;
+                      </span>
+                      Number of Bedrooms:
+                      <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                        4
+                      </span>
+                    </Grid>
+                    <Grid
+                      xs={4}
+                      className="centerd-element"
+                      style={{ justifyContent: "flex-start" }}
+                    >
+                      <span
+                        style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                      >
+                        &#8226;
+                      </span>
+                      Number of Bathrooms:
+                      <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                        3
+                      </span>
+                    </Grid>
+                    <Grid
+                      xs={4}
+                      className="centerd-element"
+                      style={{ justifyContent: "flex-start" }}
+                    >
+                      <span
+                        style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                      >
+                        &#8226;
+                      </span>
+                      Number of Bathrooms (full):
+                      <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                        2
+                      </span>
+                    </Grid>
+                    <Grid
+                      xs={4}
+                      className="centerd-element"
+                      style={{ justifyContent: "flex-start" }}
+                    >
+                      <span
+                        style={{ fontSize: "1.8rem", marginRight: "0.2rem" }}
+                      >
+                        &#8226;
+                      </span>
+                      Number of Bathrooms (half):
+                      <span style={{ fontWeight: "600", marginLeft: "0.5rem" }}>
+                        1
+                      </span>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+              {seeMoreContent ? (
+                <>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <YardIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span
+                        style={{
+                          fontWeight: "600",
+                          fontSize: "1.1rem",
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        Exterior Features
+                      </span>
+                    </h6>
+                    <Grid style={{ marginTop: "-1rem", marginLeft: "1rem" }}>
+                      <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Exterior Home Features
+                      </h6>
+                      <Grid container style={{ justifyContent: "flex-start" }}>
+                        <Grid
+                          xs={4}
+                          className="centerd-element"
+                          style={{ justifyContent: "flex-start" }}
                         >
-                          <path
-                            d="M15.961 18.183l7.056-7.147 1.893 1.868-8.951 9.068-8.927-9.069 1.896-1.866z"
-                            fill="#869099"
-                          ></path>
-                        </svg>
+                          <span
+                            style={{
+                              fontSize: "1.8rem",
+                              marginRight: "0.2rem",
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          Number of Rooms:
+                          <span
+                            style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                          >
+                            5
+                          </span>
+                        </Grid>
+                        <Grid
+                          xs={4}
+                          className="centerd-element"
+                          style={{ justifyContent: "flex-start" }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.8rem",
+                              marginRight: "0.2rem",
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          Types of Rooms:
+                          <span
+                            style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                          >
+                            Kitchen
+                          </span>
+                        </Grid>
+                      </Grid>
+                      <h6 style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Parking & Garage
+                      </h6>
+                      <Grid container style={{ justifyContent: "flex-start" }}>
+                        <Grid
+                          xs={4}
+                          className="centerd-element"
+                          style={{ justifyContent: "flex-start" }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.8rem",
+                              marginRight: "0.2rem",
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          Number of Bedrooms:
+                          <span
+                            style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                          >
+                            4
+                          </span>
+                        </Grid>
+                        <Grid
+                          xs={4}
+                          className="centerd-element"
+                          style={{ justifyContent: "flex-start" }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.8rem",
+                              marginRight: "0.2rem",
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          Number of Bathrooms:
+                          <span
+                            style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                          >
+                            3
+                          </span>
+                        </Grid>
+                        <Grid
+                          xs={4}
+                          className="centerd-element"
+                          style={{ justifyContent: "flex-start" }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.8rem",
+                              marginRight: "0.2rem",
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          Number of Bathrooms (full):
+                          <span
+                            style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                          >
+                            2
+                          </span>
+                        </Grid>
+                        <Grid
+                          xs={4}
+                          className="centerd-element"
+                          style={{ justifyContent: "flex-start" }}
+                        >
+                          <span
+                            style={{
+                              fontSize: "1.8rem",
+                              marginRight: "0.2rem",
+                            }}
+                          >
+                            &#8226;
+                          </span>
+                          Number of Bathrooms (half):
+                          <span
+                            style={{ fontWeight: "600", marginLeft: "0.5rem" }}
+                          >
+                            1
+                          </span>
+                        </Grid>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <CalendarMonthIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Days on Market
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <HomeWorkIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Property Information
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <SellIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Price & Status
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <PendingActionsIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Active Status
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <PlayCircleFilledIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Media
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <LocationOnIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Location
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <AssignmentIndIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Agent Information
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <ApartmentIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Building
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <HolidayVillageIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Community
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <Diversity3Icon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        HOA
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <GrassIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Lot Information
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <RequestQuoteIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Offer
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <MarkEmailReadIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Compensation
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                      }}
+                    >
+                      {/* <PendingIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Miscellaneous
+                      </span>
+                    </h6>
+                  </Grid>
+                  <Grid xs={12} style={{ padding: "1rem" }}>
+                    <h6
+                      style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        alignItems: "center",
+                        marginBottom: "0.8rem",
+                      }}
+                    >
+                      {/* <InfoIcon
+                      style={{
+                        color: "rgb(25, 118, 210)",
+                        fontSize: "1.65rem",
+                        marginRight: "0.5rem",
+                        marginBottom: "0.2rem",
+                      }}
+                    /> */}
+                      <span style={{ fontWeight: "600", fontSize: "1.1rem" }}>
+                        Additional Information
+                      </span>
+                    </h6>
+                  </Grid>
+                </>
+              ) : null}
+              <button
+                onClick={() => {
+                  if (seeMoreContent) {
+                    setSeeMoreContent(false);
+                  } else {
+                    setSeeMoreContent(true);
+                  }
+                }}
+                className="show-more-content-toggler-button"
+              >
+                See More{" "}
+                {seeMoreContent ? (
+                  <KeyboardArrowUpIcon style={{ color: "red" }} />
+                ) : (
+                  <KeyboardArrowDownIcon
+                    style={{ color: "rgb(25, 118, 210)" }}
+                  />
+                )}
+              </button>
+            </Grid>
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5 style={{ fontWeight: "600", marginTop: "1rem" }}>
+                Price History for 5654 Sheila Ave
+              </h5>
+              <table
+                className="Table-latbb5-3 hMYIhS table-of-priceHistory"
+                style={{ width: "100%" }}
+              >
+                <thead>
+                  <tr className="Table__TableRow-latbb5-0 ezcNaI">
+                    <th
+                      width="0.25"
+                      className="Table__TableHeadCell-latbb5-1 eYVelx"
+                    >
+                      <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                        Date
+                      </span>
+                    </th>
+                    <th
+                      width="0.25"
+                      className="Table__TableHeadCell-latbb5-1 eYVelx"
+                    >
+                      <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                        Price
+                      </span>
+                    </th>
+                    <th
+                      width="0.25"
+                      className="Table__TableHeadCell-latbb5-1 eYVelx"
+                    >
+                      <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                        Event
+                      </span>
+                    </th>
+                    <th
+                      width="0.25"
+                      className="Table__TableHeadCell-latbb5-1 eYVelx"
+                    >
+                      <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                        Source
+                      </span>
+                    </th>
+                  </tr>
+                </thead>
+                <tr className="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      03/04/2023
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $545,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Listed For Sale
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      className="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2478649
+                    </span>
+                  </td>
+                </tr>
+                <tr className="Table__TableRow-latbb5-0 cdWvbO">
+                  <td
+                    width="auto"
+                    colspan="4"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl className="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr className="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      03/04/2023
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  ></td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      ListingRemoved
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      className="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2445251
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  className="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr className="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      10/08/2022
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $550,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Listed For Sale
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      className="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2445251
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr className="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      08/01/2022
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $365,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span className="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Sold
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <div className="MediaBlock__MediaContainer-skmvlj-0 krAWpL">
+                      <div className="MediaBlock__MediaContent-skmvlj-1 bgzWtF">
+                        <span
+                          data-testid="price-history-attribution-desktop-source"
+                          className="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                        >
+                          GLVAR #2389089
+                        </span>
                       </div>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-              <tr
-                className="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  className="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb">
-                    <div
-                      width="0.5,0.5,0.5,0.5,0.25"
-                      className="Grid__CellBox-sc-144isrp-0 iwrZDM"
-                    >
-                      <dt className="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gzoTrA gUnlde">
-                        Recording Date
-                      </dt>
-                      <dd
-                        className="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 csrRqu gUnlde"
-                        style={{ margin: "0px" }}
+                      <button
+                        type="button"
+                        data-testid="expand-button"
+                        aria-label="Show Details"
+                        aria-expanded="false"
+                        theme="light"
+                        className="FloatingActionButton-sc-6olq4f-0 jLkiXh"
                       >
-                        08/01/2022
-                      </dd>
+                        <div class="getUiSvgContainer__SvgContainer-sc-1cdn1ln-0 GMFpC">
+                          <svg
+                            role="img"
+                            aria-label=""
+                            aria-hidden="true"
+                            class="svg"
+                            viewBox="0 0 32 32"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M15.961 18.183l7.056-7.147 1.893 1.868-8.951 9.068-8.927-9.069 1.896-1.866z"
+                              fill="#869099"
+                            ></path>
+                          </svg>
+                        </div>
+                      </button>
                     </div>
-                    <div
-                      width="0.5,0.5,0.5,0.5,0.25"
-                      class="Grid__CellBox-sc-144isrp-0 iwrZDM"
-                    >
-                      <dt class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gzoTrA gUnlde">
-                        County Transfer Tax
-                      </dt>
-                      <dd
-                        class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 csrRqu gUnlde"
-                        style={{ margin: "0px" }}
+                  </td>
+                </tr>
+                <tr
+                  className="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    className="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb">
+                      <div
+                        width="0.5,0.5,0.5,0.5,0.25"
+                        className="Grid__CellBox-sc-144isrp-0 iwrZDM"
                       >
-                        N/A
-                      </dd>
-                    </div>
-                    <div
-                      width="0.5,0.5,0.5,0.5,0.25"
-                      class="Grid__CellBox-sc-144isrp-0 iwrZDM"
-                    >
-                      <dt class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gzoTrA gUnlde">
-                        Total Transfer Tax
-                      </dt>
-                      <dd
-                        class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 csrRqu gUnlde"
-                        style={{ margin: "0px" }}
+                        <dt className="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gzoTrA gUnlde">
+                          Recording Date
+                        </dt>
+                        <dd
+                          className="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 csrRqu gUnlde"
+                          style={{ margin: "0px" }}
+                        >
+                          08/01/2022
+                        </dd>
+                      </div>
+                      <div
+                        width="0.5,0.5,0.5,0.5,0.25"
+                        class="Grid__CellBox-sc-144isrp-0 iwrZDM"
                       >
-                        N/A
-                      </dd>
-                    </div>
-                  </dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    04/20/2022
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $365,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Pending
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2389089
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    04/20/2022
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $365,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Listed For Sale
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2389089
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    10/29/2021
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                ></td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    ListingRemoved
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2336041
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    10/19/2021
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $350,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Pending
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2336041
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    10/13/2021
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $350,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    PendingToActive
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2336041
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    10/08/2021
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $350,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Pending
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2336041
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    10/06/2021
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $350,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    PendingToActive
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2336041
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    10/05/2021
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $350,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Pending
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2336041
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-              <tr class="Table__TableRow-latbb5-0 ezcNaI">
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    09/27/2021
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    $350,000
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
-                    Listed For Sale
-                  </span>
-                </td>
-                <td
-                  width="auto"
-                  data-testid="price-history-attribution-desktop"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <span
-                    data-testid="price-history-attribution-desktop-source"
-                    class="Text__TextBase-sc-1cait9d-0 iTXUhg"
-                  >
-                    GLVAR #2336041
-                  </span>
-                </td>
-              </tr>
-              <tr
-                class="Table__TableRow-latbb5-0 cdWvbO"
-                style={{ display: "none" }}
-              >
-                <td
-                  width="auto"
-                  colspan="4"
-                  class="Table__TableCellWrapper-latbb5-2 hPBAQA"
-                >
-                  <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
-                </td>
-              </tr>
-            </table>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5
-              style={{
-                fontWeight: "600",
-                marginTop: "1rem",
-                marginBottom: "-3rem",
-              }}
-            >
-              Similar Homes You May Like
-            </h5>
-            <ListingsCarousel ShowTitle={false} />
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5
-              style={{
-                fontWeight: "600",
-                marginTop: "1rem",
-                marginBottom: "-3rem",
-              }}
-            >
-              New Listings near 5654 Sheila Ave
-            </h5>
-            <ListingsCarousel ShowTitle={false} />
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
-              Property Taxes and Assessment
-            </h5>
-            <Grid
-              className="centerd-element"
-              style={{ justifyContent: "space-between" }}
-            >
-              <Grid
-                className="centerd-element"
-                style={{
-                  justifyContent: "center",
-                  alignItems: "start",
-                  flexDirection: "column",
-                  fontWeight: "600",
-                }}
-              >
-                <h6 style={{ fontSize: "1.1rem" }}>Year</h6>
-                <h6 style={{ fontSize: "1.1rem" }}>Tax</h6>
-                <h6 style={{ fontSize: "1.1rem" }}>Assessment</h6>
-              </Grid>
-              <Grid
-                className="centerd-element"
-                style={{
-                  justifyContent: "center",
-                  alignItems: "start",
-                  flexDirection: "column",
-                }}
-                xs={5}
-              >
-                <span style={{ padding: "1rem 0" }}>2022</span>
-                <span style={{ padding: "1rem 0" }}>$1,027</span>
-                <span style={{ padding: "1rem 0" }}>$198,826</span>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
-              Price Trends
-            </h5>
-            <br />
-            <span>For Homes in 89108</span>
-            <Grid xs={6} container>
-              <Grid xs={3}>
-                <FlagIcon
-                  style={{ color: "gray", height: "7rem", width: "5rem" }}
-                />
-              </Grid>
-              <Grid xs={9}>
-                <h6>$323,692</h6>
-                <h6>Typical home value</h6>
-                <h6>
-                  This home: $545,000{" "}
-                  <span style={{ fontWeight: "600", marginLeft: "1rem" }}>
-                    41% above
-                  </span>
-                </h6>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600" }}>
-              Comparable Sales for 5654 Sheila Ave
-            </h5>
-            <Grid xs={12} style={{ marginTop: "-0.5rem" }}>
-              <NewMap />
-              <table className="comparable-sales-table">
-                <tr className="comparable-sales-table-tr">
-                  <th>Address</th>
-                  <th>Distance</th>
-                  <th>Property Type</th>
-                  <th>Sold Price</th>
-                  <th>Sold Date</th>
-                  <th>Bed</th>
-                  <th>Bath</th>
-                  <th>Sqft</th>
-                </tr>
-                <tr className="comparable-sales-table-tr">
-                  <td
-                    style={{
-                      color: "#1976D2",
-                      borderBottom: "1px solid #1976D2",
-                    }}
-                  >
-                    5621 Avenida Silla, Las Vegas, NV
+                        <dt class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gzoTrA gUnlde">
+                          County Transfer Tax
+                        </dt>
+                        <dd
+                          class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 csrRqu gUnlde"
+                          style={{ margin: "0px" }}
+                        >
+                          N/A
+                        </dd>
+                      </div>
+                      <div
+                        width="0.5,0.5,0.5,0.5,0.25"
+                        class="Grid__CellBox-sc-144isrp-0 iwrZDM"
+                      >
+                        <dt class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 gzoTrA gUnlde">
+                          Total Transfer Tax
+                        </dt>
+                        <dd
+                          class="Text__TextBase-sc-1cait9d-0-div Text__TextContainerBase-sc-1cait9d-1 csrRqu gUnlde"
+                          style={{ margin: "0px" }}
+                        >
+                          N/A
+                        </dd>
+                      </div>
+                    </dl>
                   </td>
-                  <td>0.06</td>
-                  <td>Single-Family Home</td>
-                  <td>$580,000</td>
-                  <td>03/23/22</td>
-                  <td>4</td>
-                  <td>3</td>
-                  <td>2,403</td>
                 </tr>
-                <tr className="comparable-sales-table-tr">
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
                   <td
-                    style={{
-                      color: "#1976D2",
-                      borderBottom: "1px solid #1976D2",
-                    }}
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
                   >
-                    5621 Avenida Silla, Las Vegas, NV
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      04/20/2022
+                    </span>
                   </td>
-                  <td>0.06</td>
-                  <td>Single-Family Home</td>
-                  <td>$580,000</td>
-                  <td>03/23/22</td>
-                  <td>4</td>
-                  <td>3</td>
-                  <td>2,403</td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $365,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Pending
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2389089
+                    </span>
+                  </td>
                 </tr>
-                <tr className="comparable-sales-table-tr">
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
                   <td
-                    style={{
-                      color: "#1976D2",
-                      borderBottom: "1px solid #1976D2",
-                    }}
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
                   >
-                    5621 Avenida Silla, Las Vegas, NV
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
                   </td>
-                  <td>0.06</td>
-                  <td>Single-Family Home</td>
-                  <td>$580,000</td>
-                  <td>03/23/22</td>
-                  <td>4</td>
-                  <td>3</td>
-                  <td>2,403</td>
                 </tr>
-                <tr className="comparable-sales-table-tr">
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
                   <td
-                    style={{
-                      color: "#1976D2",
-                      borderBottom: "1px solid #1976D2",
-                    }}
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
                   >
-                    5621 Avenida Silla, Las Vegas, NV
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      04/20/2022
+                    </span>
                   </td>
-                  <td>0.06</td>
-                  <td>Single-Family Home</td>
-                  <td>$580,000</td>
-                  <td>03/23/22</td>
-                  <td>4</td>
-                  <td>3</td>
-                  <td>2,403</td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $365,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Listed For Sale
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2389089
+                    </span>
+                  </td>
                 </tr>
-                <tr className="comparable-sales-table-tr">
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
                   <td
-                    style={{
-                      color: "#1976D2",
-                      borderBottom: "1px solid #1976D2",
-                    }}
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
                   >
-                    5621 Avenida Silla, Las Vegas, NV
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
                   </td>
-                  <td>0.06</td>
-                  <td>Single-Family Home</td>
-                  <td>$580,000</td>
-                  <td>03/23/22</td>
-                  <td>4</td>
-                  <td>3</td>
-                  <td>2,403</td>
                 </tr>
-                <tr className="comparable-sales-table-tr">
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
                   <td
-                    style={{
-                      color: "#1976D2",
-                      borderBottom: "1px solid #1976D2",
-                    }}
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
                   >
-                    5621 Avenida Silla, Las Vegas, NV
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      10/29/2021
+                    </span>
                   </td>
-                  <td>0.06</td>
-                  <td>Single-Family Home</td>
-                  <td>$580,000</td>
-                  <td>03/23/22</td>
-                  <td>4</td>
-                  <td>3</td>
-                  <td>2,403</td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  ></td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      ListingRemoved
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2336041
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      10/19/2021
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $350,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Pending
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2336041
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      10/13/2021
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $350,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      PendingToActive
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2336041
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      10/08/2021
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $350,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Pending
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2336041
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      10/06/2021
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $350,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      PendingToActive
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2336041
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      10/05/2021
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $350,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Pending
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2336041
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
+                </tr>
+                <tr class="Table__TableRow-latbb5-0 ezcNaI">
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      09/27/2021
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      $350,000
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span class="Text__TextBase-sc-1cait9d-0 iTXUhg">
+                      Listed For Sale
+                    </span>
+                  </td>
+                  <td
+                    width="auto"
+                    data-testid="price-history-attribution-desktop"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <span
+                      data-testid="price-history-attribution-desktop-source"
+                      class="Text__TextBase-sc-1cait9d-0 iTXUhg"
+                    >
+                      GLVAR #2336041
+                    </span>
+                  </td>
+                </tr>
+                <tr
+                  class="Table__TableRow-latbb5-0 cdWvbO"
+                  style={{ display: "none" }}
+                >
+                  <td
+                    width="auto"
+                    colspan="4"
+                    class="Table__TableCellWrapper-latbb5-2 hPBAQA"
+                  >
+                    <dl class="Grid__GridContainer-sc-144isrp-1 cSOwYb"></dl>
+                  </td>
                 </tr>
               </table>
             </Grid>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
-              Neighborhood Overview
-            </h5>
-            <Grid xs={8} container>
-              <Grid xs={4}>
-                <img
-                  src="https://img.freepik.com/premium-vector/abstract-city-map-perspective-with-pin-pointers_163786-708.jpg"
-                  alt="adasd"
-                  width={170}
-                  height={180}
-                />
-              </Grid>
-              <Grid xs={8}>
-                <h6
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5
+                style={{
+                  fontWeight: "600",
+                  marginTop: "1rem",
+                  marginBottom: "-3rem",
+                }}
+              >
+                Similar Listings
+              </h5>
+              <ListingsCarousel ShowTitle={false} />
+            </Grid>
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5
+                style={{
+                  fontWeight: "600",
+                  marginTop: "1rem",
+                  marginBottom: "-3rem",
+                }}
+              >
+                New Listings near 5654 Sheila Ave
+              </h5>
+              <ListingsCarousel ShowTitle={false} />
+            </Grid>
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+                Property Taxes and Assessment
+              </h5>
+              <Grid
+                className="centerd-element"
+                style={{ justifyContent: "space-between" }}
+              >
+                <Grid
+                  className="centerd-element"
                   style={{
+                    justifyContent: "center",
+                    alignItems: "start",
+                    flexDirection: "column",
                     fontWeight: "600",
-                    cursor: "pointer",
-                    fontSize: "1.5rem",
                   }}
                 >
-                  Michael Way
-                </h6>
-                <h6>
-                  <FlagIcon
-                    style={{
-                      color: "gray",
-                      marginRight: "0.5rem",
-                      fontSize: "1.8rem",
-                    }}
-                  />
-                  132 Homes For You
-                </h6>
-                <h6>
-                  <SellIcon style={{ color: "gray", marginRight: "0.5rem" }} />
-                  Buy: $110k - $1.85m
-                </h6>
-                <h6
+                  <h6 style={{ fontSize: "1.1rem" }}>Year</h6>
+                  <h6 style={{ fontSize: "1.1rem" }}>Tax</h6>
+                  <h6 style={{ fontSize: "1.1rem" }}>Assessment</h6>
+                </Grid>
+                <Grid
+                  className="centerd-element"
                   style={{
-                    fontWeight: "600",
-                    color: "rgb(25, 118, 210)",
-                    cursor: "pointer",
+                    justifyContent: "center",
+                    alignItems: "start",
+                    flexDirection: "column",
                   }}
+                  xs={5}
                 >
-                  See Local Highlights
-                </h6>
+                  <span style={{ padding: "1rem 0" }}>2022</span>
+                  <span style={{ padding: "1rem 0" }}>$1,027</span>
+                  <span style={{ padding: "1rem 0" }}>$198,826</span>
+                </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+                Price Trends
+              </h5>
+              <br />
+              <span>For Homes in 89108</span>
+              <Grid xs={6} container>
+                <Grid xs={3}>
+                  <FlagIcon
+                    style={{ color: "gray", height: "7rem", width: "5rem" }}
+                  />
+                </Grid>
+                <Grid xs={9}>
+                  <h6>$323,692</h6>
+                  <h6>Typical home value</h6>
+                  <h6>
+                    This home: $545,000{" "}
+                    <span style={{ fontWeight: "600", marginLeft: "1rem" }}>
+                      41% above
+                    </span>
+                  </h6>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5 style={{ fontWeight: "600" }}>
+                Comparable Sales for 5654 Sheila Ave
+              </h5>
+              <Grid xs={12} style={{ margin: "1rem 0" }}>
+                <NewMap mapHeight="40vh" mapWidth="52vw" />
+                <table className="comparable-sales-table">
+                  <tr className="comparable-sales-table-tr">
+                    <th>Address</th>
+                    <th>Distance</th>
+                    <th>Property Type</th>
+                    <th>Sold Price</th>
+                    <th>Sold Date</th>
+                    <th>Bed</th>
+                    <th>Bath</th>
+                    <th>Sqft</th>
+                  </tr>
+                  <tr className="comparable-sales-table-tr">
+                    <td
+                      style={{
+                        color: "#1976D2",
+                        borderBottom: "1px solid #1976D2",
+                      }}
+                    >
+                      5621 Avenida Silla, Las Vegas, NV
+                    </td>
+                    <td>0.06</td>
+                    <td>Single-Family Home</td>
+                    <td>$580,000</td>
+                    <td>03/23/22</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2,403</td>
+                  </tr>
+                  <tr className="comparable-sales-table-tr">
+                    <td
+                      style={{
+                        color: "#1976D2",
+                        borderBottom: "1px solid #1976D2",
+                      }}
+                    >
+                      5621 Avenida Silla, Las Vegas, NV
+                    </td>
+                    <td>0.06</td>
+                    <td>Single-Family Home</td>
+                    <td>$580,000</td>
+                    <td>03/23/22</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2,403</td>
+                  </tr>
+                  <tr className="comparable-sales-table-tr">
+                    <td
+                      style={{
+                        color: "#1976D2",
+                        borderBottom: "1px solid #1976D2",
+                      }}
+                    >
+                      5621 Avenida Silla, Las Vegas, NV
+                    </td>
+                    <td>0.06</td>
+                    <td>Single-Family Home</td>
+                    <td>$580,000</td>
+                    <td>03/23/22</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2,403</td>
+                  </tr>
+                  <tr className="comparable-sales-table-tr">
+                    <td
+                      style={{
+                        color: "#1976D2",
+                        borderBottom: "1px solid #1976D2",
+                      }}
+                    >
+                      5621 Avenida Silla, Las Vegas, NV
+                    </td>
+                    <td>0.06</td>
+                    <td>Single-Family Home</td>
+                    <td>$580,000</td>
+                    <td>03/23/22</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2,403</td>
+                  </tr>
+                  <tr className="comparable-sales-table-tr">
+                    <td
+                      style={{
+                        color: "#1976D2",
+                        borderBottom: "1px solid #1976D2",
+                      }}
+                    >
+                      5621 Avenida Silla, Las Vegas, NV
+                    </td>
+                    <td>0.06</td>
+                    <td>Single-Family Home</td>
+                    <td>$580,000</td>
+                    <td>03/23/22</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2,403</td>
+                  </tr>
+                  <tr className="comparable-sales-table-tr">
+                    <td
+                      style={{
+                        color: "#1976D2",
+                        borderBottom: "1px solid #1976D2",
+                      }}
+                    >
+                      5621 Avenida Silla, Las Vegas, NV
+                    </td>
+                    <td>0.06</td>
+                    <td>Single-Family Home</td>
+                    <td>$580,000</td>
+                    <td>03/23/22</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>2,403</td>
+                  </tr>
+                </table>
+              </Grid>
+            </Grid>
+            <Grid xs={8} style={{ margin: "1rem 0" }}>
+              <h5 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
+                Neighborhood Overview
+              </h5>
+              <Grid xs={8} container>
+                <Grid xs={4}>
+                  <img
+                    src="https://img.freepik.com/premium-vector/abstract-city-map-perspective-with-pin-pointers_163786-708.jpg"
+                    alt="adasd"
+                    width={170}
+                    height={180}
+                  />
+                </Grid>
+                <Grid xs={8}>
+                  <h6
+                    style={{
+                      fontWeight: "600",
+                      cursor: "pointer",
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    Michael Way
+                  </h6>
+                  <h6>
+                    <FlagIcon
+                      style={{
+                        color: "gray",
+                        marginRight: "0.5rem",
+                        fontSize: "1.8rem",
+                      }}
+                    />
+                    132 Homes For You
+                  </h6>
+                  <h6>
+                    <SellIcon
+                      style={{ color: "gray", marginRight: "0.5rem" }}
+                    />
+                    Buy: $110k - $1.85m
+                  </h6>
+                  <h6
+                    style={{
+                      fontWeight: "600",
+                      color: "rgb(25, 118, 210)",
+                      cursor: "pointer",
+                    }}
+                  >
+                    See Local Highlights
+                  </h6>
+                </Grid>
+              </Grid>
+            </Grid>
+            {/* <Grid xs={8} style={{ marginTop: "1rem" }}>
             <h5 style={{ fontWeight: "600" }}>
               What Locals Say about Michael Way
             </h5>
@@ -2667,12 +2753,13 @@ const ListingPage = () => {
                 </button>
               </Grid>
             </Grid>
-          </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
-              Affordability
-            </h5>
-            <Grid>
+          </Grid> */}
+            <Grid xs={8} style={{ marginTop: "2rem" }}>
+              <h5 style={{ fontWeight: "600", marginBottom: "1rem" }}>
+                Mortgage Calculator
+              </h5>
+              <MortgageCalculator />
+              {/* <Grid>
               <h6>
                 Calculate your monthly mortgage payments <br /> Your est.
                 payment: $3,621/month*
@@ -2737,17 +2824,22 @@ const ListingPage = () => {
                   </div>
                 </div>
               </div>
+            </Grid> */}
+            </Grid>
+            <Grid xs={8} style={{ marginTop: "1rem" }}>
+              <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+                Contact an Agent
+              </h5>
+              <ContactForm
+                showLeftPhoto={false}
+                ColSize={12}
+                showTitle={false}
+              />
             </Grid>
           </Grid>
-          <Grid xs={8} style={{ marginTop: "1rem" }}>
-            <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
-              Contact an Agent
-            </h5>
-            <ContactForm showLeftPhoto={false} ColSize={12} showTitle={false} />
-          </Grid>
-        </Grid>
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 };
 
