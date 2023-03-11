@@ -348,8 +348,9 @@ const ListingItemPopUp = () => {
                 className="centerd-element"
                 style={{
                   flexDirection: "column",
-                  padding: "0 1rem",
+                  padding: "1rem",
                   overflow: "auto",
+                  height: "70vh",
                 }}
               >
                 <h5>Schedule A Tour</h5>
@@ -366,8 +367,20 @@ const ListingItemPopUp = () => {
                     <ToggleButton value="android">Video Chat</ToggleButton>
                   </ToggleButtonGroup>
                 </div>
-                <FormControl required sx={{ m: 1, minWidth: 250 }}>
-                  <InputLabel id="demo-simple-select-required-label">
+                <FormControl
+                  required
+                  sx={{ m: 2, minWidth: 250 }}
+                  style={{
+                    overflow: "auto",
+                    padding: "0.5rem",
+                  }}
+                >
+                  <InputLabel
+                    id="demo-simple-select-required-label"
+                    style={{
+                      padding: "0.5rem",
+                    }}
+                  >
                     Time
                   </InputLabel>
                   <Select
@@ -386,6 +399,13 @@ const ListingItemPopUp = () => {
                   <TextField
                     required
                     id="outlined-required"
+                    label="Full Name"
+                    defaultValue=""
+                  />
+                  <br />
+                  <TextField
+                    required
+                    id="outlined-required"
                     label="Phone Number"
                     defaultValue=""
                   />
@@ -395,6 +415,13 @@ const ListingItemPopUp = () => {
                     id="outlined-required"
                     label="Email"
                     defaultValue=""
+                  />
+                  <br />
+                  <TextField
+                    id="outlined-multiline-static"
+                    label="Message"
+                    multiline
+                    rows={4}
                   />
                   <br />
                   <button

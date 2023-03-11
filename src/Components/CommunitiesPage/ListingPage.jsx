@@ -21,42 +21,25 @@ import DeckIcon from "@mui/icons-material/Deck";
 import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
 import TableViewIcon from "@mui/icons-material/TableView";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import { fontSize } from "@mui/system";
-import GalleryTabs from "../LandingPage/Communities/GalleryTabs";
 import ListingsCarousel from "../LandingPage/ListingsCarousel/ListingsCarousel";
-import NightShelterIcon from "@mui/icons-material/NightShelter";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import YardIcon from "@mui/icons-material/Yard";
-import HomeWorkIcon from "@mui/icons-material/HomeWork";
 import SellIcon from "@mui/icons-material/Sell";
-import PendingActionsIcon from "@mui/icons-material/PendingActions";
-import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
-import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
-import ApartmentIcon from "@mui/icons-material/Apartment";
-import HolidayVillageIcon from "@mui/icons-material/HolidayVillage";
-import Diversity3Icon from "@mui/icons-material/Diversity3";
-import GrassIcon from "@mui/icons-material/Grass";
-import InfoIcon from "@mui/icons-material/Info";
-import PendingIcon from "@mui/icons-material/Pending";
-import MarkEmailReadIcon from "@mui/icons-material/MarkEmailRead";
-import RequestQuoteIcon from "@mui/icons-material/RequestQuote";
-import ContactForm from "./ContactForm";
 import FlagIcon from "@mui/icons-material/Flag";
-import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
-import LocalParking from "@mui/icons-material/LocalParking";
-import DirectionsCarFilledIcon from "@mui/icons-material/DirectionsCarFilled";
-import Avatar from "@mui/material/Avatar";
-import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
-import { DonutChart } from "react-circle-chart";
-import CircleIcon from "@mui/icons-material/Circle";
 import ListingItemPopUp from "./ListingItemPopUp";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import IosShareIcon from "@mui/icons-material/IosShare";
 import NewMap from "./NewMap";
 import MortgageCalculator from "./MortgageCalculator/MortgageCalculator";
 import NavbarListingItem from "./NavbarListingItem";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import ReqTourPic from "../../assets/reqTour.jpg";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -111,13 +94,22 @@ const ListingPage = () => {
   const [seeMoreContent, setSeeMoreContent] = useState(false);
   const [seeMoreContent2, setSeeMoreContent2] = useState(false);
   const [ShowNavbar, setShowNavbar] = useState(false);
-
+  const [alignment, setAlignment] = React.useState("web");
+  const handleChangeAlignment = (event, newAlignment) => {
+    setAlignment(newAlignment);
+  };
+  const [age, setAge] = React.useState("");
+  const handleChangeAge = (event) => {
+    setAge(event.target.value);
+  };
+  const [scheduleATour, setScheduleATour] = useState(true);
+  const [reqInfo, setReqInfo] = useState(false);
+  const [navbarDropdown, setNavbarDropdown] = useState(true);
   return (
     <>
       <div id="navbarListingItem">
         <NavbarListingItem />
       </div>
-
       <Box sx={{ flexGrow: 1 }}>
         <Grid container>
           <Grid xs={4} sm={4} md={4} lg={4} xl={4} className="centerd-element">
@@ -232,7 +224,6 @@ const ListingPage = () => {
               <Grid
                 xs={3}
                 style={{
-                  marginTop: "1rem",
                   border: "1px solid lightgray",
                   padding: "1rem",
                 }}
@@ -279,7 +270,14 @@ const ListingPage = () => {
         </Grid>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container className="centerd-element">
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
                 Neighborhood Information
               </h5>
@@ -375,7 +373,14 @@ const ListingPage = () => {
                 </p>
               </TabPanel>
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600", margin: "1rem 0" }}>
                 Property Highlights
               </h5>
@@ -556,7 +561,14 @@ const ListingPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5
                 style={{
                   fontWeight: "600",
@@ -1194,7 +1206,14 @@ const ListingPage = () => {
                 )}
               </button>
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600", marginTop: "1rem" }}>
                 Price History for 5654 Sheila Ave
               </h5>
@@ -1950,7 +1969,14 @@ const ListingPage = () => {
                 </tr>
               </table>
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5
                 style={{
                   fontWeight: "600",
@@ -1962,7 +1988,14 @@ const ListingPage = () => {
               </h5>
               <ListingsCarousel ShowTitle={false} />
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5
                 style={{
                   fontWeight: "600",
@@ -1974,7 +2007,14 @@ const ListingPage = () => {
               </h5>
               <ListingsCarousel ShowTitle={false} />
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
                 Property Taxes and Assessment
               </h5>
@@ -2010,7 +2050,14 @@ const ListingPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
                 Price Trends
               </h5>
@@ -2034,7 +2081,14 @@ const ListingPage = () => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600" }}>
                 Comparable Sales for 5654 Sheila Ave
               </h5>
@@ -2156,7 +2210,14 @@ const ListingPage = () => {
                 </table>
               </Grid>
             </Grid>
-            <Grid xs={8} style={{ margin: "1rem 0" }}>
+            <Grid
+              xs={8}
+              style={{
+                margin: "1rem 0",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600", marginBottom: "0.5rem" }}>
                 Neighborhood Overview
               </h5>
@@ -2754,7 +2815,14 @@ const ListingPage = () => {
               </Grid>
             </Grid>
           </Grid> */}
-            <Grid xs={8} style={{ marginTop: "2rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "2rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
               <h5 style={{ fontWeight: "600", marginBottom: "1rem" }}>
                 Mortgage Calculator
               </h5>
@@ -2826,15 +2894,221 @@ const ListingPage = () => {
               </div>
             </Grid> */}
             </Grid>
-            <Grid xs={8} style={{ marginTop: "1rem" }}>
-              <h5 style={{ fontWeight: "600", marginBottom: "-0.5rem" }}>
+            <Grid
+              xs={8}
+              style={{
+                marginTop: "3rem",
+                border: "1px solid lightgray",
+                padding: "1rem",
+              }}
+            >
+              <h5 style={{ fontWeight: "600", marginBottom: "1rem" }}>
                 Contact an Agent
               </h5>
-              <ContactForm
-                showLeftPhoto={false}
-                ColSize={12}
-                showTitle={false}
-              />
+              <div
+                className="centerd-element"
+                style={{
+                  justifyContent: "flex-start",
+                  marginLeft: "1rem",
+                  marginTop: "2rem",
+                }}
+              >
+                <button
+                  onClick={() => {
+                    setScheduleATour(true);
+                    setReqInfo(false);
+                  }}
+                  style={{
+                    marginRight: "2rem",
+                    color: "rgb(25, 118, 210)",
+                    fontWeight: "600",
+                  }}
+                >
+                  Schedule A Tour
+                </button>
+                <button
+                  onClick={() => {
+                    setScheduleATour(false);
+                    setReqInfo(true);
+                  }}
+                  style={{
+                    marginLeft: "2rem",
+                    color: "rgb(25, 118, 210)",
+                    fontWeight: "600",
+                  }}
+                >
+                  Request Info
+                </button>
+              </div>
+              {scheduleATour ? (
+                <Grid
+                  style={{ marginTop: "2rem", justifyContent: "space-between" }}
+                  container
+                  className="centerd-element"
+                >
+                  <Grid xs={4}>
+                    <img src={ReqTourPic} alt="" width="400" height="400" />
+                  </Grid>
+                  <Grid
+                    xs={7}
+                    className="centerd-element"
+                    style={{
+                      flexDirection: "column",
+                      padding: "0 1rem",
+                      overflow: "auto",
+                    }}
+                  >
+                    <h5>Schedule A Tour</h5>
+                    <div className="centerd-element">
+                      <span style={{ marginRight: "1rem" }}>Your Tour: </span>
+                      <ToggleButtonGroup
+                        color="primary"
+                        value={alignment}
+                        exclusive
+                        onChange={handleChangeAlignment}
+                        aria-label="Platform"
+                      >
+                        <ToggleButton value="web">In-Person</ToggleButton>
+                        <ToggleButton value="android">Video Chat</ToggleButton>
+                      </ToggleButtonGroup>
+                    </div>
+                    <FormControl required sx={{ m: 1, minWidth: 250 }}>
+                      <InputLabel id="demo-simple-select-required-label">
+                        Time
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-required-label"
+                        id="demo-simple-select-required"
+                        value={age}
+                        label="Time *"
+                        onChange={handleChangeAge}
+                      >
+                        <MenuItem value={8}>8:00 AM</MenuItem>
+                        <MenuItem value={10}>10:00 AM</MenuItem>
+                        <MenuItem value={20}>3:00 PM</MenuItem>
+                        <MenuItem value={30}>8:00 PM</MenuItem>
+                      </Select>
+                      <br />
+                      <TextField
+                        required
+                        id="outlined-required"
+                        label="Full Name"
+                        defaultValue=""
+                      />
+                      <br />
+                      <TextField
+                        required
+                        id="outlined-required"
+                        label="Phone Number"
+                        defaultValue=""
+                      />
+                      <br />
+                      <TextField
+                        required
+                        id="outlined-required"
+                        label="Email"
+                        defaultValue=""
+                      />
+                      <br />
+                      <TextField
+                        id="outlined-multiline-static"
+                        label="Message"
+                        multiline
+                        rows={4}
+                      />
+                      <br />
+                      <button
+                        style={{
+                          padding: "0.5rem 3rem",
+                          color: "white",
+                          backgroundColor: "rgb(25, 118, 210)",
+                          fontWeight: "600",
+                        }}
+                      >
+                        Schedule a Tour
+                      </button>
+                      <p style={{ fontSize: "11px", marginTop: "2rem" }}>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Blanditiis voluptas corrupti quod nihil culpa
+                        suscipit nemo quos eligendi labore dolor?
+                      </p>
+                    </FormControl>
+                  </Grid>
+                </Grid>
+              ) : (
+                <Grid
+                  container
+                  className="centerd-element"
+                  style={{
+                    justifyContent: "space-between",
+                    padding: "2rem",
+                    alignItems: "baseline",
+                  }}
+                >
+                  <Grid
+                    xs={6}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "baseline",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <label>Phone Number</label>
+                    <TextField
+                      style={{ width: "90%", marginBottom: "0.5rem" }}
+                      required
+                      id="outlined-required"
+                      label="Phone Number"
+                      defaultValue=""
+                    />
+                    <br />
+                    <label>Email</label>
+                    <TextField
+                      style={{ width: "90%", margin: "0.5rem 0" }}
+                      required
+                      id="outlined-required"
+                      label="Email"
+                      defaultValue=""
+                    />
+                    <br />
+                  </Grid>
+                  <Grid
+                    xs={6}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "start",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <label>Message</label>
+                    <TextField
+                      style={{ width: "100%", marginBottom: "1rem" }}
+                      id="outlined-multiline-static"
+                      label="Message"
+                      multiline
+                      rows={8}
+                    />
+                    <button
+                      style={{
+                        padding: "0.5rem 3rem",
+                        color: "white",
+                        backgroundColor: "rgb(25, 118, 210)",
+                        fontWeight: "600",
+                        width: "100%",
+                        margin: "2rem 0",
+                      }}
+                    >
+                      Request More Info
+                    </button>
+                    <FormControlLabel
+                      control={<Checkbox defaultChecked />}
+                      label="I want to talk about financing"
+                    />
+                  </Grid>
+                </Grid>
+              )}
             </Grid>
           </Grid>
         </Box>

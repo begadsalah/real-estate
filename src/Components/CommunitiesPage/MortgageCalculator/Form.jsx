@@ -100,7 +100,7 @@ function Form() {
             className="btn  btn-lg w-100 center"
             style={{
               color: "white",
-              backgroundColor: "#1565C0",
+              backgroundColor: "#1976D2",
             }}
           >
             Calculate

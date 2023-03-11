@@ -389,7 +389,7 @@ input[type="checkbox"] {
 
 table.comparable-sales-table {
   border-collapse: separate;
-  border-spacing: 2em 3.5em;
+  border-spacing: 1.5em 3em;
 }
 .comparable-sales-table-tr th {
   font-weight: 600;
