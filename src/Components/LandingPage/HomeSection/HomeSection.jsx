@@ -7,10 +7,16 @@ import "../../../assets/building.png";
 import FeaturedProperties from "../FeaturedProperties/FeaturedProperties.jsx";
 import AgentsDisplay from "../AgentsSection/AgentsDisplay.jsx";
 import ServicesSection from "../ServicesSection/ServicesSection.jsx";
+import RealtynaApi from "../../api/RealtynaApi.jsx";
 
 const HomeSection = () => {
   return (
     <>
+      {/* <div style={{ margin: "15rem" }}>
+        <h1>Dynamic data</h1>
+        <RealtynaApi />
+      </div> */}
+
       <div className="full-bg-image">
         <div className="homeSection-cntent">
           <h1 className="homeSection-h1">

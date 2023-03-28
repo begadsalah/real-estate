@@ -6,11 +6,11 @@ import PieChart from "./Pie Chart";
 import Grid from "@mui/material/Unstable_Grid2";
 
 function Form() {
-  const [homeValue, setHomeValue] = useState("");
-  const [downPayment, setDownPayment] = useState("");
-  const [loanAmount, setLoanAmount] = useState("");
-  const [interestRate, setInterestRate] = useState("");
-  const [loanDuration, setLoanDuration] = useState("");
+  const [homeValue, setHomeValue] = useState("750000");
+  const [downPayment, setDownPayment] = useState("55000");
+  const [loanAmount, setLoanAmount] = useState("150000");
+  const [interestRate, setInterestRate] = useState("14");
+  const [loanDuration, setLoanDuration] = useState("30");
   const [monthlyPayment, setMonthlyPayment] = useState(0);
 
   function calculateLoanAmount() {
@@ -46,7 +46,13 @@ function Form() {
       <Grid xs={6}>
         <form
           onSubmit={(e) => e.preventDefault()}
-          style={{ padding: "0 2rem" }}
+          style={{
+            padding: "1rem 0rem",
+            marginTop: "0.9rem",
+            paddingRight: "1rem",
+            flexDirection: "column",
+          }}
+          className="centerd-element"
         >
           <FormInputGroup
             text="Home Value "
@@ -57,20 +63,20 @@ function Form() {
             onkeyup={calculateLoanAmount}
           />
           <FormInputGroup
-            text="Down payment"
+            text="Down Payment"
             icon={<FaDollarSign />}
             placeholder={"Enter your funds"}
             value={downPayment}
             onInput={(e) => setDownPayment(e.target.value)}
             onkeyup={calculateLoanAmount}
           />
-          <FormInputGroup
+          {/* <FormInputGroup
             text="Loan amount"
             icon={<FaDollarSign />}
             placeholder={"Enter your funds"}
             readOnly={true}
             value={loanAmount}
-          />
+          /> */}
           <FormInputGroup
             text="Interest Rate %"
             placeholder={"Enter your interest rate"}
@@ -83,24 +89,25 @@ function Form() {
             value={loanDuration}
             onInput={(e) => setLoanDuration(e.target.value)}
           />
-          <h4
-            className="fw-bold"
-            style={{
-              color: "rgba(21, 101, 192,1)",
-              backgroundColor: "rgba(21, 101, 192,0.2)",
-              padding: "1rem 0.6rem",
-            }}
-          >
-            Monthly payment: <FaDollarSign />
-            {parseFloat(monthlyPayment.toFixed(2))}
-          </h4>
+          {/* <h4
+              className="fw-bold"
+              style={{
+                color: "rgba(21, 101, 192,1)",
+                backgroundColor: "rgba(21, 101, 192,0.2)",
+                padding: "1rem 0.6rem",
+              }}
+            >
+              Monthly payment: <FaDollarSign />
+              {parseFloat(monthlyPayment.toFixed(2))}
+            </h4> */}
           <button
             type="submit"
             onClick={calculateMonthlyPayment}
-            className="btn  btn-lg w-100 center"
+            className="btn  btn-lg  center"
             style={{
               color: "white",
               backgroundColor: "#1976D2",
+              width: "60%",
             }}
           >
             Calculate

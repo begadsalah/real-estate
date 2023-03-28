@@ -11,9 +11,14 @@ import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
+import ScheduleTourForm from "./ScheduleTourForm";
+import FullScheduleTourForm from "./FullScheduleTourForm";
 
 const NavbarListingItem = () => {
   const [tourDropdown, setTourDropdown] = useState(false);
+  const [reqInfoDropdown, setReqInfoDropdown] = useState(false);
+  const [togglerMeetButton2, setTogglerMeetButton2] = useState(true);
+
   const ref = useRef();
   const [isActive, setIsActive] = useState(false);
   const handleColorchange = () => {
@@ -45,20 +50,33 @@ const NavbarListingItem = () => {
       style={{
         marginTop: "6.95rem",
         justifyContent: "space-evenly",
-        padding: "0.5rem 0",
-        borderBottom: "2px solid rgba(21, 101, 192,0.5)",
+        padding: "1rem 0.3rem",
       }}
-      className="centerd-element"
+      className="centerd-element AppearingNavbar-container"
       onScroll={() => setTourDropdown(false)}
     >
-      <Grid>
-        <h4 style={{ fontWeight: "600" }}>5654 Sheila Ave</h4>
-        <h6>Las Vegas, NV 89108</h6>
+      <Grid xs={4}>
+        <h4 style={{ fontWeight: "600", marginTop: "0.5rem" }}>
+          5654 Sheila Ave Las Vegas, NV 89108
+        </h4>
       </Grid>
-      <Grid>
-        <h4 style={{ fontWeight: "600" }}>$745,000</h4>
+      <Grid
+        xs={1}
+        style={{ justifyContent: "flex-start" }}
+        className="centerd-element"
+      >
+        <h4
+          style={{
+            fontWeight: "600",
+            textAlign: "right",
+            marginLeft: "3.1rem",
+            marginTop: "0.5rem",
+          }}
+        >
+          $745,000
+        </h4>
       </Grid>
-      <Grid className="centerd-element">
+      <Grid className="centerd-element" xs={5}>
         <div
           className="shareIcon centerd-element"
           style={{ border: "1px solid lightgray" }}
@@ -93,13 +111,12 @@ const NavbarListingItem = () => {
           <Button
             variant="contained"
             style={{
-              margin: "0.3rem",
-              fontSize: "1rem",
               width: "100%",
             }}
             onClick={() => {
-              if (tourDropdown) {
+              if (tourDropdown || reqInfoDropdown) {
                 setTourDropdown(false);
+                setReqInfoDropdown(false);
               } else {
                 setTourDropdown(true);
               }
@@ -112,103 +129,77 @@ const NavbarListingItem = () => {
               xs={4}
               className="centerd-element"
               style={{
+                justifyContent: "flex-start",
+                alignItems: "start",
                 flexDirection: "column",
-                padding: "1rem",
                 overflow: "auto",
                 height: "70vh",
                 position: "absolute",
                 backgroundColor: "white",
                 left: "60%",
                 border: "2px solid lightgray",
+                zIndex: "32000",
               }}
             >
-              <h5>Schedule A Tour</h5>
-              <div className="centerd-element">
-                <span style={{ marginRight: "1rem" }}>Your Tour: </span>
-                <ToggleButtonGroup
-                  color="primary"
-                  value={alignment}
-                  exclusive
-                  onChange={handleChangeAlignment}
-                  aria-label="Platform"
-                >
-                  <ToggleButton value="web">In-Person</ToggleButton>
-                  <ToggleButton value="android">Video Chat</ToggleButton>
-                </ToggleButtonGroup>
-              </div>
-              <FormControl
-                required
-                sx={{ m: 2, minWidth: 250 }}
-                style={{
-                  overflow: "auto",
-                  padding: "0.5rem",
-                }}
-              >
-                <InputLabel
-                  id="demo-simple-select-required-label"
-                  style={{
-                    padding: "0.5rem",
-                  }}
-                >
-                  Time
-                </InputLabel>
-                <Select
-                  labelId="demo-simple-select-required-label"
-                  id="demo-simple-select-required"
-                  value={age}
-                  label="Time *"
-                  onChange={handleChangeAge}
-                >
-                  <MenuItem value={8}>8:00 AM</MenuItem>
-                  <MenuItem value={10}>10:00 AM</MenuItem>
-                  <MenuItem value={20}>3:00 PM</MenuItem>
-                  <MenuItem value={30}>8:00 PM</MenuItem>
-                </Select>
-                <br />
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Full Name"
-                  defaultValue=""
-                />
-                <br />
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Phone Number"
-                  defaultValue=""
-                />
-                <br />
-                <TextField
-                  required
-                  id="outlined-required"
-                  label="Email"
-                  defaultValue=""
-                />
-                <br />
-                <TextField
-                  id="outlined-multiline-static"
-                  label="Message"
-                  multiline
-                  rows={4}
-                />
-                <br />
-                <button
-                  style={{
-                    padding: "0.5rem 5rem",
-                    color: "white",
-                    backgroundColor: "rgb(25, 118, 210)",
-                    fontWeight: "600",
-                  }}
-                >
-                  Schedule a Tour
-                </button>
-                <p style={{ fontSize: "11px" }}>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Blanditiis voluptas corrupti quod nihil culpa suscipit nemo
-                  quos eligendi labore dolor?
-                </p>
-              </FormControl>
+              <FullScheduleTourForm
+                formWidth={"-webkit-fill-available"}
+                formMarginRight={0}
+                formMarginTop={0}
+                formMarginTop2={0}
+                ShowScheduleButton={false}
+                ShowReqInfoButton={false}
+                scheduleInitialState={true}
+                reqInitialState={false}
+              />
+            </Grid>
+          ) : null}
+        </div>
+        <div>
+          <Button
+            variant="outlined"
+            style={{
+              margin: "0.1rem",
+              width: "100%",
+              backgroundColor: "white",
+            }}
+            onClick={() => {
+              if (tourDropdown || reqInfoDropdown) {
+                setReqInfoDropdown(false);
+                setTourDropdown(false);
+              } else {
+                setReqInfoDropdown(true);
+              }
+            }}
+          >
+            Request Info
+          </Button>
+          {reqInfoDropdown ? (
+            <Grid
+              xs={4}
+              className="centerd-element"
+              style={{
+                justifyContent: "flex-start",
+                alignItems: "start",
+                flexDirection: "column",
+                overflow: "auto",
+                height: "70vh",
+                position: "absolute",
+                backgroundColor: "white",
+                left: "60%",
+                border: "2px solid lightgray",
+                zIndex: "32000",
+              }}
+            >
+              <FullScheduleTourForm
+                formWidth={"-webkit-fill-available"}
+                formMarginRight={0}
+                formMarginTop={0}
+                formMarginTop2={0}
+                ShowScheduleButton={false}
+                scheduleInitialState={false}
+                reqInitialState={true}
+                heightOfForm={"fit-content"}
+              />
             </Grid>
           ) : null}
         </div>

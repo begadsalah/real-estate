@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import IosShareIcon from "@mui/icons-material/IosShare";
-import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -16,25 +15,20 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { photos } from "../api/mlsdata";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { itemData } from "../api/mlsdata";
 import CollectionsIcon from "@mui/icons-material/Collections";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
-import MapSearch from "../MapSearch/MapSearch";
 import NewMap from "./NewMap";
-
+import ScheduleTourForm from "./ScheduleTourForm";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
+import FullScheduleTourForm from "./FullScheduleTourForm";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -122,33 +116,17 @@ const ListingItemPopUp = () => {
   const [isActive, setIsActive] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
-  const [alignment, setAlignment] = React.useState("web");
-  const [age, setAge] = React.useState("");
+  const [togglerMeetButton, setTogglerMeetButton] = useState(true);
+  const [scheduleATour, setScheduleATour] = useState(true);
+  const [reqInfo, setReqInfo] = useState(false);
 
-  const handleChangeAge = (event) => {
-    setAge(event.target.value);
-  };
-  const handleChangeAlignment = (event, newAlignment) => {
-    setAlignment(newAlignment);
-  };
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
     setViewerIsOpen(true);
   }, []);
-
   const closeLightbox = () => {
     setCurrentImage(0);
     setViewerIsOpen(false);
-  };
-  const handleMaxWidthChange = (event) => {
-    setMaxWidth(
-      // @ts-expect-error autofill of arbitrary value is not handled.
-      event.target.value
-    );
-  };
-
-  const handleFullWidthChange = (event) => {
-    setFullWidth(event.target.checked);
   };
 
   const handleColorchange = () => {
@@ -214,6 +192,30 @@ const ListingItemPopUp = () => {
             />
             13
           </div>
+          <span
+            style={{
+              padding: "0.2rem 0.7rem",
+              color: "black",
+              fontWeight: "600",
+              backgroundColor: "rgb(213, 241, 250,0.6)",
+              position: "absolute",
+              display: "flex",
+              alignSelf: "end",
+              justifySelf: "flex-start",
+              borderLeft: "4px solid #1565C0",
+            }}
+          >
+            <span
+              style={{
+                color: "#1565C0",
+                fontWeight: "600",
+                fontSize: "1.1rem",
+              }}
+            >
+              NEW{" "}
+            </span>{" "}
+            &nbsp;- 3 DAYS ON THE MARKET
+          </span>
           {itemData.map((item) => (
             <ImageListItem
               onClick={handleClickOpen}
@@ -345,101 +347,28 @@ const ListingItemPopUp = () => {
               </Grid>
               <Grid
                 xs={4}
-                className="centerd-element"
+                className="property-detailed-description-popup"
                 style={{
+                  display: "flex",
+                  justifyContent: "flex-start",
                   flexDirection: "column",
-                  padding: "1rem",
+                  padding: "0rem",
+                  marginBottom: "2rem",
                   overflow: "auto",
-                  height: "70vh",
+                  overflowX: "hidden",
                 }}
               >
-                <h5>Schedule A Tour</h5>
-                <div className="centerd-element">
-                  <span style={{ marginRight: "1rem" }}>Your Tour: </span>
-                  <ToggleButtonGroup
-                    color="primary"
-                    value={alignment}
-                    exclusive
-                    onChange={handleChangeAlignment}
-                    aria-label="Platform"
-                  >
-                    <ToggleButton value="web">In-Person</ToggleButton>
-                    <ToggleButton value="android">Video Chat</ToggleButton>
-                  </ToggleButtonGroup>
-                </div>
-                <FormControl
-                  required
-                  sx={{ m: 2, minWidth: 250 }}
-                  style={{
-                    overflow: "auto",
-                    padding: "0.5rem",
-                  }}
-                >
-                  <InputLabel
-                    id="demo-simple-select-required-label"
-                    style={{
-                      padding: "0.5rem",
-                    }}
-                  >
-                    Time
-                  </InputLabel>
-                  <Select
-                    labelId="demo-simple-select-required-label"
-                    id="demo-simple-select-required"
-                    value={age}
-                    label="Time *"
-                    onChange={handleChangeAge}
-                  >
-                    <MenuItem value={8}>8:00 AM</MenuItem>
-                    <MenuItem value={10}>10:00 AM</MenuItem>
-                    <MenuItem value={20}>3:00 PM</MenuItem>
-                    <MenuItem value={30}>8:00 PM</MenuItem>
-                  </Select>
-                  <br />
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Full Name"
-                    defaultValue=""
-                  />
-                  <br />
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Phone Number"
-                    defaultValue=""
-                  />
-                  <br />
-                  <TextField
-                    required
-                    id="outlined-required"
-                    label="Email"
-                    defaultValue=""
-                  />
-                  <br />
-                  <TextField
-                    id="outlined-multiline-static"
-                    label="Message"
-                    multiline
-                    rows={4}
-                  />
-                  <br />
-                  <button
-                    style={{
-                      padding: "0.5rem 5rem",
-                      color: "white",
-                      backgroundColor: "rgb(25, 118, 210)",
-                      fontWeight: "600",
-                    }}
-                  >
-                    Schedule a Tour
-                  </button>
-                  <p style={{ fontSize: "11px" }}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Blanditiis voluptas corrupti quod nihil culpa suscipit nemo
-                    quos eligendi labore dolor?
-                  </p>
-                </FormControl>
+                <FullScheduleTourForm
+                  formWidth={"-webkit-fill-available"}
+                  formMarginRight={0}
+                  formMarginTop={-1}
+                  formMarginTop2={0}
+                  ShowScheduleButton={true}
+                  ShowReqInfoButton={true}
+                  scheduleInitialState={true}
+                  reqInitialState={false}
+                  heightOfForm={"fit-content"}
+                />
               </Grid>
             </Grid>
           </TabPanel>

@@ -15,7 +15,7 @@ class DoughnutChart extends Component {
         {
           text: `${parseFloat(this.props.monthlyPayment.toFixed(2))}/month`,
           verticalAlign: "center",
-          fontSize: 25,
+          fontSize: 22,
           dockInsidePlotArea: true,
         },
       ],
@@ -23,11 +23,11 @@ class DoughnutChart extends Component {
         {
           type: "doughnut",
           showInLegend: true,
-          indexLabel: "{name}: {y}",
+          // indexLabel: "{name}: {y}",
           yValueFormatString: "#,###",
           dataPoints: [
             { name: "Down Payment", y: this.props.downPayment },
-            { name: "Loan Amount", y: this.props.loanAmount },
+            // { name: "Loan Amount", y: this.props.loanAmount },
             { name: "Interest Rate", y: this.props.interestRate },
             { name: "Home Value", y: this.props.homeValue },
             { name: "Loan Duration", y: this.props.loanDuration },
