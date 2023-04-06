@@ -27,7 +27,10 @@ import ListingItemPopUp from "./ListingItemPopUp";
 import MortgageCalculator from "./MortgageCalculator/MortgageCalculator";
 import NavbarListingItem from "./NavbarListingItem";
 import FullScheduleTourForm from "./FullScheduleTourForm";
-
+import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
+import DirectionsBusIcon from "@mui/icons-material/DirectionsBus";
+import DirectionsBikeIcon from "@mui/icons-material/DirectionsBike";
+import StarIcon from "@mui/icons-material/Star";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
   return (
@@ -46,7 +49,6 @@ function TabPanel(props) {
     </div>
   );
 }
-
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
@@ -59,7 +61,6 @@ function a11yProps(index) {
     "aria-controls": `simple-tabpanel-${index}`,
   };
 }
-
 const scrollFunction = () => {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("navbarListingItem").style.top = "0";
@@ -74,7 +75,7 @@ function windowScroll() {
     "test",
     mainNav.scrollTop > 300 ||
       (document.documentElement.scrollTop > 300 &&
-        document.documentElement.scrollTop < 4300)
+        document.documentElement.scrollTop < 4500)
   );
 }
 window.onscroll = function () {
@@ -89,6 +90,10 @@ const ListingPage = () => {
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+  const [value1, setValue1] = useState(0);
+  const handleChange1 = (event, newValue) => {
+    setValue1(newValue);
   };
   const [seeMoreContent, setSeeMoreContent] = useState(false);
   return (
@@ -154,7 +159,7 @@ const ListingPage = () => {
             </h4>
             <div
               className="card-body-content"
-              style={{ justifyContent: "flex-start", marginLeft: "0rem" }}
+              style={{ justifyContent: "flex-start", marginTop: "0rem" }}
             >
               <span
                 className="houseCardInfo card-address centerd-element"
@@ -196,6 +201,26 @@ const ListingPage = () => {
                 2,464 sqft (on 0.47 acres)
               </span>
             </div>
+            <div>
+              <h5 style={{ fontWeight: "600", marginTop: "1.5rem" }}>
+                Property Description
+              </h5>
+              <p style={{ maxWidth: "52vw" }}>
+                Must see this large Las Vegas two story home on just under a
+                half-acre lot in this custom home neighborhood!! Perfect for a
+                large family! Huge Backyard is a blank slate with space for a
+                pool, guesthouse or an additional garage for all your toys! RV!
+                Zoned for horses! Home has been updated with two new air
+                conditioners, new roof, new paint inside and out! New kitchen
+                countertops, appliances with a view of the backyard! Updated
+                bathrooms! New tile and carpet throughout! Four large bedrooms
+                with an optional fifth or a den downstairs along with family
+                room, living room and a dining room off the kitchen! New front
+                yard desert landscaping! Perfect home for your large family!
+                Don't hesitate or it will be gone!! Hard to find lot at this
+                price
+              </p>
+            </div>
           </Grid>
           <Grid
             xs={3}
@@ -232,7 +257,7 @@ const ListingPage = () => {
               style={{
                 display: "grid",
                 position: "absolute",
-                justifyContent: "flex-end",
+                justifyContent: "flex-start",
                 alignItems: "start",
                 marginTop: "0.4rem",
                 padding: "0 1rem",
@@ -283,7 +308,11 @@ const ListingPage = () => {
               </div>
               <Grid
                 className="centerd-element"
-                style={{ justifyContent: "flex-start" }}
+                style={{
+                  justifyContent: "flex-start",
+                  alignItems: "start",
+                  flexDirection: "column",
+                }}
               >
                 <div className="centerd-element">
                   <h6 style={{ fontWeight: "500" }}>
@@ -320,24 +349,6 @@ const ListingPage = () => {
               <TabPanel value={value} index={0}>
                 <Grid>
                   <MapSearch mapHeight="40vh" mapWidth="52vw" />
-                  <h5 style={{ fontWeight: "600", marginTop: "1.5rem" }}>
-                    Property Description
-                  </h5>
-                  <p style={{ maxWidth: "52vw" }}>
-                    Must see this large Las Vegas two story home on just under a
-                    half-acre lot in this custom home neighborhood!! Perfect for
-                    a large family! Huge Backyard is a blank slate with space
-                    for a pool, guesthouse or an additional garage for all your
-                    toys! RV! Zoned for horses! Home has been updated with two
-                    new air conditioners, new roof, new paint inside and out!
-                    New kitchen countertops, appliances with a view of the
-                    backyard! Updated bathrooms! New tile and carpet throughout!
-                    Four large bedrooms with an optional fifth or a den
-                    downstairs along with family room, living room and a dining
-                    room off the kitchen! New front yard desert landscaping!
-                    Perfect home for your large family! Don't hesitate or it
-                    will be gone!! Hard to find lot at this price
-                  </p>
                 </Grid>
               </TabPanel>
               <TabPanel value={value} index={1}>
@@ -862,7 +873,7 @@ const ListingPage = () => {
                     See More{" "}
                   </span>
                   {seeMoreContent ? (
-                    <KeyboardArrowUpIcon style={{ color: "red" }} />
+                    <KeyboardArrowUpIcon style={{ color: "#eeeeee" }} />
                   ) : (
                     <KeyboardArrowDownIcon
                       style={{ color: "rgb(25, 118, 210)" }}
@@ -870,63 +881,6 @@ const ListingPage = () => {
                   )}
                 </button>
               </div>
-            </Grid>
-            <Grid
-              style={{
-                padding: "2rem 0",
-                marginTop: "-1.5rem",
-              }}
-            >
-              <div
-                className="centerd-element"
-                style={{
-                  justifyContent: "start",
-                }}
-              >
-                <h3
-                  style={{
-                    fontWeight: "600",
-                    justifyContent: "start",
-                    marginBottom: "-2rem",
-                    borderBottom: "2.7px solid #eeeeee",
-                    lineHeight: "2",
-                    width: "100%",
-                  }}
-                  className="centerd-element"
-                >
-                  Similar Listings
-                </h3>
-              </div>
-
-              <ListingsCarousel ShowTitle={false} />
-            </Grid>
-            <Grid
-              style={{
-                padding: "2rem 0",
-                margin: "-2.5rem 0",
-              }}
-            >
-              <div
-                className="centerd-element"
-                style={{
-                  justifyContent: "start",
-                }}
-              >
-                <h3
-                  style={{
-                    fontWeight: "600",
-                    justifyContent: "start",
-                    marginBottom: "-2rem",
-                    borderBottom: "2.7px solid #eeeeee",
-                    lineHeight: "2",
-                    width: "100%",
-                  }}
-                  className="centerd-element"
-                >
-                  New Listings Near 5654 Sheila Ave
-                </h3>
-              </div>
-              <ListingsCarousel ShowTitle={false} />
             </Grid>
             <Grid
               style={{
@@ -1382,6 +1336,662 @@ const ListingPage = () => {
                 padding: "2rem 0",
               }}
             >
+              <h3
+                style={{
+                  fontWeight: "600",
+                  justifyContent: "start",
+                  marginBottom: "2rem",
+                  borderBottom: "2.7px solid #eeeeee",
+                  lineHeight: "2",
+                  width: "100%",
+                }}
+                className="centerd-element"
+              >
+                Walking & Transportation
+              </h3>
+              <Grid
+                container
+                className="centerd-element"
+                style={{
+                  marginTop: "-0.8rem",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Grid
+                  xs={3}
+                  style={{
+                    border: "1px solid #eeeeee",
+                    padding: "0.5rem",
+                    flexDirection: "column",
+                    height: "130px",
+                  }}
+                  className="centerd-element"
+                >
+                  <h1
+                    style={{ color: "#1976D2", fontWeight: "600" }}
+                    className="centerd-element"
+                  >
+                    <DirectionsWalkIcon
+                      style={{
+                        color: "gray",
+                        fontSize: "3rem",
+                      }}
+                    />
+                    5
+                  </h1>
+                  <h6 style={{ color: "#1976D2", fontWeight: "600" }}>
+                    CAR-DEPENDENT
+                  </h6>
+                  <p style={{ color: "gray", fontSize: "0.85rem" }}>
+                    Walk Score &#x24C7;
+                  </p>
+                </Grid>
+                <Grid
+                  xs={3}
+                  style={{
+                    border: "1px solid #eeeeee",
+                    padding: "0.5rem",
+                    flexDirection: "column",
+                    height: "130px",
+                  }}
+                  className="centerd-element"
+                >
+                  <h1
+                    style={{ color: "#1976D2", fontWeight: "600" }}
+                    className="centerd-element"
+                  >
+                    <DirectionsBusIcon
+                      style={{
+                        color: "gray",
+                        fontSize: "3rem",
+                        marginRight: "1rem",
+                      }}
+                    />
+                    1
+                  </h1>
+                  <h6 style={{ color: "#1976D2", fontWeight: "600" }}>
+                    NEARBY TRANSIT
+                  </h6>
+                  <p style={{ color: "gray", fontSize: "0.85rem" }}>
+                    Transit Score &#9415;
+                  </p>
+                </Grid>
+                <Grid
+                  xs={3}
+                  style={{
+                    border: "1px solid #eeeeee",
+                    padding: "0.5rem",
+                    flexDirection: "column",
+                    height: "130px",
+                  }}
+                  className="centerd-element"
+                >
+                  <h1
+                    style={{ color: "#1976D2", fontWeight: "600" }}
+                    className="centerd-element"
+                  >
+                    <DirectionsBikeIcon
+                      style={{
+                        color: "gray",
+                        fontSize: "3rem",
+                        marginRight: "1rem",
+                      }}
+                    />
+                    16
+                  </h1>
+                  <h6
+                    style={{
+                      color: "#1976D2",
+                      fontWeight: "600",
+                      textAlign: "center",
+                      fontSize: "0.95rem",
+                    }}
+                  >
+                    SOMEWHAT BIKEABLE
+                  </h6>
+                  <p style={{ color: "gray", fontSize: "0.85rem" }}>
+                    Bike Score &#9415;
+                  </p>
+                </Grid>
+                <Grid xs={12} style={{ marginTop: "1rem" }}>
+                  <div>
+                    <p
+                      style={{
+                        color: "gray",
+                        fontSize: "1rem",
+                        padding: "1rem",
+                        borderLeft: "3px solid #1976D2",
+                      }}
+                    >
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Error non unde modi omnis qui dolor, debitis autem ratione
+                      at tenetur.
+                    </p>
+                  </div>
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid
+              style={{
+                padding: "2rem 0",
+              }}
+            >
+              <h3
+                style={{
+                  fontWeight: "600",
+                  justifyContent: "start",
+                  marginBottom: "2rem",
+                  borderBottom: "2.7px solid #eeeeee",
+                  lineHeight: "2",
+                  width: "100%",
+                }}
+                className="centerd-element"
+              >
+                Nearby Schools
+              </h3>
+              <p>
+                Contact the school or district directly to verify enrollment
+                eligibility
+              </p>
+              <Tabs
+                className="basic-tabs "
+                value={value1}
+                onChange={handleChange1}
+                aria-label="basic tabs example"
+                style={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <Tab
+                  label="Nearby Schools"
+                  {...a11yProps(0)}
+                  style={{ fontWeight: "600" }}
+                />
+                <Tab
+                  label="Elementary"
+                  {...a11yProps(1)}
+                  style={{ fontWeight: "600" }}
+                />
+                <Tab
+                  label="Middle"
+                  {...a11yProps(2)}
+                  style={{ fontWeight: "600" }}
+                />
+                <Tab
+                  label="High"
+                  {...a11yProps(3)}
+                  style={{ fontWeight: "600" }}
+                />
+                <Tab
+                  label="Private"
+                  {...a11yProps(4)}
+                  style={{ fontWeight: "600" }}
+                />
+              </Tabs>
+              <TabPanel value={value1} index={0}>
+                <Grid container style={{ marginTop: "1.5rem" }}>
+                  <Grid style={{ padding: "0 0.5rem" }}>
+                    <h6
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      Rating
+                    </h6>
+                    <ul>
+                      <li
+                        style={{
+                          padding: "0.5rem 0",
+                        }}
+                      >
+                        <div
+                          style={{
+                            border: "2px solid rgb(25, 118, 210)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "41px",
+                            height: "41px",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontWeight: "600",
+                              fontSize: "1.1rem",
+                            }}
+                          >
+                            2
+                          </span>
+                          /10
+                        </div>
+                      </li>
+                      <li
+                        style={{
+                          padding: "0.5rem 0",
+                        }}
+                      >
+                        <div
+                          style={{
+                            border: "2px solid rgb(25, 118, 210)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "41px",
+                            height: "41px",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontWeight: "600",
+                              fontSize: "1.1rem",
+                            }}
+                          >
+                            5
+                          </span>
+                          /10
+                        </div>
+                      </li>
+                      <li
+                        style={{
+                          padding: "0.5rem 0",
+                        }}
+                      >
+                        <div
+                          style={{
+                            border: "2px solid rgb(25, 118, 210)",
+                            borderRadius: "50%",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            width: "41px",
+                            height: "41px",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontWeight: "600",
+                              fontSize: "1.1rem",
+                            }}
+                          >
+                            7
+                          </span>
+                          /10
+                        </div>
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid style={{ padding: "0 0.5rem" }}>
+                    <h6
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      School Name
+                    </h6>
+                    <ul>
+                      <li
+                        style={{
+                          padding: "1.2rem 0.5rem",
+
+                          color: "rgb(25, 118, 210)",
+                          fontWeight: "600",
+                        }}
+                      >
+                        First School Name
+                      </li>
+                      <li
+                        style={{
+                          padding: "1.2rem 0.5rem",
+
+                          color: "rgb(25, 118, 210)",
+                          fontWeight: "600",
+                        }}
+                      >
+                        Second School Name
+                      </li>
+                      <li
+                        style={{
+                          padding: "1.2rem 0.5rem",
+
+                          color: "rgb(25, 118, 210)",
+                          fontWeight: "600",
+                        }}
+                      >
+                        Third School Name
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid style={{ padding: "0 0.5rem" }}>
+                    <h6
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      Grades
+                    </h6>
+                    <ul>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        PK-5
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        6-7
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        7-9
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid style={{ padding: "0 0.5rem" }}>
+                    <h6
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      Type
+                    </h6>
+                    <ul>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        Public
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        Public
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        Public
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid style={{ padding: "0 0.5rem" }}>
+                    <h6
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      Students
+                    </h6>
+                    <ul>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        1266
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        6921
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                        }}
+                      >
+                        4991
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid style={{ padding: "0 0.5rem" }}>
+                    <h6
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      Reviews
+                    </h6>
+                    <ul
+                      className="centerd-element"
+                      style={{ flexDirection: "column" }}
+                    >
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "0.2rem",
+                        }}
+                      >
+                        <div>
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "gray",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "gray",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "gray",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                        </div>
+                        <p
+                          style={{
+                            fontSize: "0.85rem",
+                            fontWeight: "500",
+                            color: "gray",
+                          }}
+                        >
+                          4 reviews
+                        </p>
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "0.2rem",
+                        }}
+                      >
+                        <div>
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "gray",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "gray",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                        </div>
+                        <p
+                          style={{
+                            fontSize: "0.85rem",
+                            fontWeight: "500",
+                            color: "gray",
+                          }}
+                        >
+                          7 reviews
+                        </p>
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "0.2rem",
+                        }}
+                      >
+                        <div>
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "#F0B215",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                          <StarIcon
+                            style={{
+                              color: "gray",
+                              fontSize: "1.3rem",
+                            }}
+                          />
+                        </div>
+                        <p
+                          style={{
+                            fontSize: "0.85rem",
+                            fontWeight: "500",
+                            color: "gray",
+                          }}
+                        >
+                          12 reviews
+                        </p>
+                      </li>
+                    </ul>
+                  </Grid>
+                  <Grid style={{ padding: "0 0.5rem" }}>
+                    <h6
+                      style={{
+                        fontWeight: "600",
+                      }}
+                    >
+                      Distance
+                    </h6>
+                    <ul>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                          borderBottom: "1px solid #eeeeee",
+                        }}
+                      >
+                        0.12 mi
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                          borderBottom: "1px solid #eeeeee",
+                        }}
+                      >
+                        0.34 mi
+                      </li>
+                      <li
+                        style={{
+                          fontWeight: "600",
+                          padding: "1.2rem 0.5rem",
+                          borderBottom: "1px solid #eeeeee",
+                        }}
+                      >
+                        2.1 mi
+                      </li>
+                    </ul>
+                  </Grid>
+                </Grid>
+              </TabPanel>
+              <TabPanel value={value1} index={1}></TabPanel>
+              <TabPanel value={value1} index={2}></TabPanel>
+              <TabPanel value={value1} index={3}></TabPanel>
+              <TabPanel value={value1} index={4}></TabPanel>
+              <p>
+                Great Schools Rating are based on student performance on state
+                tests, progress over time, and college readiness, in addition to
+                how effectively schools serve students
+                <br />
+                <span
+                  style={{
+                    color: "#1976D2",
+                    fontWeight: "600",
+                    marginTop: "2rem",
+                  }}
+                >
+                  CONTINUE READING <KeyboardArrowDownIcon />
+                </span>
+              </p>
+            </Grid>
+            <Grid
+              style={{
+                padding: "2rem 0",
+              }}
+            >
               <div
                 className="centerd-element"
                 style={{
@@ -1420,6 +2030,72 @@ const ListingPage = () => {
                   style={{
                     fontWeight: "600",
                     justifyContent: "start",
+                    marginBottom: "-2rem",
+                    borderBottom: "2.7px solid #eeeeee",
+                    lineHeight: "2",
+                    width: "100%",
+                  }}
+                  className="centerd-element"
+                >
+                  Similar Listings
+                </h3>
+              </div>
+              <ListingsCarousel
+                ShowTitle={false}
+                ItemsNumberBig={2}
+                ItemsNumberMed={2}
+                ItemsNumberSm={1}
+              />
+            </Grid>
+            <Grid
+              style={{
+                padding: "2rem 0",
+                margin: "-2.5rem 0",
+              }}
+            >
+              <div
+                className="centerd-element"
+                style={{
+                  justifyContent: "start",
+                }}
+              >
+                <h3
+                  style={{
+                    fontWeight: "600",
+                    justifyContent: "start",
+                    marginBottom: "-2rem",
+                    borderBottom: "2.7px solid #eeeeee",
+                    lineHeight: "2",
+                    width: "100%",
+                  }}
+                  className="centerd-element"
+                >
+                  New Listings Near 5654 Sheila Ave
+                </h3>
+              </div>
+              <ListingsCarousel
+                ShowTitle={false}
+                ItemsNumberBig={2}
+                ItemsNumberMed={2}
+                ItemsNumberSm={1}
+              />
+            </Grid>
+            <Grid
+              style={{
+                padding: "2rem 0",
+                marginTop: "-1.5rem",
+              }}
+            >
+              <div
+                className="centerd-element"
+                style={{
+                  justifyContent: "start",
+                }}
+              >
+                <h3
+                  style={{
+                    fontWeight: "600",
+                    justifyContent: "start",
                     borderBottom: "2.7px solid #eeeeee",
                     lineHeight: "2",
                     width: "100%",
@@ -1429,7 +2105,6 @@ const ListingPage = () => {
                   Contact an Agent
                 </h3>
               </div>
-
               <FullScheduleTourForm
                 formWidth={"-webkit-fill-available"}
                 formMarginRight={0}

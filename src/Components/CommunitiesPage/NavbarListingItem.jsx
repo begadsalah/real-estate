@@ -1,23 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Grid from "@mui/material/Unstable_Grid2";
-import Box from "@mui/material/Box";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { Button } from "@mui/material";
-import ToggleButton from "@mui/material/ToggleButton";
-import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import MenuItem from "@mui/material/MenuItem";
-import TextField from "@mui/material/TextField";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
-import Select from "@mui/material/Select";
-import ScheduleTourForm from "./ScheduleTourForm";
 import FullScheduleTourForm from "./FullScheduleTourForm";
 
 const NavbarListingItem = () => {
   const [tourDropdown, setTourDropdown] = useState(false);
   const [reqInfoDropdown, setReqInfoDropdown] = useState(false);
-  const [togglerMeetButton2, setTogglerMeetButton2] = useState(true);
 
   const ref = useRef();
   const [isActive, setIsActive] = useState(false);

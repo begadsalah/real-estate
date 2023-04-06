@@ -107,28 +107,34 @@ Oxnard, CA 93036`,
     price: "$821,000",
   },
 ];
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 3000 },
-    items: 3,
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-    slidesToSlide: 4,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3,
-    slidesToSlide: 2,
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1,
-    slidesToSlide: 1,
-  },
-};
-const ListingsCarousel = ({ ShowTitle }) => {
+
+const ListingsCarousel = ({
+  ShowTitle,
+  ItemsNumberBig,
+  ItemsNumberMed,
+  ItemsNumberSm,
+}) => {
+  const responsive = {
+    superLargeDesktop: {
+      breakpoint: { max: 4000, min: 3000 },
+      items: parseInt(`${ItemsNumberBig}`),
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: parseInt(`${ItemsNumberBig}`),
+      slidesToSlide: 4,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: parseInt(`${ItemsNumberMed}`),
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: parseInt(`${ItemsNumberSm}`),
+      slidesToSlide: 1,
+    },
+  };
   return (
     <div className="sections-main-container">
       {ShowTitle ? (

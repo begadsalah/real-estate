@@ -29,7 +29,12 @@ const HomeSection = () => {
           />
         </div>
       </div>
-      <ListingsCarousel ShowTitle={true} />
+      <ListingsCarousel
+        ShowTitle={true}
+        ItemsNumberBig={3}
+        ItemsNumberMed={3}
+        ItemsNumberSm={3}
+      />
       <FeaturedProperties />
       <CommunitiesSection />
       <ServicesSection />

@@ -183,10 +183,9 @@ const FullScheduleTourForm = ({
             container
             className="centerd-element"
             style={{
-              justifyContent: "felx-start",
+              justifyContent: "flex-start",
               padding: "2rem 0rem",
               alignItems: "start",
-
               marginLeft: "1rem",
               flexDirection: "column",
             }}
