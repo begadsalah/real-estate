@@ -18,7 +18,7 @@ const HomeSection = () => {
       </div> */}
 
       <div className="full-bg-image">
-        <div className="homeSection-cntent">
+        <div className="homeSection-content">
           <h1 className="homeSection-h1">
             All <span className="homeSection-h1-span"> Los Angeles</span> Homes
           </h1>

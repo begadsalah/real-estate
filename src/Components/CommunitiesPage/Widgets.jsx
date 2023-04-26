@@ -28,6 +28,7 @@ function paginator(items, current_page, per_page_items) {
   };
 }
 const Widgets = ({
+  varaitionType,
   areaFromParent,
   showPagination,
   placeholderContent,
@@ -82,7 +83,10 @@ const Widgets = ({
               <thead className="area-thead">
                 <tr className="area-tr">
                   <th>
-                    <h5>Los Angeles County Residential Market Stats</h5>
+                    <h5>
+                      Los Angeles County {varaitionType} Residential Market
+                      Stats
+                    </h5>
                   </th>
                 </tr>
               </thead>
@@ -140,7 +144,7 @@ const Widgets = ({
               </tbody>
             </div>
           </Row>
-          <Row className="row-box">
+          {/* <Row className="row-box">
             <div className="searchBox">
               <thead className="area-thead">
                 <tr className="area-tr">
@@ -149,7 +153,8 @@ const Widgets = ({
                       Featured{" "}
                       {areaFromParent.contentLabel
                         ? areaFromParent.contentLabel
-                        : area.contentLabel}
+                        : area.contentLabel}{" "}
+                      {varaitionType}
                     </h5>
                   </th>
                 </tr>
@@ -177,14 +182,14 @@ const Widgets = ({
                 </Container>
               </tbody>
             </div>
-          </Row>
+          </Row> */}
           <Row className="row-box">
             <div className="searchBox">
               <thead className="area-thead">
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse Los Angeles
+                      Browse Los Angeles {varaitionType}
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -204,7 +209,11 @@ const Widgets = ({
                       xl={4}
                       className="element-col"
                     >
-                      <td className="td-text">Single Family Homes</td>
+                      <td className="td-text">
+                        <Link to="/area-page/los-angeles/single-family-homes">
+                          Single Family Homes
+                        </Link>
+                      </td>
                     </Col>
                     <Col
                       xs={4}
@@ -357,7 +366,7 @@ const Widgets = ({
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse Los Angeles
+                      Browse Los Angeles {varaitionType}
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -505,7 +514,7 @@ const Widgets = ({
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse Los Angeles
+                      Browse Los Angeles {varaitionType}
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -632,7 +641,7 @@ const Widgets = ({
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse Los Angeles
+                      Browse Los Angeles {varaitionType}
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}
@@ -755,7 +764,7 @@ const Widgets = ({
                 <tr className="area-tr">
                   <th>
                     <h5>
-                      Browse Los Angeles
+                      Browse Los Angeles {varaitionType}
                       {areaFromParent.PageName
                         ? areaFromParent.PageName
                         : area.PageName}{" "}

@@ -1,16 +1,23 @@
-import React from 'react';
+import React from "react";
 import { useParams } from "react-router-dom";
-import ReactDOM from 'react-dom/client';
-import { Link,BrowserRouter, Routes, Route,MemoryRouter,useLocation, } from "react-router-dom";
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import CommunitiesPage from './Components/CommunitiesPage/CommunitiesPage';
-import MainNavbar from './Components/Navbar/MainNavbar';
-import SearchPage from './Components/SearchPage/SearchPage';
-import Footer from './Components/Footer/Footer';
-import MapSearch from './Components/MapSearch/MapSearch';
-import AreaPage from './Components/CommunitiesPage/AreaPage';
+import ReactDOM from "react-dom/client";
+import {
+  Link,
+  BrowserRouter,
+  Routes,
+  Route,
+  MemoryRouter,
+  useLocation,
+} from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import CommunitiesPage from "./Components/CommunitiesPage/CommunitiesPage";
+import MainNavbar from "./Components/Navbar/MainNavbar";
+import SearchPage from "./Components/SearchPage/SearchPage";
+import Footer from "./Components/Footer/Footer";
+import MapSearch from "./Components/MapSearch/MapSearch";
+import AreaPage from "./Components/CommunitiesPage/AreaPage";
 import * as serviceWorker from "./serviceWorker";
 import "stylecraft/dist/stylecraft.css";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -18,31 +25,39 @@ import "./Components/MapListting/css/index.css";
 import "./Components/MapListting/css/fonts.css";
 import "./Components/MapListting/css/input-range.css";
 import "./Components/MapListting/css/hacks.css";
-import "./Components/MapListting/css/mapbox-hacks.css"; 
+import "./Components/MapListting/css/mapbox-hacks.css";
 import "./Components/MapListting/css/fonts.css";
 import "./Components/MapListting/css/input-range.css";
 import "./Components/MapListting/css/hacks.css";
 import "./Components/MapListting/css/mapbox-hacks.css";
-import CountyPages from './Components/CommunitiesPage/CountyPages';
-import ListingPage from './Components/CommunitiesPage/ListingPage';
+import CountyPages from "./Components/CommunitiesPage/CountyPages";
+import ListingPage from "./Components/CommunitiesPage/ListingPage";
+import PropertiesByType from "./Components/CommunitiesPage/VaraitionPages/PropertiesByType";
+import Contact from "./Components/ContactUs/Contact";
 
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <MainNavbar/>
-        <Routes>
-        <Route index element={<App />}/>
-        <Route path="communities" element={<CommunitiesPage />}/>
-        <Route path="property-search" element={<SearchPage  ShowHead={true}/>}/>
-        <Route path="property-map-search" element={<MapSearch/>}/>
-        <Route path="/area-page" element={ <AreaPage /> } />
-        <Route path="/area-page/Listing-item" element={ <ListingPage /> } />
-        <Route path="/area-page/:pageId" element={ <CountyPages /> } />
-        </Routes>
-      <Footer/>
+      <MainNavbar />
+      <Routes>
+        <Route index element={<App />} />
+        <Route path="communities" element={<CommunitiesPage />} />
+        <Route
+          path="property-search"
+          element={<SearchPage ShowHead={true} />}
+        />
+        <Route path="property-map-search" element={<MapSearch />} />
+        <Route path="/area-page" element={<AreaPage />} />
+        <Route path="/area-page/Listing-item" element={<ListingPage />} />
+        <Route path="/area-page/:pageId" element={<CountyPages />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route
+          path="/area-page/los-angeles/single-family-homes"
+          element={<PropertiesByType />}
+        />
+      </Routes>
+      <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

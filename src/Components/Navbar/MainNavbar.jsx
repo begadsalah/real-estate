@@ -271,7 +271,7 @@ function MainNavbar() {
             </Col>
             <Col className="div-flex-center">
               <Nav>
-                <Nav.Link href="#">Contact</Nav.Link>
+                <Nav.Link href="/contact">Contact</Nav.Link>
                 <Nav.Link href="#">Help</Nav.Link>
                 <Nav.Link href="#">Sign in</Nav.Link>
               </Nav>

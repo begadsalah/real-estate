@@ -35,14 +35,14 @@
   padding: 0 0.4rem;
   padding-bottom: 0.25rem;
 }
-.homeSection-cntent {
+.homeSection-content {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 75vh;
   flex-direction: column;
-  postion: realtive;
+  position: realtive;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
