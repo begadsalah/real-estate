@@ -1,0 +1,62 @@
+.full-bg-image-agent {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 48, 96, 0.6),
+      rgba(38, 94, 137, 0.9)
+    ),
+    url(../../assets/agentPagePic.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.agent-content {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+  min-height: 65vh;
+  flex-direction: column;
+  position: realtive;
+}
+.agentsPage-h1 {
+  color: white;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: left;
+  position: relative;
+  text-shadow: rgba(0, 0, 0, 0.7) 0px 2px 5px;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+.Contact-content .searchBar_form {
+  justify-content: flex-start !important;
+  padding: 0 1rem;
+}
+.Agents-pic-container {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 48, 96, 0.1),
+      rgba(38, 94, 137, 0.1)
+    ),
+    url(../../assets/agentPage1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Agents-pic-2-container {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 48, 96, 0.1),
+      rgba(38, 94, 137, 0.1)
+    ),
+    url(../../assets/agentPage2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

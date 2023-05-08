@@ -25,7 +25,7 @@ import housePic9 from "../../../assets/house9.jpg";
 const itemData = [
   {
     img: housePic7,
-    title: "Long Beach",
+    title: "Beverly Hills",
     size: {
       width: "300",
       height: "200",
@@ -33,7 +33,7 @@ const itemData = [
   },
   {
     img: housePic8,
-    title: "Pasadena",
+    title: "Burbank ",
     size: {
       width: "300",
       height: "200",
@@ -41,7 +41,7 @@ const itemData = [
   },
   {
     img: housePic9,
-    title: "Anaheim",
+    title: "Echo Park ",
     size: {
       width: "300",
       height: "200",
@@ -49,7 +49,7 @@ const itemData = [
   },
   {
     img: housePic2,
-    title: "Pasadena",
+    title: "Encino",
     size: {
       width: "300",
       height: "200",
@@ -57,7 +57,7 @@ const itemData = [
   },
   {
     img: housePic4,
-    title: "Pasadena",
+    title: "Glendale",
     size: {
       width: "300",
       height: "200",
@@ -65,7 +65,7 @@ const itemData = [
   },
   {
     img: housePic5,
-    title: "Anaheim",
+    title: "Hermosa Beach ",
     size: {
       width: "300",
       height: "200",
@@ -75,7 +75,7 @@ const itemData = [
 const itemData1 = [
   {
     img: housePic,
-    title: "Los Angeles",
+    title: "Hollywood Hills",
     size: {
       width: "300",
       height: "200",
@@ -83,7 +83,73 @@ const itemData1 = [
   },
   {
     img: housePic1,
-    title: "Orange County",
+    title: "Long Beach ",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+  {
+    img: housePic2,
+    title: "Los Angeles",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+  {
+    img: housePic3,
+    title: "Los Feliz",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+  {
+    img: housePic4,
+    title: "Malibu",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+  {
+    img: housePic5,
+    title: "Palm Springs",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+];
+const itemData2 = [
+  {
+    img: housePic1,
+    title: "Pasadena ",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+  {
+    img: housePic2,
+    title: "Santa Monica",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+  {
+    img: housePic4,
+    title: "Sherman Oaks ",
+    size: {
+      width: "300",
+      height: "200",
+    },
+  },
+  {
+    img: housePic3,
+    title: "Silver Lake ",
     size: {
       width: "300",
       height: "200",
@@ -98,24 +164,8 @@ const itemData1 = [
     },
   },
   {
-    img: housePic3,
-    title: "Riverside",
-    size: {
-      width: "300",
-      height: "200",
-    },
-  },
-  {
-    img: housePic4,
-    title: "Palm Springs",
-    size: {
-      width: "300",
-      height: "200",
-    },
-  },
-  {
-    img: housePic5,
-    title: "Palm Springs",
+    img: housePic1,
+    title: "West Hollywood ",
     size: {
       width: "300",
       height: "200",
@@ -211,7 +261,7 @@ const FeaturedProperties = () => {
         </Container>
         <Container className="FeaturedCard-div-container">
           <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
-            {itemData.map((item, index) => (
+            {itemData1.map((item, index) => (
               <Item key={index}>
                 <div className="container-div">
                   <div
@@ -246,7 +296,7 @@ const FeaturedProperties = () => {
         </Container>
         <Container className="FeaturedCard-div-container">
           <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 3 }} spacing={2}>
-            {itemData1.map((item, index) => (
+            {itemData2.map((item, index) => (
               <Item key={index}>
                 <div className="container-div">
                   <div

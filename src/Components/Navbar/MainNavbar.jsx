@@ -6,7 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import logo from "../../assets/realEstateLogo.png";
+import logo from "../../assets/1.png";
 import "./MainNavbar.css";
 
 function MainNavbar() {
@@ -234,26 +234,176 @@ function MainNavbar() {
           <Row className="navbar_contaner">
             <Col className="div-flex-center">
               <Nav>
+                <Nav.Link href="/">Home</Nav.Link>
                 <NavDropdown title="Search" id="collasible-nav-dropdown">
                   <NavDropdown.Item href="/property-map-search">
-                    By Map
+                    Newest Listings
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/property-map-search">
+                    Map Search
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/property-map-search">
+                    Advanced Search
                   </NavDropdown.Item>
                   <NavDropdown.Item href="/property-search">
                     By ZIP Code
                   </NavDropdown.Item>
+                  <NavDropdown
+                    title="Popular Searches"
+                    id="collasible-nav-dropdown"
+                  >
+                    <NavDropdown.Item href="/property-search">
+                      Luxury Homes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      Gated Community Homes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      New Construction Homes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      Single Story Homes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      Pool Homes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      Townhomes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      Condos
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      Mountain View Homes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      Ocean View Homes
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="/property-search">
+                      City View Homes
+                    </NavDropdown.Item>
+                  </NavDropdown>
                 </NavDropdown>
-                <Nav.Link href="#">Hire Agent</Nav.Link>
-
+                {/* <Nav.Link href="/agents">Hire Agent</Nav.Link> */}
                 <NavDropdown title="Communities" id="collasible-nav-dropdown">
-                  {CommunitiesObj.map((content, index) => (
-                    <div key={index}>
-                      <NavDropdown.Item href={`#action/3.${index + 1}`}>
-                        <Link to="/communities">{content.PageName}</Link>
-                      </NavDropdown.Item>
-                    </div>
-                  ))}
-                  <NavDropdown.Item href={`#action/3.17`}>
-                    <Link to="/communities">View More</Link>
+                  <NavDropdown title="By County" id="collasible-nav-dropdown">
+                    <NavDropdown.Item>
+                      <Link to="/communities">Los Angeles</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Orange</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Riverside</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">San Bernadino</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">San Diego</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Ventura</Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                  <NavDropdown
+                    title="Popular Communities"
+                    id="collasible-nav-dropdown"
+                  >
+                    <NavDropdown.Item>
+                      <Link to="/communities">Bel Air</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Beverly Hills</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Burbank</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Corona Del Mar</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Encino</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Glendale</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Hermosa Beach</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Hollywood Hills</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Huntington Beach</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">La Jolla</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Laguna Beach</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Long Beach</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Los Feliz</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Malibu</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Newport Beach</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Palm Springs</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Pasadena</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Santa Barbara</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Santa Monica</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Sherman Oaks</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Silver Lake</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">Ventura</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">West Hollywood</Link>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Link to="/communities">View More </Link>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </NavDropdown>
+                <NavDropdown title="Buy" id="collasible-nav-dropdown">
+                  <NavDropdown.Item>
+                    <Link to="/communities">Buyers</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to="/communities">Connect with Agent</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to="/communities">Mortgage Calculator </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
+                <NavDropdown title="Sell" id="collasible-nav-dropdown">
+                  <NavDropdown.Item>
+                    <Link to="/communities">Sell Your Home</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to="/communities">Free Home Valuation</Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to="/communities">Connect with Agent</Link>
                   </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
@@ -262,8 +412,8 @@ function MainNavbar() {
               <Navbar.Brand href="/" className="margin-0">
                 <img
                   src={`${logo}`}
-                  width="55"
-                  height="55"
+                  // width="220"
+                  height="70"
                   className="d-inline-block align-top"
                   alt="React Bootstrap logo"
                 />
@@ -272,8 +422,8 @@ function MainNavbar() {
             <Col className="div-flex-center">
               <Nav>
                 <Nav.Link href="/contact">Contact</Nav.Link>
-                <Nav.Link href="#">Help</Nav.Link>
-                <Nav.Link href="#">Sign in</Nav.Link>
+                <Nav.Link href="#">Blog</Nav.Link>
+                <Nav.Link href="#">Login / Create Account</Nav.Link>
               </Nav>
             </Col>
           </Row>

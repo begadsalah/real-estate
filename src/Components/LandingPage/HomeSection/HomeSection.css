@@ -1,10 +1,10 @@
 .full-bg-image {
   background-image: linear-gradient(
       to bottom,
-      rgba(0, 48, 96, 0.4),
-      rgba(38, 94, 137, 0.7)
+      rgb(255, 168, 64, 0.1),
+      rgb(255, 168, 64, 0.4)
     ),
-    url(../../../assets/homeSectionPic.jpg);
+    url(../../../assets/Los-Angeles-Skyline.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,7 +26,7 @@
   align-items: center;
 }
 .homeSection-h1-span {
-  color: #68b3f9;
+  color: #ffa840;
   text-shadow: rgb(0 0 0) 0px 2px 5px;
   text-align: center;
   display: flex;

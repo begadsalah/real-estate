@@ -1,18 +1,18 @@
 hr.solid {
-  border-top: 2px solid white;
+  border-top: 2px solid rgb(36, 36, 36);
 }
 .footer-tbody {
-  color: white;
+  color: rgb(36, 36, 36);
 }
 .footer-main-div {
   /* background-image: url(../../assets/wave.svg); */
-  background-color: #18446c;
+  background-color: #ffffff;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 50vh;
   width: 100%;
-  color: white;
+  color: rgb(36, 36, 36);
 }
 .footer-container {
   display: flex;
@@ -27,28 +27,28 @@ hr.solid {
   margin: 1rem 0;
 }
 .footer-thead-tr th {
-  color: white;
+  color: rgb(36, 36, 36);
   font-size: 1.4rem;
 }
 
 .footer-tbody {
-  color: white;
+  color: rgb(36, 36, 36);
 }
 .footer-tbody-tr {
-  color: white;
+  color: rgb(36, 36, 36);
 }
 .footer-tbody-tr td {
-  color: white;
+  color: rgb(36, 36, 36);
 }
 .socialMedia-td {
   display: flex;
   justify-contnet: space-between;
   align-items: center;
   flex-direction: row;
-  color: white;
+  color: rgb(36, 36, 36);
 }
 .footer-thead-rights {
-  border-top: 1px solid white;
+  border-top: 1px solid rgb(36, 36, 36);
   margin: 2rem 0;
   padding: 1rem;
 }
@@ -56,6 +56,9 @@ hr.solid {
   display: flex;
   justify-contnet: center;
   align-items: center;
-  color: white;
+  color: rgb(36, 36, 36);
   tex-align: center;
+}
+.footer-mainRow span {
+  padding: 0.3rem 0 !important;
 }

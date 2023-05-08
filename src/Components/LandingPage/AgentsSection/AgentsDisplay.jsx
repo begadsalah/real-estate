@@ -97,7 +97,10 @@ const AgentsDisplay = () => {
         >
           {users.map((user, index) => (
             <div key={index}>
-              <Row className="agent-card-row">
+              <Row
+                className="agent-card-row"
+                style={{ maxWidth: "365px", maxHeight: "200px" }}
+              >
                 <Col className="image-div">
                   <img src={user.img} alt={user.name} className="card-image" />
                 </Col>

@@ -1,5 +1,5 @@
 .services-full-bg-image {
-  background-color: #336b9f;
+  background-color: #ffa840;
   /* background-image: linear-gradient(
     to bottom,
     rgba(179, 209, 243, 0.95),
@@ -28,7 +28,7 @@
   text-shadow: rgb(0 0 0) 0px 1px 5px;
 }
 .servicesSection-h1 span {
-  color: #336b9f;
+  color: #ffa840;
   text-shadow: none;
 }
 .servicesSection-content {

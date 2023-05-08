@@ -177,7 +177,7 @@ const ContactForm = ({ showLeftPhoto, ColSize, showTitle }) => {
                         width: "50%",
                         margin: "1rem 0",
                         color: "white",
-                        backgroundColor: "#336b9f",
+                        backgroundColor: "#ffa840",
                       }}
                     />
                   </Col>

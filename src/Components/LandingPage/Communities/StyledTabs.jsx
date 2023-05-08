@@ -54,7 +54,7 @@ const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
     marginRight: theme.spacing(1),
     color: "rgba(0, 0, 0, 0.3)",
     "&.Mui-selected": {
-      color: "#336B9F",
+      color: "#ffa840",
     },
     "&.Mui-focusVisible": {
       backgroundColor: "rgba(100, 95, 228, 0.32)",

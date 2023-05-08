@@ -58,7 +58,7 @@ const SearchPage = ({ ShowHead, searchPadding }) => {
                     style={{
                       margin: "0.3rem",
                       fontSize: "2rem",
-                      color: "#336b9f",
+                      color: "#ffa840",
                     }}
                   />
                   {"  "}

@@ -7,7 +7,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import "./AgentsDisplay.css";
-import { ReactComponent as Agent1 } from "../../../assets/agentsvg.svg";
+import Agent1 from "../../../assets/sec6.png";
 
 const ContactAgent = () => {
   return (
@@ -22,7 +22,8 @@ const ContactAgent = () => {
             xs={0}
             sm={0}
           >
-            <Agent1 className="connect-agent-image" />
+            {/* <Agent1 className="connect-agent-image" />{" "} */}
+            <img src={`${Agent1}`} alt="" className="connect-agent-image" />
           </Col>
           <Col className="connect-agent-content">
             <span>Connect With a Local Agent</span>

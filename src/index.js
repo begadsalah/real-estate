@@ -34,6 +34,7 @@ import CountyPages from "./Components/CommunitiesPage/CountyPages";
 import ListingPage from "./Components/CommunitiesPage/ListingPage";
 import PropertiesByType from "./Components/CommunitiesPage/VaraitionPages/PropertiesByType";
 import Contact from "./Components/ContactUs/Contact";
+import AgentsPage from "./Components/Agents/AgentsPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -52,6 +53,7 @@ root.render(
         <Route path="/area-page/Listing-item" element={<ListingPage />} />
         <Route path="/area-page/:pageId" element={<CountyPages />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/agents" element={<AgentsPage />} />
         <Route
           path="/area-page/los-angeles/single-family-homes"
           element={<PropertiesByType />}

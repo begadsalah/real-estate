@@ -45,7 +45,7 @@ function PropertiesGallery({
                   }
                 }}
               >
-                <KeyboardArrowLeftIcon style={{ color: "#336b9f" }} />
+                <KeyboardArrowLeftIcon style={{ color: "#ffa840" }} />
               </button>
               {/* pagination stuff */}
               <div
@@ -77,7 +77,7 @@ function PropertiesGallery({
                 }}
               >
                 {" "}
-                <KeyboardArrowRightIcon style={{ color: "#336b9f" }} />
+                <KeyboardArrowRightIcon style={{ color: "#ffa840" }} />
               </button>
             </div>
           ) : null}
@@ -130,7 +130,7 @@ function PropertiesGallery({
                 }
               }}
             >
-              <KeyboardArrowLeftIcon style={{ color: "#336b9f" }} />
+              <KeyboardArrowLeftIcon style={{ color: "#ffa840" }} />
             </button>
             {/* pagination stuff */}
             <div
@@ -162,7 +162,7 @@ function PropertiesGallery({
               }}
             >
               {" "}
-              <KeyboardArrowRightIcon style={{ color: "#336b9f" }} />
+              <KeyboardArrowRightIcon style={{ color: "#ffa840" }} />
             </button>
           </div>
         </div>

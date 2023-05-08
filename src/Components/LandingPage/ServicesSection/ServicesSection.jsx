@@ -8,9 +8,9 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { ReactComponent as Iconone } from "../../../assets/icon1-2.svg";
-import { ReactComponent as Icontwo } from "../../../assets/icon2-1.svg";
-import { ReactComponent as Iconthree } from "../../../assets/icon3-2.svg";
+import Iconone from "../../../assets/Buyer.png";
+import Icontwo from "../../../assets/Sellers.png";
+import Iconthree from "../../../assets/Home-Valuation.png";
 import "./ServicesSection.css";
 const ServicesSection = () => {
   return (
@@ -18,19 +18,15 @@ const ServicesSection = () => {
       <Container>
         <div className="headLines-div-container">
           <div className="servicesSection-content">
-            <h1 className="servicesSection-h1 h1-title">See How We Can Help</h1>
+            <h1 className="servicesSection-h1 h1-title">
+              Help Every Step of The Way
+            </h1>
           </div>
         </div>
         <div className="card-div">
           <Card sx={{ maxWidth: 345, maxHeight: 350 }} className="card-body">
             <CardContent className="card-content">
-              <div className="svg-container">
-                <Iconone
-                  className="service-svg-icon"
-                  width={"110px"}
-                  height={"110px"}
-                />
-              </div>
+              <img src={`${Iconone}`} alt="" width={"110px"} height={"110px"} />
               <Typography
                 gutterBottom
                 variant="h5"
@@ -44,8 +40,8 @@ const ServicesSection = () => {
                 color="text.secondary"
                 className="card-paragraph"
               >
-                With over 1 million homes for sale available on the website,
-                Real Estate can match you with a house you will want to call
+                Schedule home showings on-demand and connect with a local
+                professional who is dedicated to helping you find your perfect
                 home.
               </Typography>
               <CardActions>
@@ -57,13 +53,7 @@ const ServicesSection = () => {
           </Card>
           <Card sx={{ maxWidth: 345, maxHeight: 350 }} className="card-body">
             <CardContent className="card-content">
-              <div className="svg-container">
-                <Icontwo
-                  className="service-svg-icon"
-                  width={"110px"}
-                  height={"110px"}
-                />
-              </div>
+              <img src={`${Icontwo}`} alt="" width={"110px"} height={"110px"} />
               <Typography
                 gutterBottom
                 variant="h5"
@@ -77,9 +67,9 @@ const ServicesSection = () => {
                 color="text.secondary"
                 className="card-paragraph"
               >
-                With over 1 million visitors on the monthly on the website, Real
-                Estate can match you with a buyer you will get a your house sold
-                in no time.
+                Connect with a local expert who specializes in selling.
+                Determine what’s right for your home and get a free, in-depth
+                comparative market analysis.
               </Typography>
 
               <CardActions>
@@ -91,13 +81,12 @@ const ServicesSection = () => {
           </Card>
           <Card sx={{ maxWidth: 345, maxHeight: 350 }} className="card-body">
             <CardContent className="card-content">
-              <div className="svg-container">
-                <Iconthree
-                  className="service-svg-icon"
-                  width={"110px"}
-                  height={"110px"}
-                />
-              </div>
+              <img
+                src={`${Iconthree}`}
+                alt=""
+                width={"110px"}
+                height={"110px"}
+              />
               <Typography
                 gutterBottom
                 variant="h5"
@@ -111,9 +100,8 @@ const ServicesSection = () => {
                 color="text.secondary"
                 className="card-paragraph"
               >
-                With over 1 million homes for sale available on the website,
-                Real Estate can match you with a house you will want to call
-                home.
+                Wondering what your home could sell for? Find out what your home
+                is worth in today’s market with a free online home valuation.
               </Typography>
               <CardActions>
                 <Button size="small" className="card-button">
