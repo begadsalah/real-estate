@@ -91,9 +91,9 @@ const CommunityPage = () => {
     setShowed5(false);
   };
   return (
-    <Container style={{ marginBottom: "3rem" }}>
+    <Container style={{ marginBottom: "3rem", marginTop: "1rem" }}>
       <Row className="communities-breadcrumbs-row">
-        <h1> Los Angeles Homes For Sale</h1>
+        <h1 style={{ marginTop: "1rem" }}> Los Angeles Homes For Sale</h1>
         <Col className="communities-breadcrumbs-col1">
           <Link className="breadcrumbs-links" to="/">
             Home

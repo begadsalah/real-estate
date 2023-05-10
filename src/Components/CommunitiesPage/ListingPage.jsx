@@ -109,7 +109,11 @@ const ListingPage = () => {
       >
         <div
           className="centerd-element"
-          style={{ justifyContent: "flex-start", width: "82%" }}
+          style={{
+            justifyContent: "flex-start",
+            width: "82%",
+            marginTop: "1.52rem",
+          }}
         >
           <div style={{ marginRight: "2rem" }}>
             <Link to="/area-page" style={{ color: "#2FA8E6" }}>

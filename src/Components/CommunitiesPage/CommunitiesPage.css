@@ -436,6 +436,7 @@ table.comparable-sales-table {
 
 .AppearingNavbar-container {
   background-color: #eeeeee;
+  margin-top: 7.7rem !important;
 }
 .property-detailed-description {
   /* overflow-y: auto; */
